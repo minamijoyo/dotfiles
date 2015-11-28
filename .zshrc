@@ -1,6 +1,11 @@
 # デフォルトパス
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
+# コマンドの履歴
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+
 # oh-my-zshの設定
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
