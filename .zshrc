@@ -1,11 +1,14 @@
+# デフォルトパス
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
 # oh-my-zshの設定
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-# パスの設定
-export PATH="/Users/minamijoyo/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# rbenvの設定
+export PATH="$HOME/.rbenv/shims:$PATH"
 
 # terraformの設定
 export PATH="$PATH:/opt/terraform/terraform_0.6.6_darwin_amd64"
