@@ -51,6 +51,19 @@ export PATH="$PATH:/opt/terraform/terraform_0.6.6_darwin_amd64"
 # aws-cliの補完
 source /usr/local/bin/aws_zsh_completer.sh
 
+# ec2-listでEC2インスタンスの一覧を動的に取得してssh先をpecoで選択できるようにする
+function peco-ec2ssh() {
+  echo "Fetching ec2 host..."
+  local selected_host=$(ec2list | sort | peco | cut -f 3)
+  if [ -n "${selected_host}" ]; then
+    BUFFER="ssh morita@${selected_host} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-ec2ssh
+bindkey '^re' peco-ec2ssh
+
 # tmuxの自動起動
 if [ -z $TMUX ]; then
   tmux
