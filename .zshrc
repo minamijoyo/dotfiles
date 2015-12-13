@@ -64,6 +64,9 @@ function peco-ec2ssh() {
 zle -N peco-ec2ssh
 bindkey '^re' peco-ec2ssh
 
+# ctagsの設定
+alias ctags="`brew --prefix`/bin/ctags"
+
 # tmuxの自動起動
 if [ -z $TMUX ]; then
   tmux
