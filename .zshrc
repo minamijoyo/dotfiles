@@ -8,9 +8,25 @@ SAVEHIST=100000
 
 # oh-my-zshの設定
 export ZSH=~/.oh-my-zsh
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
+
+# プロンプト設定
+# robbyrussellベースでカスタマイズ
+#local rails_var=""
+#if [ -n "$BUNDLE_GEMFILE" ]; then
+#  rails_var="* "
+#fi
+local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
+PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+RPROMPT='${BUNDLE_GEMFILE}'
+
+ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+
 
 # cdrでディレクトリ履歴の管理
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
