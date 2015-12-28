@@ -17,13 +17,11 @@ NeoBundle 'Shougo/neomru.vim'
 " ヤンク履歴
 NeoBundle 'Shougo/neoyank.vim'
 " アウトラインの表示
-NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'Shougo/unite-outline'
 
 " uniteの設定
 " インサートモードで開始
 let g:unite_enable_start_insert=1
-" アウトライン用のハイライト
-let g:unite_abbr_highlight = 'normal'
 " prefix keyの設定
 nmap <Space> [unite]
 
