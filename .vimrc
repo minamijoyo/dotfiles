@@ -41,5 +41,4 @@ set vb t_vb=
 set novisualbell
 
 " OSのクリップボードを使う
-set clipboard+=unnamed
-
+set clipboard=unnamed,autoselect

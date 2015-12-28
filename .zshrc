@@ -86,6 +86,10 @@ bindkey '^re' peco-ec2ssh
 # ctagsの設定
 alias ctags="`brew --prefix`/bin/ctags"
 
+# vimとclipboardの連携
+alias vi="vim"
+alias vim="reattach-to-user-namespace vim"
+
 # tmuxの自動起動
 if [ -z $TMUX ]; then
   tmux
