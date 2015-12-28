@@ -22,6 +22,9 @@ NeoBundle 'Shougo/unite-outline'
 " uniteの設定
 " インサートモードで開始
 let g:unite_enable_start_insert=1
+" ウィンドウ分割ルール
+let g:unite_split_rule = 'botright'
+"
 " prefix keyの設定
 nmap <Space> [unite]
 
@@ -40,7 +43,7 @@ nnoremap <silent> [unite]t :<C-u>Unite<Space>tab<CR>
 " スペースキーとhキーでヒストリ/ヤンクを表示
 nnoremap <silent> [unite]h :<C-u>Unite<Space>history/yank<CR>
  "スペースキーとoキーでoutline
-nnoremap <silent> [unite]o :<C-u>Unite<Space>outline<CR>
+nnoremap <silent> [unite]o :<C-u>Unite<Space>-vertical -winwidth=40 outline<CR>
 " スペースキーとENTERキーでfile_rec:!
 nnoremap <silent> [unite]<CR> :<C-u>Unite<Space>file_rec:!<CR>
 " unite.vimを開いている間のキーマッピング
