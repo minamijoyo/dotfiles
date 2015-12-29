@@ -10,7 +10,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " プラグイン
-" ファイル管理
+" ランチャー
 NeoBundle 'Shougo/unite.vim'
 " 最近開いたファイル
 NeoBundle 'Shougo/neomru.vim'
@@ -59,6 +59,9 @@ NeoBundle 'tpope/vim-fugitive.git'
 NeoBundle 'vim-gitgutter'
 " コミットログ確認
 NeoBundle 'gregsexton/gitv.git'
+
+" ファイラ
+NeoBundle 'scrooloose/nerdtree'
 
 call neobundle#end()
 filetype plugin indent on
