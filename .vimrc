@@ -68,6 +68,15 @@ NeoBundle 'gregsexton/gitv.git'
 " ファイラ
 NeoBundle 'scrooloose/nerdtree'
 
+" カラースキーマ
+NeoBundle 'altercation/vim-colors-solarized'
+let g:solarized_termtrans=1
+
+" インデントガイド
+NeoBundle 'nathanaelkane/vim-indent-guides'
+" 自動でvim-indent-guidesをオンにする
+let g:indent_guides_enable_on_vim_startup = 1
+
 " Ruby関連
 " endを自動で挿入
 NeoBundle 'tpope/vim-endwise'
@@ -84,6 +93,9 @@ set number
 
 " シンタックスハイライト
 syntax on
+" カラースキーマ
+set background=light
+colorscheme solarized
 " エンコード
 set encoding=utf8
 " ファイルエンコード
