@@ -24,7 +24,6 @@ NeoBundle 'Shougo/unite-outline'
 let g:unite_enable_start_insert=1
 " ウィンドウ分割ルール
 let g:unite_split_rule = 'botright'
-"
 " prefix keyの設定
 nmap <Space> [unite]
 
@@ -83,7 +82,7 @@ let g:indent_guides_start_level=2
 let g:indent_guides_auto_colors=0
 " set background=dark
 " 奇数番目のインデントの色
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=lightgray
 " 偶数番目のインデントの色
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
 " ガイドの幅
@@ -130,3 +129,14 @@ set novisualbell
 
 " OSのクリップボードを使う
 set clipboard=unnamed,autoselect
+" 改行時に前の行のインデントを継続する
+set autoindent
+" 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
+set smartindent
+" タブ文字の表示幅
+set tabstop=2
+" Vimが挿入するインデントの幅
+set shiftwidth=2
+" 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする
+set smarttab
+
