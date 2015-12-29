@@ -69,13 +69,25 @@ NeoBundle 'gregsexton/gitv.git'
 NeoBundle 'scrooloose/nerdtree'
 
 " カラースキーマ
-NeoBundle 'altercation/vim-colors-solarized'
-let g:solarized_termtrans=1
+NeoBundle 'nanotech/jellybeans.vim'
+" カラースキーマの選択
+NeoBundle 'ujihisa/unite-colorscheme'
 
 " インデントガイド
 NeoBundle 'nathanaelkane/vim-indent-guides'
-" 自動でvim-indent-guidesをオンにする
-let g:indent_guides_enable_on_vim_startup = 1
+" vim 起動時 vim-indent-guides を自動起動
+let g:indent_guides_enable_on_vim_startup=1
+" ガイドをスタートするインデントの量
+let g:indent_guides_start_level=2
+" 自動カラー無効
+let g:indent_guides_auto_colors=0
+" set background=dark
+" 奇数番目のインデントの色
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=black
+" 偶数番目のインデントの色
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
+" ガイドの幅
+let g:indent_guides_guide_size = 1
 
 " Ruby関連
 " endを自動で挿入
@@ -94,8 +106,10 @@ set number
 " シンタックスハイライト
 syntax on
 " カラースキーマ
-set background=light
-colorscheme solarized
+set t_Co=256
+set background=dark
+colorscheme jellybeans
+
 " エンコード
 set encoding=utf8
 " ファイルエンコード
