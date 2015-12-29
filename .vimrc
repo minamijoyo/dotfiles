@@ -53,6 +53,13 @@ function! s:unite_my_settings()"{{{
   nmap <buffer> <ESC> <Plug>(unite_exit)
 endfunction"}}}
 
+" gitコマンド実行
+NeoBundle 'tpope/vim-fugitive.git'
+" gitの差分をエディタ上に表示
+NeoBundle 'vim-gitgutter'
+" コミットログ確認
+NeoBundle 'gregsexton/gitv.git'
+
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
