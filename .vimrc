@@ -1,4 +1,4 @@
-" NeoBundleの設定
+ " NeoBundleの設定
 if has('vim_starting')
   if &compatible
     set nocompatible
@@ -159,7 +159,8 @@ endif
 
 " 対応括弧をハイライト表示する
 set showmatch
-
+" 小文字の検索でも大文字も見つかるようにする
+set ignorecase
 " 検索結果をハイライト表示する
 set hlsearch
 " 小文字のみで検索したときに大文字小文字を無視する
