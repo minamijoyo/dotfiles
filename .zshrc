@@ -19,13 +19,13 @@ source $ZSH/oh-my-zsh.sh
 #  rails_var="* "
 #fi
 local ret_status="%(?:%{$fg[green]%}:%{$fg[red]%}%s)"
-PROMPT='[%n@%m:%c]${ret_status}$ %{$reset_color%}'
-RPROMPT='${BUNDLE_GEMFILE} %{$fg[blue]%} $(git_prompt_info) %{$reset_color%}'
+PROMPT='[%{$fg[blue]%}%c%{$reset_color%}$(git_prompt_info)]${ret_status}$ %{$reset_color%}'
+RPROMPT='${BUNDLE_GEMFILE}'
 
-ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="@%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%} x%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 
 # cdrでディレクトリ履歴の管理
