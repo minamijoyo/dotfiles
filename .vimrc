@@ -104,6 +104,8 @@ NeoBundleCheck
 
 " 行番号を表示
 set number
+" 行列番号を表示する
+set ruler
 
 " シンタックスハイライト
 syntax on
@@ -140,6 +142,48 @@ set smartindent
 set tabstop=2
 " Vimが挿入するインデントの幅
 set shiftwidth=2
+" タブ入力を複数の空白入力に置き換える
+set expandtab
 " 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする
 set smarttab
+
+" 不可視文字を表示する
+set list
+set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
+
+""""""""""""""""""""""""""""""
+" 全角スペースの表示
+""""""""""""""""""""""""""""""
+function! ZenkakuSpace()
+    highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgrey
+endfunction
+
+if has('syntax')
+    augroup ZenkakuSpace
+        autocmd!
+        autocmd ColorScheme * call ZenkakuSpace()
+        autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
+    augroup END
+    call ZenkakuSpace()
+endif
+""""""""""""""""""""""""""""""
+
+" 対応括弧をハイライト表示する
+set showmatch
+
+" 検索結果をハイライト表示する
+set hlsearch
+" 小文字のみで検索したときに大文字小文字を無視する
+set smartcase
+" 検索ワードの最初の文字を入力した時点で検索を開始する
+set incsearch
+" ESCを二回押すことでハイライトを消す
+nmap <silent> <Esc><Esc> :nohlsearch<CR>
+" カーソル下の単語を * で検索
+vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v, '\/'), "\n", '\\n', 'g')<CR><CR>
+
+" 保存されていないファイルがあるときでも別のファイルを開けるようにする
+set hidden
+" w!! でsudoして保存
+cmap w!! w !sudo tee > /dev/null %
 
