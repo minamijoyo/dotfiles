@@ -72,6 +72,9 @@ NeoBundle 'nanotech/jellybeans.vim'
 " カラースキーマの選択
 NeoBundle 'ujihisa/unite-colorscheme'
 
+" 色情報が入ったファイルを開いた場合は表示を色付けする
+NeoBundle 'vim-scripts/AnsiEsc.vim'
+
 " インデントガイド
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " vim 起動時 vim-indent-guides を自動起動
