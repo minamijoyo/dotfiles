@@ -75,6 +75,9 @@ NeoBundle 'ujihisa/unite-colorscheme'
 " 色情報が入ったファイルを開いた場合は表示を色付けする
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 
+" 行末の半角スペースを可視化
+NeoBundle 'bronson/vim-trailing-whitespace'
+
 " インデントガイド
 NeoBundle 'Yggdroot/indentLine'
 let g:indentLine_color_term = 239
