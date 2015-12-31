@@ -18,9 +18,9 @@ source $ZSH/oh-my-zsh.sh
 #if [ -n "$BUNDLE_GEMFILE" ]; then
 #  rails_var="* "
 #fi
-local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
-PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
-RPROMPT='${BUNDLE_GEMFILE}'
+local ret_status="%(?:%{$fg[green]%}:%{$fg[red]%}%s)"
+PROMPT='[%n@%m:%c]${ret_status}$ %{$reset_color%}'
+RPROMPT='${BUNDLE_GEMFILE} %{$fg[blue]%} $(git_prompt_info) %{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
