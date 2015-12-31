@@ -1,0 +1,9 @@
+{
+    "Style": {
+        "Basic": ["on_default", "default"],
+        "SavedSelection": ["bold", "on_yellow", "white"],
+        "Selected": ["underline", "on_magenta", "cyan"],
+        "Query": ["yellow", "bold"],
+        "Matched": ["black", "on_yellow"]
+    }
+}
