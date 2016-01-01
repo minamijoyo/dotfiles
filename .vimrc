@@ -1,4 +1,11 @@
- " NeoBundleの設定
+" .vimrcaを保存したら自動でリロードさせる
+augroup source-vimrc
+  autocmd!
+  autocmd BufWritePost *vimrc source $MYVIMRC | set foldmethod=marker
+  autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
+augroup END
+
+" NeoBundleの設定
 if has('vim_starting')
   if &compatible
     set nocompatible
