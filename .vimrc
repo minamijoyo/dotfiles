@@ -71,6 +71,9 @@ NeoBundle 'vim-gitgutter'
 " コミットログ確認
 NeoBundle 'gregsexton/gitv.git'
 
+" セッション保存
+NeoBundle 'tpope/vim-obsession'
+
 " ファイラ
 NeoBundle 'scrooloose/nerdtree'
 
