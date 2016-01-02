@@ -70,6 +70,8 @@ set statusline+=%{fugitive#statusline()}
 NeoBundle 'vim-gitgutter'
 " コミットログ確認
 NeoBundle 'gregsexton/gitv.git'
+" githubを開く
+NeoBundle 'tonchis/vim-to-github'
 
 " セッション保存
 NeoBundle 'tpope/vim-obsession'
