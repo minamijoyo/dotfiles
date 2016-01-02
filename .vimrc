@@ -77,6 +77,13 @@ NeoBundle 'tpope/vim-obsession'
 " ファイラ
 NeoBundle 'scrooloose/nerdtree'
 
+" PowerLine
+NeoBundle 'alpaca-tc/alpaca_powertabline'
+NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+NeoBundle 'Lokaltog/powerline-fontpatcher'
+let g:Powerline_symbols = 'fancy'
+set laststatus=2
+
 " カラースキーマ
 NeoBundle 'nanotech/jellybeans.vim'
 " カラースキーマの選択
