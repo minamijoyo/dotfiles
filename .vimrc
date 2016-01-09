@@ -19,6 +19,17 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " プラグイン
 " ランチャー
 NeoBundle 'Shougo/unite.vim'
+" 非同期実行
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
+
 " 最近開いたファイル
 NeoBundle 'Shougo/neomru.vim'
 " ヤンク履歴
@@ -52,6 +63,8 @@ nnoremap <silent> [unite]h :<C-u>Unite<Space>history/yank<CR>
 nnoremap <silent> [unite]o :<C-u>Unite<Space>-vertical -winwidth=40 outline<CR>
 " スペースキーとENTERキーでfile_rec:!
 nnoremap <silent> [unite]<CR> :<C-u>Unite<Space>file_rec:!<CR>
+" スペースキーとENTERキーでfile_rec/git
+nnoremap <silent> [unite]g :<C-u>Unite<Space>file_rec/git<CR>
 " unite.vimを開いている間のキーマッピング
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()"{{{
@@ -242,4 +255,9 @@ vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v, '\/'), "\n", '\\n', 'g')<C
 set hidden
 " w!! でsudoして保存
 cmap w!! w !sudo tee > /dev/null %
+
+" unite.vimのファイル検索候補から画像ファイルを無視する
+let s:unite_ignore_patterns='\.\(gif\|jpe\?g\|png\|webp\)$'
+call unite#custom#source('file_rec/async', 'ignore_pattern', s:unite_ignore_patterns)
+call unite#custom#source('file_rec/git', 'ignore_pattern', s:unite_ignore_patterns)
 
