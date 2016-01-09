@@ -25,6 +25,8 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/neoyank.vim'
 " アウトラインの表示
 NeoBundle 'Shougo/unite-outline'
+" git連携
+NeoBundle 'kmnk/vim-unite-giti'
 
 " uniteの設定
 " インサートモードで開始
