@@ -243,3 +243,7 @@ set hidden
 " w!! でsudoして保存
 cmap w!! w !sudo tee > /dev/null %
 
+" uniteのfile_recの検索対象から画像ファイルを無視する
+let s:unite_ignore_patterns='\.\(gif\|jpe\?g\|png\)$'
+call unite#custom#source('file_rec', 'ignore_pattern', s:unite_ignore_patterns)
+
