@@ -160,7 +160,8 @@ NeoBundleCheck
 set number
 " 行列番号を表示する
 set ruler
-
+" 入力中のコマンドを表示する
+set showcmd
 " シンタックスハイライト
 syntax on
 " カラースキーマ
