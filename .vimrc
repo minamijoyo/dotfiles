@@ -152,6 +152,9 @@ NeoBundle 'tpope/vim-endwise'
 " Rails関連
 NeoBundle 'tpope/vim-rails'
 
+" js関連
+NeoBundle 'kchmck/vim-coffee-script'
+
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
