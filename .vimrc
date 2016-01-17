@@ -167,6 +167,8 @@ set vb t_vb=
 set novisualbell
 " マウス操作を有効にする
 set mouse=a
+" 端末224桁制限を超えて画面の右端でもマウスが使えるようにする
+set ttymouse=sgr
 " OSのクリップボードを使う
 set clipboard=unnamed,autoselect
 " 改行時に前の行のインデントを継続する
