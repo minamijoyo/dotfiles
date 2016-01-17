@@ -202,6 +202,10 @@ if has('syntax')
 endif
 """"""""""""""""""""""""""""""
 
+" カレント行をハイライト
+set cursorline
+" カレント行にアンダーラインを引く
+highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
 " 対応括弧をハイライト表示する
 set showmatch
 " 小文字の検索でも大文字も見つかるようにする
