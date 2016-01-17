@@ -165,7 +165,8 @@ set backspace=indent,eol,start
 " ビープ音を消す
 set vb t_vb=
 set novisualbell
-
+" マウス操作を有効にする
+set mouse=a
 " OSのクリップボードを使う
 set clipboard=unnamed,autoselect
 " 改行時に前の行のインデントを継続する
