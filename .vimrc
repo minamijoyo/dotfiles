@@ -131,6 +131,13 @@ NeoBundle 'tpope/vim-rails'
 " js関連
 NeoBundle 'kchmck/vim-coffee-script'
 
+" メモ帳
+NeoBundle 'glidenote/memolist.vim'
+let g:memolist_path = "~/Dropbox/work/memo"
+let g:memolist_memo_suffix = "md"
+let g:memolist_unite = 1
+let g:memolist_unite_option = "-auto-preview"
+
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
