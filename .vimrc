@@ -126,6 +126,9 @@ let g:syntastic_auto_loc_list = 1
 " Ruby関連
 " endを自動で挿入
 NeoBundle 'tpope/vim-endwise'
+" rubyのブロックをテキストオブジェクトとして扱えるようにする
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'rhysd/vim-textobj-ruby'
 
 " Rails関連
 NeoBundle 'tpope/vim-rails'
