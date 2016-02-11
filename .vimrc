@@ -20,6 +20,8 @@ NeoBundle 'Shougo/neoyank.vim'
 NeoBundle 'Shougo/unite-outline'
 " git連携
 NeoBundle 'kmnk/vim-unite-giti'
+" 検索にagを使う
+NeoBundle 'rking/ag.vim'
 
 " uniteの設定
 " インサートモードで開始
