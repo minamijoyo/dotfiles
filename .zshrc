@@ -64,6 +64,10 @@ bindkey '^r^f' anyframe-widget-insert-filename
 # rbenvの設定
 export PATH="$HOME/.rbenv/shims:$PATH"
 
+# goの設定
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
+
 # terraformの設定
 export PATH="$PATH:/opt/terraform/terraform_0.6.6_darwin_amd64"
 
