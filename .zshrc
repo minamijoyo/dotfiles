@@ -87,6 +87,18 @@ function peco-ec2ssh() {
 zle -N peco-ec2ssh
 bindkey '^re' peco-ec2ssh
 
+# ghqとpecoの連携
+function peco-ghq () {
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-ghq
+bindkey '^rg' peco-ghq
+
 # ctagsの設定
 alias ctags="`brew --prefix`/bin/ctags"
 
