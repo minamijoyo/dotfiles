@@ -1,0 +1,15 @@
+[user]
+	name = Masayuki Morita
+	email = masayuki.morita@crowdworks.co.jp
+[color]
+	ui = true
+[alias]
+	st  = status
+	co  = checkout
+	cb  = checkout -b
+	br  = branch
+
+[core]
+	editor = /usr/local/bin/vim
+[ghq]
+	root = ~/src
