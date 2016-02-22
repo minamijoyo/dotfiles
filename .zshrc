@@ -74,12 +74,50 @@ export PATH="$PATH:/opt/terraform/terraform_0.6.6_darwin_amd64"
 # aws-cliの補完
 source /usr/local/bin/aws_zsh_completer.sh
 
-# ec2-listでEC2インスタンスの一覧を動的に取得してssh先をpecoで選択できるようにする
+EC2LIST_SSH_USER=morita
+
+# aws-cliからタグ指定で動的にインスタンスのIPアドレスなどの一覧を取得する
+function get-ec2list() {
+  filter_tag_name=${1:-Name}
+  filter_tag_value=${2:-\*}
+  print_tag_name=${3:-attached_asg}
+  filter="Name=tag:$filter_tag_name,Values=$filter_tag_value"
+  query=".Reservations[] | .Instances[] | select(.State.Name == \"running\") | select(has(\"PublicIpAddress\")) | [.PublicIpAddress,.InstanceId,.State.Name,.LaunchTime,(.Tags[] | select(.Key == \"Name\") | .Value // \"\"),(.Tags[] | select(.Key == \""$print_tag_name"\") | .Value // \"\")] | join(\"\t\")"
+  aws ec2 describe-instances --filter "$filter" | jq -r "$query"
+}
+
+# タグからIPアドレスを解決してsshする。複数該当する場合はどれか一つ。
+function ec2ssh() {
+  filter_tag_name=${1:-Name}
+  filter_tag_value=${2:-\*}
+  target_host=$(get-ec2list $filter_tag_name $filter_tag_value | sort | head -n 1 | cut -f 1)
+  ssh $EC2LIST_SSH_USER@$target_host -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+}
+
+# タグからIPアドレスを解決してtmux-csshで全台同時にsshしてキー入力を同期する
+# tmux-csshはtmuxのセッション内から実行できないのでbindkey+dでデタッチしてから実行すること
+function ec2cssh() {
+  filter_tag_name=${1:-Name}
+  filter_tag_value=${2:-\*}
+  target_hosts=$(get-ec2list $filter_tag_name $filter_tag_value | sort | cut -f 1 | tr '\n' ' ')
+  sh -c "tmux-cssh -u $EC2LIST_SSH_USER $target_hosts"
+}
+
+# よくログインするサーバへのエイリアス
+alias ec2ssh-app='ec2ssh Name app-production'
+alias ec2ssh-app-1='ec2ssh attached_asg app-production-asg-1'
+alias ec2ssh-app-2='ec2ssh attached_asg app-production-asg-2'
+
+alias ec2cssh-app='ec2cssh Name app-production'
+alias ec2cssh-app-1='ec2cssh attached_asg app-production-asg-1'
+alias ec2cssh-app-2='ec2cssh attached_asg app-production-asg-2'
+
+# get-ec2listの出力をpeco連携してsshできるようにする
 function peco-ec2ssh() {
   echo "Fetching ec2 host..."
-  local selected_host=$(ec2list | sort | peco | cut -f 3)
+  local selected_host=$(get-ec2list Name \* attached_asg | sort | peco | cut -f 1)
   if [ -n "${selected_host}" ]; then
-    BUFFER="ssh morita@${selected_host} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+    BUFFER="ssh $EC2LIST_SSH_USER@${selected_host} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
     zle accept-line
   fi
   zle clear-screen
