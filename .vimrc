@@ -117,8 +117,11 @@ let g:neocomplete#enable_smart_case = 1
 
 " コメントアウト
 NeoBundle "tyru/caw.vim.git"
-nmap <C-K> <Plug>(caw:i:toggle)
-vmap <C-K> <Plug>(caw:i:toggle)
+nnoremap [caw] <Nop>
+nmap <Space>c [caw]
+vmap <Space>c [caw]
+nmap [caw] <Plug>(caw:i:toggle)
+vmap [caw] <Plug>(caw:i:toggle)
 
 " シンタックスチェク
 NeoBundle 'scrooloose/syntastic'
