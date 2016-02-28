@@ -59,6 +59,16 @@ endfunction"}}}
 
 " gitコマンド実行
 NeoBundle 'tpope/vim-fugitive.git'
+nnoremap [fugitive] <Nop>
+nmap <Space>g [fugitive]
+nnoremap [fugitive]d :<C-u>Gdiff<Enter>
+nnoremap [fugitive]s :<C-u>Gstatus<Enter>
+nnoremap [fugitive]l :<C-u>Glog<Enter>
+nnoremap [fugitive]a :<C-u>Gwrite<Enter>
+nnoremap [fugitive]c :<C-u>Gcommit -v<Enter>
+nnoremap [fugitive]C :<C-u>Gcommit -v --amend<Enter>
+nnoremap [fugitive]b :<C-u>Gblame<Enter>
+
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
 
