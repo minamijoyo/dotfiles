@@ -29,7 +29,8 @@ let g:unite_enable_start_insert=1
 " ウィンドウ分割ルール
 let g:unite_split_rule = 'botright'
 " prefix keyの設定
-nmap <Space> [unite]
+nnoremap [unite] <Nop>
+nmap <Space>u [unite]
 
 " スペースキーとaキーでカレントディレクトリを表示
 nnoremap <silent> [unite]a :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
