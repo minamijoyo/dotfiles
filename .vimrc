@@ -114,6 +114,11 @@ NeoBundle 'Shougo/neocomplete'
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 
+" コメントアウト
+NeoBundle "tyru/caw.vim.git"
+nmap <C-K> <Plug>(caw:i:toggle)
+vmap <C-K> <Plug>(caw:i:toggle)
+
 " シンタックスチェク
 NeoBundle 'scrooloose/syntastic'
 set statusline+=%#warningmsg#
