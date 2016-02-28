@@ -78,6 +78,8 @@ nnoremap [nerdtree] <Nop>
 nmap <Space>n [nerdtree]
 nnoremap <silent>[nerdtree]n :NERDTree<CR>
 nnoremap <silent>[nerdtree]t :NERDTreeToggle<CR>
+" 隠しファイルをデフォルトで表示させる
+let NERDTreeShowHidden = 1
 
 " PowerLine
 NeoBundle 'alpaca-tc/alpaca_powertabline'
