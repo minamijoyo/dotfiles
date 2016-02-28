@@ -254,6 +254,9 @@ nnoremap <Up>   gk
 nnoremap gj j
 nnoremap gk k
 
+" ノーマルモードのままで空行を挿入する
+nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
+
 " 保存されていないファイルがあるときでも別のファイルを開けるようにする
 set hidden
 " w!! でsudoして保存
