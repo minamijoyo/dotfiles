@@ -32,23 +32,23 @@ let g:unite_split_rule = 'botright'
 nnoremap [unite] <Nop>
 nmap <Space>u [unite]
 
-" スペースキーとaキーでカレントディレクトリを表示
+" カレントディレクトリを表示
 nnoremap <silent> [unite]a :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-" スペースキーとfキーでバッファと最近開いたファイル一覧を表示
+" バッファと最近開いたファイル一覧を表示
 nnoremap <silent> [unite]f :<C-u>Unite<Space>buffer file_mru<CR>
-" スペースキーとdキーで最近開いたディレクトリを表示
+" 最近開いたディレクトリを表示
 nnoremap <silent> [unite]d :<C-u>Unite<Space>directory_mru<CR>
-" スペースキーとbキーでバッファを表示
+" バッファを表示
 nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
-" スペースキーとrキーでレジストリを表示
+" レジストリを表示
 nnoremap <silent> [unite]r :<C-u>Unite<Space>register<CR>
-" スペースキーとtキーでタブを表示
+" タブを表示
 nnoremap <silent> [unite]t :<C-u>Unite<Space>tab<CR>
-" スペースキーとhキーでヒストリ/ヤンクを表示
+" ヒストリ/ヤンクを表示
 nnoremap <silent> [unite]h :<C-u>Unite<Space>history/yank<CR>
- "スペースキーとoキーでoutline
+ "outlineを表示
 nnoremap <silent> [unite]o :<C-u>Unite<Space>-vertical -winwidth=40 outline<CR>
-" スペースキーとENTERキーでfile_rec:!
+" カレントディレクトリでファイル名を再帰検索
 nnoremap <silent> [unite]<CR> :<C-u>Unite<Space>file_rec:!<CR>
 " unite.vimを開いている間のキーマッピング
 autocmd FileType unite call s:unite_my_settings()
