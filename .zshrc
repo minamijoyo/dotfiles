@@ -1,6 +1,9 @@
 # デフォルトパス
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
+# デフォルトのエディタ
+export EDITOR=vim
+
 # コマンドの履歴
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
@@ -148,4 +151,7 @@ alias vim="reattach-to-user-namespace vim"
 if [ -z $TMUX ]; then
   tmux
 fi
+
+# 環境変数の管理にdirenvを使う
+eval "$(direnv hook zsh)"
 
