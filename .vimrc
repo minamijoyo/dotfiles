@@ -74,6 +74,10 @@ NeoBundle 'tpope/vim-obsession'
 
 " ファイラ
 NeoBundle 'scrooloose/nerdtree'
+nnoremap [nerdtree] <Nop>
+nmap <Space>n [nerdtree]
+nnoremap <silent>[nerdtree]n :NERDTree<CR>
+nnoremap <silent>[nerdtree]t :NERDTreeToggle<CR>
 
 " PowerLine
 NeoBundle 'alpaca-tc/alpaca_powertabline'
