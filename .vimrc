@@ -139,6 +139,9 @@ vmap <Space>c [caw]
 nmap [caw] <Plug>(caw:i:toggle)
 vmap [caw] <Plug>(caw:i:toggle)
 
+" 括弧の操作
+NeoBundle 'tpope/vim-surround'
+
 " シンタックスチェク
 NeoBundle 'scrooloose/syntastic'
 set statusline+=%#warningmsg#
