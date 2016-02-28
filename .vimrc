@@ -194,6 +194,10 @@ set encoding=utf8
 set fileencoding=utf-8
 " スクロールする時に下が見えるようにする
 set scrolloff=5
+" 新しいウィンドウを下に開く
+set splitbelow
+" 新しいウィンドウを右に開く
+set splitright
 " .swapファイルを作らない
 set noswapfile
 " バックアップファイルを作らない
