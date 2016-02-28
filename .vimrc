@@ -245,6 +245,15 @@ nmap <silent> <Esc><Esc> :nohlsearch<CR>
 " カーソル下の単語を * で検索
 vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v, '\/'), "\n", '\\n', 'g')<CR><CR>
 
+" 表示行単位で上下移動するようにする
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up>   gk
+" 行単位で移動したいときのために入れ替える
+nnoremap gj j
+nnoremap gk k
+
 " 保存されていないファイルがあるときでも別のファイルを開けるようにする
 set hidden
 " w!! でsudoして保存
