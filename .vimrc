@@ -207,7 +207,7 @@ set mouse=a
 " 端末224桁制限を超えて画面の右端でもマウスが使えるようにする
 set ttymouse=sgr
 " OSのクリップボードを使う
-set clipboard=unnamed,autoselect
+set clipboard=unnamed
 " 改行時に前の行のインデントを継続する
 set autoindent
 " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
