@@ -94,7 +94,7 @@ function ec2ssh() {
   filter_tag_name=${1:-Name}
   filter_tag_value=${2:-\*}
   target_host=$(get-ec2list $filter_tag_name $filter_tag_value | sort | head -n 1 | cut -f 1)
-  ssh $EC2_SSH_USER@$target_host -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+  ssh $EC2_SSH_USER@$target_host
 }
 
 # タグからIPアドレスを解決してtmux-csshで全台同時にsshしてキー入力を同期する
@@ -148,7 +148,7 @@ function peco-ec2ssh() {
   echo "Fetching ec2 host..."
   local selected_host=$(get-ec2list Name \* attached_asg | sort | peco | cut -f 1)
   if [ -n "${selected_host}" ]; then
-    BUFFER="ssh $EC2_SSH_USER@${selected_host} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+    BUFFER="ssh $EC2_SSH_USER@${selected_host}"
     zle accept-line
   fi
   zle clear-screen
