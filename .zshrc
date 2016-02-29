@@ -106,6 +106,32 @@ function ec2cssh() {
   sh -c "tmux-cssh -u $EC2_SSH_USER $target_hosts"
 }
 
+# sshホストキーの削除
+function delete-hostkey() {
+  ssh-keygen -R $1
+}
+
+# sshホストキーの追加
+function add-hostkey() {
+  ssh-keyscan -H $1 >> ~/.ssh/known_hosts
+}
+
+# sshホストキーの更新
+function update-hostkey() {
+  delete-hostkey $1
+  add-hostkey $1
+}
+
+# タグからIPアドレス解決してsshホストキーをまとめて更新
+function update-hostkeys() {
+  filter_tag_name=${1:-Name}
+  filter_tag_value=${2:-\*}
+  target_hosts=($(get-ec2list $filter_tag_name $filter_tag_value | sort | cut -f 1 | tr '\n' ' '))
+  for target_host in $target_hosts; do
+    update-hostkey $target_host
+  done
+}
+
 # よくログインするサーバへのエイリアス
 alias ec2ssh-app='ec2ssh Name app-production'
 alias ec2ssh-app-1='ec2ssh attached_asg app-production-asg-1'
@@ -114,6 +140,8 @@ alias ec2ssh-app-2='ec2ssh attached_asg app-production-asg-2'
 alias ec2cssh-app='ec2cssh Name app-production'
 alias ec2cssh-app-1='ec2cssh attached_asg app-production-asg-1'
 alias ec2cssh-app-2='ec2cssh attached_asg app-production-asg-2'
+
+alias update-hostkeys-app='update-hostkeys Name app-production'
 
 # get-ec2listの出力をpeco連携してsshできるようにする
 function peco-ec2ssh() {
