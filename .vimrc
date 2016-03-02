@@ -278,7 +278,7 @@ nnoremap gj j
 nnoremap gk k
 
 " ノーマルモードのままで空行を挿入する
-nnoremap <CR> :<C-u>call append(expand('.'), '')<Cr>j
+nnoremap <Space><CR> :<C-u>call append(expand('.'), '')<Cr>j
 
 " 保存されていないファイルがあるときでも別のファイルを開けるようにする
 set hidden
