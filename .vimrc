@@ -22,6 +22,7 @@ NeoBundle 'Shougo/unite-outline'
 NeoBundle 'kmnk/vim-unite-giti'
 " 検索にagを使う
 NeoBundle 'rking/ag.vim'
+let g:ag_prg="ag --vimgrep --hidden"
 
 " uniteの設定
 " インサートモードで開始
