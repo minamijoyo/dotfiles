@@ -264,8 +264,6 @@ set hlsearch
 set smartcase
 " 検索ワードの最初の文字を入力した時点で検索を開始する
 set incsearch
-" ESCを二回押すことでハイライトを消す
-nmap <silent> <Esc><Esc> :nohlsearch<CR>
 " カーソル下の単語を * で検索
 vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v, '\/'), "\n", '\\n', 'g')<CR><CR>
 
