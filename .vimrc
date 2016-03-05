@@ -278,6 +278,8 @@ nnoremap gk k
 
 " ノーマルモードのままで空行を挿入する
 nnoremap <Space><CR> :<C-u>call append(expand('.'), '')<Cr>j
+" ノーマルモードに戻る待ち時間を減らすためESCキーのタイムアウトを短くする
+set timeout timeoutlen=1000 ttimeoutlen=50
 
 " 保存されていないファイルがあるときでも別のファイルを開けるようにする
 set hidden
