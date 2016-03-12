@@ -31,7 +31,7 @@ let g:unite_enable_start_insert=1
 let g:unite_split_rule = 'botright'
 " prefix keyの設定
 nnoremap [unite] <Nop>
-nmap <Space>u [unite]
+nmap <Space>b [unite]
 
 " カレントディレクトリを表示
 nnoremap <silent> [unite]a :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
