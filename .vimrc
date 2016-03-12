@@ -87,8 +87,8 @@ NeoBundle 'tpope/vim-obsession'
 NeoBundle 'scrooloose/nerdtree'
 nnoremap [nerdtree] <Nop>
 nmap <Space>n [nerdtree]
-nnoremap <silent>[nerdtree]n :NERDTree<CR>
-nnoremap <silent>[nerdtree]t :NERDTreeToggle<CR>
+nnoremap <silent>[nerdtree]n :NERDTreeToggle<CR>
+nnoremap <silent>[nerdtree]r :NERDTree<CR>
 " 隠しファイルをデフォルトで表示させる
 let NERDTreeShowHidden = 1
 
