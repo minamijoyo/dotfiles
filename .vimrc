@@ -63,7 +63,7 @@ NeoBundle 'tpope/vim-fugitive.git'
 nnoremap [fugitive] <Nop>
 nmap <Space>g [fugitive]
 nnoremap [fugitive]d :<C-u>Gdiff<Enter>
-nnoremap [fugitive]s :<C-u>Gstatus<Enter>
+nnoremap [fugitive]g :<C-u>Gstatus<Enter>
 nnoremap [fugitive]l :<C-u>Glog<Enter>
 nnoremap [fugitive]c :<C-u>Gcommit -v<Enter>
 nnoremap [fugitive]a :<C-u>Gcommit -v --amend<Enter>
