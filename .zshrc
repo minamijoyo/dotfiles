@@ -72,7 +72,7 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 
 # terraformの設定
-export PATH="$PATH:/opt/terraform/terraform_0.6.12_darwin_amd64"
+export PATH="$PATH:/opt/terraform/terraform_0.6.14_darwin_amd64"
 
 # aws-cliの補完
 source /usr/local/bin/aws_zsh_completer.sh
