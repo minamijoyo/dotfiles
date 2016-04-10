@@ -10,7 +10,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " プラグイン
-" ランチャー
+" Unite
 NeoBundle 'Shougo/unite.vim'
 " 最近開いたファイル
 NeoBundle 'Shougo/neomru.vim'
