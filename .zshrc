@@ -160,7 +160,9 @@ alias ec2cssh-proxy-1='ec2cssh attached_asg reverse-proxy-production-asg-1'
 alias ec2cssh-proxy-2='ec2cssh attached_asg reverse-proxy-production-asg-2'
 
 alias update-hostkeys-app='update-hostkeys Name app-production'
-alias update-hostkeys-proxy='update-hostkeys Name app-production'
+alias update-hostkeys-app-3='update-hostkeys Name app-production-rails3'
+alias update-hostkeys-app-4='update-hostkeys Name app-production-rails4'
+alias update-hostkeys-proxy='update-hostkeys Name reverse-proxy-production'
 
 # get-ec2listの出力をpeco連携してsshできるようにする
 function peco-ec2ssh() {
