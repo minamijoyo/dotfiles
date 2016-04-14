@@ -77,6 +77,9 @@ export PATH="$PATH:/opt/terraform/terraform_0.6.12_darwin_amd64"
 # aws-cliの補完
 source /usr/local/bin/aws_zsh_completer.sh
 
+# cw-cli-toolsの設定
+export PATH=$PATH:~/src/github.com/crowdworksjp/cw-cli-tools/bin
+
 EC2_SSH_USER=morita
 
 # aws-cliからタグ指定で動的にインスタンスのIPアドレスなどの一覧を取得する
