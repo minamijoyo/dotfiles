@@ -280,6 +280,12 @@ nnoremap <Up>   gk
 nnoremap gj j
 nnoremap gk k
 
+" Ctrl + hjklだけでウィンドウ移動できるようにする
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
 " ノーマルモードのままで空行を挿入する
 nnoremap <Space><CR> :<C-u>call append(expand('.'), '')<Cr>j
 " ノーマルモードに戻る待ち時間を減らすためESCキーのタイムアウトを短くする
