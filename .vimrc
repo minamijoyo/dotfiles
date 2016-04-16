@@ -286,6 +286,10 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
+" Ctrl + 左右キーでタブローテーション
+nnoremap <c-Left> gT
+nnoremap <c-Right> gt
+
 " ノーマルモードのままで空行を挿入する
 nnoremap <Space><CR> :<C-u>call append(expand('.'), '')<Cr>j
 " ノーマルモードに戻る待ち時間を減らすためESCキーのタイムアウトを短くする
