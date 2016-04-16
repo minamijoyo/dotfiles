@@ -286,6 +286,11 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
+" バッファの移動
+nnoremap <silent>bp :bprevious<CR>
+nnoremap <silent>bn :bnext<CR>
+nnoremap <silent>bb :b#<CR>
+
 " Ctrl + 左右キーでタブローテーション
 nnoremap <c-Left> gT
 nnoremap <c-Right> gt
