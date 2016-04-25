@@ -271,6 +271,10 @@ set incsearch
 " カーソル下の単語を * で検索
 vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v, '\/'), "\n", '\\n', 'g')<CR><CR>
 
+" 拡張正規表現をデフォルトにする
+nnoremap / /\v
+nnoremap ? ?\v
+
 " 表示行単位で上下移動するようにする
 nnoremap j gj
 nnoremap k gk
