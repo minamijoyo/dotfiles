@@ -8,7 +8,7 @@
   co = checkout
   cb = checkout -b
   br = branch
-
+  pf = push --force-with-lease
 [core]
   editor = /usr/local/bin/vim
   excludesfile = ~/.gitignore_global
