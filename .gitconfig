@@ -1,18 +1,18 @@
 [user]
-	name = Masayuki Morita
-	email = masayuki.morita@crowdworks.co.jp
+  name = Masayuki Morita
+  email = masayuki.morita@crowdworks.co.jp
 [color]
-	ui = true
+  ui = true
 [alias]
-	st  = status
-	co  = checkout
-	cb  = checkout -b
-	br  = branch
+  st = status
+  co = checkout
+  cb = checkout -b
+  br = branch
 
 [core]
-	editor = /usr/local/bin/vim
-	excludesfile = ~/.gitignore_global
+  editor = /usr/local/bin/vim
+  excludesfile = ~/.gitignore_global
 [ghq]
-	root = ~/src
+  root = ~/src
 [push]
-	default = simple
+  default = simple
