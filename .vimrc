@@ -1,3 +1,6 @@
+" Leaderをスペースにする
+let mapleader = "\<Space>"
+
 " NeoBundleの設定
 if has('vim_starting')
   if &compatible
@@ -31,7 +34,7 @@ let g:unite_enable_start_insert=1
 let g:unite_split_rule = 'botright'
 " prefix keyの設定
 nnoremap [unite] <Nop>
-nmap <Space>b [unite]
+nmap <Leader>b [unite]
 
 " カレントディレクトリを表示
 nnoremap <silent> [unite]a :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
@@ -61,7 +64,7 @@ endfunction"}}}
 " gitコマンド実行
 NeoBundle 'tpope/vim-fugitive.git'
 nnoremap [fugitive] <Nop>
-nmap <Space>g [fugitive]
+nmap <Leader>g [fugitive]
 nnoremap [fugitive]d :<C-u>Gdiff<Enter>
 nnoremap [fugitive]g :<C-u>Gstatus<Enter>
 nnoremap [fugitive]l :<C-u>Glog<Enter>
@@ -85,7 +88,7 @@ NeoBundle 'tpope/vim-obsession'
 " ファイラ
 NeoBundle 'scrooloose/nerdtree'
 nnoremap [nerdtree] <Nop>
-nmap <Space>n [nerdtree]
+nmap <Leader>n [nerdtree]
 nnoremap <silent>[nerdtree]n :NERDTreeToggle<CR>
 nnoremap <silent>[nerdtree]r :NERDTree<CR>
 " 隠しファイルをデフォルトで表示させる
@@ -134,8 +137,8 @@ let g:neocomplete#enable_smart_case = 1
 " コメントアウト
 NeoBundle "tyru/caw.vim.git"
 nnoremap [caw] <Nop>
-nmap <Space>c [caw]
-vmap <Space>c [caw]
+nmap <Leader>c [caw]
+vmap <Leader>c [caw]
 nmap [caw] <Plug>(caw:i:toggle)
 vmap [caw] <Plug>(caw:i:toggle)
 
@@ -171,7 +174,7 @@ let g:memolist_memo_suffix = "md"
 let g:memolist_unite = 1
 let g:memolist_unite_option = "-auto-preview"
 nnoremap [memo] <Nop>
-nmap <Space>m [memo]
+nmap <Leader>m [memo]
 nnoremap <silent>[memo]m :MemoNew<CR>
 nnoremap <silent>[memo]l :MemoList<CR>
 nnoremap <silent>[memo]g :MemoGrep<CR>
@@ -300,7 +303,7 @@ nnoremap <c-Left> gT
 nnoremap <c-Right> gt
 
 " ノーマルモードのままで空行を挿入する
-nnoremap <Space><CR> :<C-u>call append(expand('.'), '')<Cr>j
+nnoremap <Leader><CR> :<C-u>call append(expand('.'), '')<Cr>j
 " ノーマルモードに戻る待ち時間を減らすためESCキーのタイムアウトを短くする
 set timeout timeoutlen=1000 ttimeoutlen=50
 
