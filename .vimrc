@@ -278,6 +278,9 @@ vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v, '\/'), "\n", '\\n', 'g')<C
 nnoremap / /\v
 nnoremap ? ?\v
 
+" tagジャンプ候補が複数あるときは一覧表示
+nnoremap <C-]> g<C-]>
+
 " 表示行単位で上下移動するようにする
 nnoremap j gj
 nnoremap k gk
