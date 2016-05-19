@@ -9,6 +9,7 @@
   cb = checkout -b
   br = branch
   pf = push --force-with-lease
+  ph = push origin HEAD
 [core]
   editor = /usr/local/bin/vim
   excludesfile = ~/.gitignore_global
