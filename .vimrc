@@ -142,6 +142,14 @@ vmap <Leader>c [caw]
 nmap [caw] <Plug>(caw:i:toggle)
 vmap [caw] <Plug>(caw:i:toggle)
 
+" オペレータの拡張
+NeoBundle 'kana/vim-operator-user'
+
+" スネークケースとキャメルケースの入れ替え
+NeoBundle 'tyru/operator-camelize.vim'
+map <Leader>C <Plug>(operator-camelize)
+map <Leader>_ <Plug>(operator-decamelize)
+
 " 括弧の操作
 NeoBundle 'tpope/vim-surround'
 
