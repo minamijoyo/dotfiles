@@ -8,8 +8,8 @@
   co = checkout
   cb = checkout -b
   br = branch
-  pf = push --force-with-lease
-  ph = push origin HEAD
+  push-f = push --force-with-lease
+  pH = push origin HEAD
 [core]
   editor = /usr/local/bin/vim
   excludesfile = ~/.gitignore_global
