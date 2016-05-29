@@ -281,6 +281,8 @@ set smartcase
 set incsearch
 " カーソル下の単語を * で検索
 vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v, '\/'), "\n", '\\n', 'g')<CR><CR>
+" ファイルタイプごとの単語の定義のカスタマイズ
+autocmd BufRead,BufNewFile *.rb set iskeyword+=?,!
 
 " 拡張正規表現をデフォルトにする
 nnoremap / /\v
