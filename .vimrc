@@ -188,6 +188,13 @@ nnoremap <silent>[memo]m :MemoNew<CR>
 nnoremap <silent>[memo]l :MemoList<CR>
 nnoremap <silent>[memo]g :MemoGrep<CR>
 
+" カーソル下のURLをブラウザで開く
+" URLでなければその文字列をブラウザで検索する
+NeoBundle 'open-browser.vim'
+let g:netrw_nogx = 1
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
