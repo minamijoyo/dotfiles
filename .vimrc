@@ -161,7 +161,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_ruby_checkers = ['reek']
+command Reek SyntasticCheck reek
 
 " Ruby関連
 " endを自動で挿入
