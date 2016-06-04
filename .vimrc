@@ -312,6 +312,11 @@ nnoremap <silent>bp :bprevious<CR>
 nnoremap <silent>bn :bnext<CR>
 nnoremap <silent>bb :b#<CR>
 
+" ロケーションリストの移動
+nnoremap <silent>lp :lprevious<CR>
+nnoremap <silent>ln :lnext<CR>
+nnoremap <silent>ll :lnext<CR>
+
 " Ctrl + 左右キーでタブローテーション
 nnoremap <c-Left> gT
 nnoremap <c-Right> gt
