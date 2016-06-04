@@ -322,6 +322,7 @@ nnoremap <silent>bb :b#<CR>
 " ロケーションリストの移動
 nnoremap slp :lprevious<CR>
 nnoremap sln :lnext<CR>
+nnoremap sll :lnext<CR>
 
 " Ctrl + 左右キーでタブローテーション
 nnoremap <c-Left> gT
