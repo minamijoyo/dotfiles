@@ -324,6 +324,11 @@ nnoremap slp :lprevious<CR>
 nnoremap sln :lnext<CR>
 nnoremap sll :lnext<CR>
 
+" QuickFixの移動
+nnoremap scp :cprevious<CR>
+nnoremap scn :cnext<CR>
+nnoremap scc :cnext<CR>
+
 " Ctrl + 左右キーでタブローテーション
 nnoremap <c-Left> gT
 nnoremap <c-Right> gt
