@@ -320,9 +320,8 @@ nnoremap <silent>bn :bnext<CR>
 nnoremap <silent>bb :b#<CR>
 
 " ロケーションリストの移動
-nnoremap <silent>lp :lprevious<CR>
-nnoremap <silent>ln :lnext<CR>
-nnoremap <silent>ll :lnext<CR>
+nnoremap <S-h> :lprevious<CR>
+nnoremap <S-l> :lnext<CR>
 
 " Ctrl + 左右キーでタブローテーション
 nnoremap <c-Left> gT
