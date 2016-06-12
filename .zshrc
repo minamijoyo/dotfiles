@@ -68,7 +68,7 @@ bindkey '^r^f' anyframe-widget-insert-filename
 export PATH="$HOME/.rbenv/shims:$PATH"
 
 # goの設定
-export GOPATH=$HOME/.go
+export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
 
 # terraformの設定
