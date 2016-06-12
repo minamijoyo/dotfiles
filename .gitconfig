@@ -11,6 +11,7 @@
   push-f = push --force-with-lease
   pH = push origin HEAD
   open = !hub browse -- pull/$(git symbolic-ref --short HEAD)
+  pr = !hub pull-request
 [core]
   editor = /usr/local/bin/vim
   excludesfile = ~/.gitignore_global
