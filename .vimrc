@@ -327,9 +327,9 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
 " バッファの移動
-nnoremap <silent>bp :bprevious<CR>
-nnoremap <silent>bn :bnext<CR>
-nnoremap <silent>bb :b#<CR>
+nnoremap sbp :bprevious<CR>
+nnoremap sbn :bnext<CR>
+nnoremap sbb :b#<CR>
 
 " ロケーションリストの移動
 nnoremap slp :lprevious<CR>
