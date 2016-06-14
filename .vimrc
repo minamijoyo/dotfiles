@@ -188,6 +188,10 @@ noremap <silent>[rails]t :<C-u>Unite rails/spec<CR>
 " js関連
 NeoBundle 'kchmck/vim-coffee-script'
 
+" Terraform関連
+NeoBundle 'hashivim/vim-terraform'
+let g:terraform_fmt_on_save = 1
+
 " メモ帳
 NeoBundle 'glidenote/memolist.vim'
 let g:memolist_path = "~/Dropbox/work/memo"
