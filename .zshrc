@@ -192,6 +192,18 @@ function peco-ghq () {
 zle -N peco-ghq
 bindkey '^rg' peco-ghq
 
+# hubとpecoの連携
+function peco-hub-pr () {
+    local pr=$(hub issue 2> /dev/null | grep 'pull' | peco --query "$LBUFFER" | sed -e 's/.*( \(.*\) )$/\1/')
+    if [ -n "$pr" ]; then
+        BUFFER="open ${pr}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-hub-pr
+bindkey '^rh' peco-hub-pr
+
 # ctagsの設定
 alias ctags="`brew --prefix`/bin/ctags"
 
