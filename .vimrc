@@ -299,6 +299,9 @@ set showmatch
 set ignorecase
 " 検索結果をハイライト表示する
 set hlsearch
+" 検索結果のハイライトが重いときがあるので欲しいときだけトグルで有効化する
+nnoremap <Leader>L :set hlsearch!<CR>
+
 " 小文字のみで検索したときに大文字小文字を無視する
 set smartcase
 " 検索ワードの最初の文字を入力した時点で検索を開始する
