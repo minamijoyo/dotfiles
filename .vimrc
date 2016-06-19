@@ -289,8 +289,8 @@ if has('syntax')
 endif
 """"""""""""""""""""""""""""""
 
-" カレント行をハイライト
-set cursorline
+" カレント行ハイライトが重いときがあるので欲しいときだけトグルで有効化する
+nnoremap <Leader>l :set cursorline! cursorcolumn!<CR>
 " カレント行にアンダーラインを引く
 highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
 " 対応括弧をハイライト表示する
