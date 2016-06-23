@@ -216,6 +216,9 @@ if [ -z $TMUX ]; then
   tmux
 fi
 
+# dinghy用の環境変数の読み込み
+eval "$(dinghy env)"
+
 # 環境変数の管理にdirenvを使う
 eval "$(direnv hook zsh)"
 
