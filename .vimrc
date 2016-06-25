@@ -363,6 +363,8 @@ set hidden
 cmap w!! w !sudo tee > /dev/null %
 " q!!ですべて廃棄して終了
 cmap q!! qall!
+" Ctrl + q で保存済みのバッファをすべて閉じる
+nnoremap <c-q> :qall<CR>
 
 " uniteのfile_recの検索対象から画像ファイルを無視する
 let s:unite_ignore_patterns='\.\(gif\|jpe\?g\|png\)$'
