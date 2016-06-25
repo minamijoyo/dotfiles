@@ -211,6 +211,10 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias vi="vim"
 alias vim="reattach-to-user-namespace vim"
 
+# sttyのCtrl + S と Ctrl + Q の割り当てを解除してvimなどで使えるようにする
+stty stop undef
+stty start undef
+
 # tmuxの自動起動
 if [ -z $TMUX ]; then
   tmux
