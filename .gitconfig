@@ -8,8 +8,8 @@
   co = checkout
   cb = checkout -b
   br = branch -v --sort=authordate
-  push-f = push --force-with-lease
   pH = push origin HEAD
+  pF = push --force-with-lease origin HEAD
   open = !hub browse -- pull/$(git symbolic-ref --short HEAD)
   pr = !hub pull-request
 [core]
