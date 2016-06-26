@@ -71,6 +71,7 @@ nnoremap [fugitive]l :<C-u>Glog<Enter>
 nnoremap [fugitive]c :<C-u>Gcommit -v<Enter>
 nnoremap [fugitive]a :<C-u>Gcommit -v --amend<Enter>
 nnoremap [fugitive]b :<C-u>Gblame<Enter>
+nnoremap [fugitive]p :<C-u>Git push origin HEAD<Enter>
 
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
