@@ -72,6 +72,7 @@ nnoremap [fugitive]c :<C-u>Gcommit -v<Enter>
 nnoremap [fugitive]a :<C-u>Gcommit -v --amend<Enter>
 nnoremap [fugitive]b :<C-u>Gblame<Enter>
 nnoremap [fugitive]p :<C-u>Gpush origin HEAD<Enter>
+nnoremap [fugitive]o :<C-u>Gbrowse<Enter>
 
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
