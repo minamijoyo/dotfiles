@@ -38,6 +38,11 @@ zstyle ':chpwd:*' recent-dirs-max 1000
 zstyle ':chpwd:*' recent-dirs-default yes
 zstyle ':completion:*' recent-dirs-insert both
 
+# 今日日付の作業ディレクトリ作成と移動用のエイリアス
+alias wdir="echo ~/work/tmp/`date '+%Y%m%d'`"
+alias mkdirw="mkdir `wdir`"
+alias cdw="cd `wdir`"
+
 # anyframeでpecoと連携
 fpath=($HOME/.zsh/anyframe(N-/) $fpath)
 autoload -Uz anyframe-init
