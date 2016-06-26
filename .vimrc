@@ -78,7 +78,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 " gitの差分をエディタ上に表示
 NeoBundle 'vim-gitgutter'
 " コミットログ確認
-NeoBundle 'gregsexton/gitv.git'
+NeoBundle 'cohama/agit.vim'
 " githubを開く
 NeoBundle 'tonchis/vim-to-github'
 
