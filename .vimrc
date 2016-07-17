@@ -167,6 +167,26 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 command Reek SyntasticCheck reek
 
+" コマンドの非同期実行
+NeoBundle 'Shougo/vimproc', {
+\  'build' : {
+\     'mac' : 'make -f make_mac.mak',
+\   },
+\}
+" コマンドの実行結果をバッファに表示
+NeoBundle 'thinca/vim-quickrun'
+let g:quickrun_config = {
+\   "_" : {
+\       "outputter/buffer/split" : ":botright",
+\       "outputter/buffer/close_on_empty" : 1,
+\       "runner" : "vimproc",
+\       "runner/vimproc/updatetime" : 60
+\   },
+\}
+" <C-c> で実行を強制終了させる
+" quickrun.vim が実行していない場合には <C-c> を呼び出す
+nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+
 " Ruby関連
 " endを自動で挿入
 NeoBundle 'tpope/vim-endwise'
