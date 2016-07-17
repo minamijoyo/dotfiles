@@ -194,6 +194,9 @@ NeoBundle 'kchmck/vim-coffee-script'
 
 " Go関連
 NeoBundle 'fatih/vim-go'
+nnoremap [go] <Nop>
+nmap <Leader>o [go]
+nnoremap <silent>[go]o :GoRun<CR>
 
 " Terraform関連
 NeoBundle 'hashivim/vim-terraform'
