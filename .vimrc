@@ -192,6 +192,9 @@ noremap <silent>[rails]t :<C-u>Unite rails/spec<CR>
 " js関連
 NeoBundle 'kchmck/vim-coffee-script'
 
+" Go関連
+NeoBundle 'fatih/vim-go'
+
 " Terraform関連
 NeoBundle 'hashivim/vim-terraform'
 let g:terraform_fmt_on_save = 1
