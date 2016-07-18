@@ -369,6 +369,9 @@ nnoremap <Up>   gk
 nnoremap gj j
 nnoremap gk k
 
+" 行頭の左と行末の右で前後の行に移動できるようにする
+set whichwrap=b,s,h,l,<,>,[,],~
+
 " Ctrl + hjklだけでウィンドウ移動できるようにする
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
