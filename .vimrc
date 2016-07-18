@@ -137,6 +137,7 @@ let g:indent_guides_guide_size = 1
 NeoBundle 'Shougo/neocomplete'
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
+autocmd CompleteDone * pclose
 
 " コメントアウト
 NeoBundle "tyru/caw.vim.git"
