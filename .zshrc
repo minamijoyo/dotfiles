@@ -227,3 +227,4 @@ eval "$(pyenv virtualenv-init -)"
 
 # よく使うコマンドのエイリアス
 alias dsh="docker-compose run --rm --service-ports rails /bin/bash"
+alias dmy="mycli -h `dinghy ip` -P 3307 -u root crowdworks_dev"
