@@ -323,9 +323,12 @@ set expandtab
 " 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする
 set smarttab
 
+" ファイルタイプごとにタブを調整
+autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4
+
 " 不可視文字を表示する
 set list
-set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
+set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
 
 """"""""""""""""""""""""""""""
 " 全角スペースの表示
