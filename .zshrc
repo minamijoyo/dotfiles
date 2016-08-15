@@ -164,16 +164,21 @@ alias update-hostkeys-proxy='update-hostkeys Name reverse-proxy-production'
 
 # get-ec2listの出力をpeco連携してsshできるようにする
 function peco-ec2ssh() {
+  aws_profile_name=$1
   echo "Fetching ec2 host..."
-  local selected_host=$(get-ec2list Name \* attached_asg | sort | peco | cut -f 1)
+  local selected_host=$(AWS_DEFAULT_PROFILE=$aws_profile_name get-ec2list Name \* attached_asg | sort | peco | cut -f 1)
   if [ -n "${selected_host}" ]; then
     BUFFER="ssh $EC2_SSH_USER@${selected_host}"
     zle accept-line
   fi
   zle clear-screen
 }
-zle -N peco-ec2ssh
-bindkey '^re' peco-ec2ssh
+function peco-ec2ssh-main() { peco-ec2ssh main }
+function peco-ec2ssh-development() { peco-ec2ssh development }
+zle -N peco-ec2ssh-main
+zle -N peco-ec2ssh-development
+bindkey '^re' peco-ec2ssh-main
+bindkey '^rd' peco-ec2ssh-development
 
 # ghqとpecoの連携
 function peco-ghq () {
