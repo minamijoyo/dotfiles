@@ -66,9 +66,6 @@ export PATH="$HOME/.rbenv/shims:$PATH"
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
 
-# terraformの設定
-export PATH="$PATH:/opt/terraform/terraform_0.6.16_darwin_amd64"
-
 # aws-cliの補完
 source /usr/local/bin/aws_zsh_completer.sh
 
