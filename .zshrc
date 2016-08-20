@@ -201,6 +201,12 @@ function peco-hub-pr () {
 zle -N peco-hub-pr
 bindkey '^rh' peco-hub-pr
 
+# カレントリポジトリのgitconfigをminamijoyoに設定
+function set-git-config-minamijoyo() {
+  git config user.name "Masayuki Morita"
+  git config user.email "minamijoyo@gmail.com"
+}
+
 # ctagsの設定
 alias ctags="`brew --prefix`/bin/ctags"
 
