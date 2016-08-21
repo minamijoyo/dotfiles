@@ -11,6 +11,7 @@
   pH = push origin HEAD
   pF = push --force-with-lease origin HEAD
   root = rev-parse --show-toplevel
+  browse = !hub browse
   open = !hub browse -- pull/$(git symbolic-ref --short HEAD)
   pr = !hub pull-request
 [core]
