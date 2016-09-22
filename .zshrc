@@ -177,6 +177,20 @@ zle -N peco-ec2ssh-development
 bindkey '^re' peco-ec2ssh-main
 bindkey '^rd' peco-ec2ssh-development
 
+function zssh() {
+  print -z ssh $EC2_SSH_USER@$(cat \
+    <(myaws ec2 ls --profile=main --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg') \
+    <(myaws ec2 ls --profile=dev --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg') \
+    | sort -k4 | peco | cut -f2)
+}
+
+function zcssh() {
+  print -z sh -c \"tmux-cssh -u $EC2_SSH_USER $(cat \
+    <(myaws ec2 ls --profile=main --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg') \
+    <(myaws ec2 ls --profile=dev --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg') \
+    | sort -k4 | peco | cut -f2 | tr '\n' ' ' )\"
+}
+
 # ghqとpecoの連携
 function peco-ghq () {
   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
