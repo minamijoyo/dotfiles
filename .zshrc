@@ -191,12 +191,6 @@ function zcssh() {
     | sort -k4 | peco | cut -f2 | tr '\n' ' ' )\"
 }
 
-function pssh-dev() {
-  print -z ssh dev+$(cat \
-    <(myaws ec2 ls --profile=dev --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg') \
-    | sort -k4 | peco | cut -f2)
-}
-
 function pssh() {
   aws_profile_name=$1
   echo "Fetching ec2 host..."
