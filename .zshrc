@@ -191,6 +191,30 @@ function zcssh() {
     | sort -k4 | peco | cut -f2 | tr '\n' ' ' )\"
 }
 
+function pssh-dev() {
+  print -z ssh dev+$(cat \
+    <(myaws ec2 ls --profile=dev --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg') \
+    | sort -k4 | peco | cut -f2)
+}
+
+function pssh() {
+  aws_profile_name=$1
+  echo "Fetching ec2 host..."
+  local selected_host=$(myaws ec2 ls --profile=${aws_profile_name} --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg' | sort -k4 | peco | cut -f2)
+  if [ -n "${selected_host}" ]; then
+    BUFFER="ssh ${aws_profile_name}+${selected_host}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+
+function pssh-main() { pssh main }
+function pssh-dev() { pssh dev }
+zle -N pssh-main
+zle -N pssh-dev
+bindkey '^rm' pssh-main
+bindkey '^rd' pssh-dev
+
 # ghqとpecoの連携
 function peco-ghq () {
   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
