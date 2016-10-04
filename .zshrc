@@ -128,35 +128,10 @@ function update-hostkeys() {
 }
 
 # よくログインするサーバへのエイリアス
-alias ec2ssh-app='ec2ssh Name app-production'
-alias ec2ssh-app-3='ec2ssh Name app-production-rails3'
-alias ec2ssh-app-4='ec2ssh Name app-production-rails4'
-alias ec2ssh-proxy='ec2ssh Name reverse-proxy-production'
-alias ec2ssh-app-1='ec2ssh attached_asg app-production-asg-1'
-alias ec2ssh-app-2='ec2ssh attached_asg app-production-asg-2'
-alias ec2ssh-app-31='ec2ssh attached_asg app-production-rails3-asg-1'
-alias ec2ssh-app-32='ec2ssh attached_asg app-production-rails3-asg-2'
-alias ec2ssh-app-41='ec2ssh attached_asg app-production-rails4-asg-1'
-alias ec2ssh-app-42='ec2ssh attached_asg app-production-rails4-asg-2'
-alias ec2ssh-proxy-1='ec2ssh attached_asg reverse-proxy-production-asg-1'
-alias ec2ssh-proxy-2='ec2ssh attached_asg reverse-proxy-production-asg-2'
-
 alias ec2cssh-app='ec2cssh Name app-production'
-alias ec2cssh-app-3='ec2cssh Name app-production-rails3'
-alias ec2cssh-app-4='ec2cssh Name app-production-rails4'
 alias ec2cssh-proxy='ec2cssh Name reverse-proxy-production'
-alias ec2cssh-app-1='ec2cssh attached_asg app-production-asg-1'
-alias ec2cssh-app-2='ec2cssh attached_asg app-production-asg-2'
-alias ec2cssh-app-31='ec2cssh attached_asg app-production-rails3-asg-1'
-alias ec2cssh-app-32='ec2cssh attached_asg app-production-rails3-asg-2'
-alias ec2cssh-app-41='ec2cssh attached_asg app-production-rails4-asg-1'
-alias ec2cssh-app-42='ec2cssh attached_asg app-production-rails4-asg-2'
-alias ec2cssh-proxy-1='ec2cssh attached_asg reverse-proxy-production-asg-1'
-alias ec2cssh-proxy-2='ec2cssh attached_asg reverse-proxy-production-asg-2'
 
 alias update-hostkeys-app='update-hostkeys Name app-production'
-alias update-hostkeys-app-3='update-hostkeys Name app-production-rails3'
-alias update-hostkeys-app-4='update-hostkeys Name app-production-rails4'
 alias update-hostkeys-proxy='update-hostkeys Name reverse-proxy-production'
 
 # get-ec2listの出力をpeco連携してsshできるようにする
@@ -170,26 +145,10 @@ function peco-ec2ssh() {
   fi
   zle clear-screen
 }
+
 function peco-ec2ssh-main() { peco-ec2ssh main }
-function peco-ec2ssh-development() { peco-ec2ssh development }
 zle -N peco-ec2ssh-main
-zle -N peco-ec2ssh-development
 bindkey '^re' peco-ec2ssh-main
-bindkey '^rd' peco-ec2ssh-development
-
-function zssh() {
-  print -z ssh $EC2_SSH_USER@$(cat \
-    <(myaws ec2 ls --profile=main --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg') \
-    <(myaws ec2 ls --profile=dev --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg') \
-    | sort -k4 | peco | cut -f2)
-}
-
-function zcssh() {
-  print -z sh -c \"tmux-cssh -u $EC2_SSH_USER $(cat \
-    <(myaws ec2 ls --profile=main --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg') \
-    <(myaws ec2 ls --profile=dev --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg') \
-    | sort -k4 | peco | cut -f2 | tr '\n' ' ' )\"
-}
 
 function pssh() {
   aws_profile_name=$1
