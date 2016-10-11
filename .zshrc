@@ -155,7 +155,7 @@ function pssh() {
   echo "Fetching ec2 host..."
   local selected_host=$(myaws ec2 ls --profile=${aws_profile_name} --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg' | sort -k4 | peco | cut -f2)
   if [ -n "${selected_host}" ]; then
-    BUFFER="ssh -t ${aws_profile_name} devops@${selected_host}"
+    BUFFER="ssh -t $EC2_SSH_USER@${aws_profile_name} ssh devops@${selected_host}"
     zle accept-line
   fi
   zle clear-screen
