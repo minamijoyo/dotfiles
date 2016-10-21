@@ -134,11 +134,10 @@ alias ec2cssh-proxy='ec2cssh Name reverse-proxy-production'
 alias update-hostkeys-app='update-hostkeys Name app-production'
 alias update-hostkeys-proxy='update-hostkeys Name reverse-proxy-production'
 
-# get-ec2listの出力をpeco連携してsshできるようにする
 function peco-ec2ssh() {
   aws_profile_name=$1
   echo "Fetching ec2 host..."
-  local selected_host=$(AWS_DEFAULT_PROFILE=$aws_profile_name get-ec2list Name \* attached_asg | sort | peco | cut -f 1)
+  local selected_host=$(myaws ec2 ls --profile=${aws_profile_name} --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg' | sort -k4 | peco | cut -f2)
   if [ -n "${selected_host}" ]; then
     BUFFER="ssh $EC2_SSH_USER@${selected_host}"
     zle accept-line
