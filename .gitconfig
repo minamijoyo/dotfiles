@@ -14,6 +14,7 @@
   browse = !hub browse
   open = !hub browse -- pull/$(git symbolic-ref --short HEAD)
   pr = !hub pull-request
+  gh-show = "!f(){ open https://github.com/$(git rev-parse --show-toplevel | rev | cut -f1,2 -d '/' | rev)/commit/$1;};f"
   ci-status = !circleci-cli recent -l 5 -b $(git symbolic-ref --short HEAD)
   ci-open = !open https://circleci.com/gh/$(git rev-parse --show-toplevel | rev | cut -f1,2 -d '/' | rev)/tree/$(git symbolic-ref --short HEAD)
 [core]
