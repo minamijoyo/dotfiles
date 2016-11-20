@@ -128,9 +128,6 @@ function update-hostkeys() {
 }
 
 # よくログインするサーバへのエイリアス
-alias ec2cssh-app='ec2cssh Name app-production'
-alias ec2cssh-proxy='ec2cssh Name reverse-proxy-production'
-
 alias update-hostkeys-app='update-hostkeys Name app-production'
 alias update-hostkeys-proxy='update-hostkeys Name reverse-proxy-production'
 
