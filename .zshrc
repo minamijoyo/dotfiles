@@ -134,38 +134,37 @@ function update-hostkeys() {
 alias update-hostkeys-app='update-hostkeys Name app-production'
 alias update-hostkeys-proxy='update-hostkeys Name reverse-proxy-production'
 
-function peco-ec2ssh() {
-  aws_profile_name=$1
-  echo "Fetching ec2 host..."
-  local selected_host=$(myaws ec2 ls --profile=${aws_profile_name} --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg' | sort -k4 | peco | cut -f2)
-  if [ -n "${selected_host}" ]; then
-    BUFFER="ssh $EC2_SSH_USER@${selected_host}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-
-function peco-ec2ssh-main() { peco-ec2ssh main }
-zle -N peco-ec2ssh-main
-bindkey '^re' peco-ec2ssh-main
-
 function pssh() {
   aws_profile_name=$1
+  ssh_proxy=$2
   echo "Fetching ec2 host..."
   local selected_host=$(myaws ec2 ls --profile=${aws_profile_name} --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg' | sort -k4 | peco | cut -f2)
   if [ -n "${selected_host}" ]; then
-    BUFFER="ssh -t $EC2_SSH_USER@${aws_profile_name} ssh devops@${selected_host}"
+    if [ -z "${ssh_proxy}" ]; then
+      BUFFER="ssh $EC2_SSH_USER@${selected_host}"
+    else
+      BUFFER="ssh -t $EC2_SSH_USER@${ssh_proxy} ssh devops@${selected_host}"
+    fi
     zle accept-line
   fi
   zle clear-screen
 }
 
-function pssh-main() { pssh main }
-function pssh-dev() { pssh dev }
+function pssh-main() { pssh main}
+function pssh-dev() { pssh dev}
+function pssh-prod-with-proxy() { pssh main main}
+function pssh-stg-with-proxy() { pssh main dev}
+function pssh-dev-with-proxy() { pssh dev dev}
 zle -N pssh-main
 zle -N pssh-dev
+zle -N pssh-prod-with-proxy
+zle -N pssh-stg-with-proxy
+zle -N pssh-dev-with-proxy
 bindkey '^rm' pssh-main
-bindkey '^rd' pssh-dev
+bindkey '^re' pssh-dev
+bindkey '^rp' pssh-prod-with-proxy
+bindkey '^rs' pssh-stg-with-proxy
+bindkey '^rd' pssh-dev-with-proxy
 
 # ghqとpecoの連携
 function peco-ghq () {
