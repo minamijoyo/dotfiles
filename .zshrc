@@ -62,6 +62,9 @@ bindkey '^r^b' anyframe-widget-checkout-git-branch
 # rbenvの設定
 export PATH="$HOME/.rbenv/shims:$PATH"
 
+# tfenvの設定
+export PATH="$HOME/src/github.com/kamatama41/tfenv/bin:$PATH"
+
 # goの設定
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
