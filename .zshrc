@@ -72,6 +72,14 @@ export PATH=$PATH:$GOPATH/bin
 # aws-cliの補完
 source /usr/local/bin/aws_zsh_completer.sh
 
+# gcloudの設定
+if [ -f /Users/m-morita/google-cloud-sdk/path.zsh.inc ]; then
+  source '/Users/m-morita/google-cloud-sdk/path.zsh.inc'
+fi
+if [ -f /Users/m-morita/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/Users/m-morita/google-cloud-sdk/completion.zsh.inc'
+fi
+
 # cw-cli-toolsの設定
 export PATH=$PATH:~/src/github.com/crowdworksjp/cw-cli-tools/bin
 
