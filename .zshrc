@@ -73,11 +73,11 @@ export PATH=$PATH:$GOPATH/bin
 source /usr/local/bin/aws_zsh_completer.sh
 
 # gcloudの設定
-if [ -f /Users/m-morita/google-cloud-sdk/path.zsh.inc ]; then
-  source '/Users/m-morita/google-cloud-sdk/path.zsh.inc'
+if [ -f $HOME/google-cloud-sdk/path.zsh.inc ]; then
+  source $HOME/google-cloud-sdk/path.zsh.inc
 fi
-if [ -f /Users/m-morita/google-cloud-sdk/completion.zsh.inc ]; then
-  source '/Users/m-morita/google-cloud-sdk/completion.zsh.inc'
+if [ -f $HOME/google-cloud-sdk/completion.zsh.inc ]; then
+  source $HOME/google-cloud-sdk/completion.zsh.inc
 fi
 
 # cw-cli-toolsの設定
