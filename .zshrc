@@ -85,63 +85,6 @@ export PATH=$PATH:~/src/github.com/crowdworksjp/cw-cli-tools/bin
 
 EC2_SSH_USER=morita
 
-# aws-cliからタグ指定で動的にインスタンスのIPアドレスなどの一覧を取得する
-function get-ec2list() {
-  filter_tag_name=${1:-Name}
-  filter_tag_value=${2:-\*}
-  print_tag_name=${3:-attached_asg}
-  filter="Name=tag:$filter_tag_name,Values=$filter_tag_value"
-  query=".Reservations[] | .Instances[] | select(.State.Name == \"running\") | select(has(\"PublicIpAddress\")) | [.PublicIpAddress,.InstanceId,.State.Name,.LaunchTime,(.Tags[] | select(.Key == \"Name\") | .Value // \"\"),(.Tags[] | select(.Key == \""$print_tag_name"\") | .Value // \"\")] | join(\"\t\")"
-  aws ec2 describe-instances --filter "$filter" | jq -r "$query"
-}
-
-# タグからIPアドレスを解決してsshする。複数該当する場合はどれか一つ。
-function ec2ssh() {
-  filter_tag_name=${1:-Name}
-  filter_tag_value=${2:-\*}
-  target_host=$(get-ec2list $filter_tag_name $filter_tag_value | sort | head -n 1 | cut -f 1)
-  ssh $EC2_SSH_USER@$target_host
-}
-
-# タグからIPアドレスを解決してtmux-csshで全台同時にsshしてキー入力を同期する
-# tmux-csshはtmuxのセッション内から実行できないのでbindkey+dでデタッチしてから実行すること
-function ec2cssh() {
-  filter_tag_name=${1:-Name}
-  filter_tag_value=${2:-\*}
-  target_hosts=$(get-ec2list $filter_tag_name $filter_tag_value | sort | cut -f 1 | tr '\n' ' ')
-  sh -c "tmux-cssh -u $EC2_SSH_USER $target_hosts"
-}
-
-# sshホストキーの削除
-function delete-hostkey() {
-  ssh-keygen -R $1
-}
-
-# sshホストキーの追加
-function add-hostkey() {
-  ssh-keyscan -H $1 >> ~/.ssh/known_hosts
-}
-
-# sshホストキーの更新
-function update-hostkey() {
-  delete-hostkey $1
-  add-hostkey $1
-}
-
-# タグからIPアドレス解決してsshホストキーをまとめて更新
-function update-hostkeys() {
-  filter_tag_name=${1:-Name}
-  filter_tag_value=${2:-\*}
-  target_hosts=($(get-ec2list $filter_tag_name $filter_tag_value | sort | cut -f 1 | tr '\n' ' '))
-  for target_host in $target_hosts; do
-    update-hostkey $target_host
-  done
-}
-
-# よくログインするサーバへのエイリアス
-alias update-hostkeys-app='update-hostkeys Name app-production'
-alias update-hostkeys-proxy='update-hostkeys Name reverse-proxy-production'
-
 function pssh() {
   aws_profile_name=$1
   ssh_proxy=$2
