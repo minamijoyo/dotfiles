@@ -69,6 +69,9 @@ export PATH="$HOME/src/github.com/kamatama41/tfenv/bin:$PATH"
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
 
+# javaの設定
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+
 # aws-cliの補完
 source /usr/local/bin/aws_zsh_completer.sh
 
