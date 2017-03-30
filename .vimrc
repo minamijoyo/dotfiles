@@ -250,6 +250,10 @@ let g:go_fmt_command = "goimports"
 NeoBundle 'hashivim/vim-terraform'
 let g:terraform_fmt_on_save = 1
 
+" Scala関連
+NeoBundle 'derekwyatt/vim-scala'
+au BufNewFile,BufRead *.scala setf scala
+
 " メモ帳
 NeoBundle 'glidenote/memolist.vim'
 let g:memolist_path = "~/work/memo"
