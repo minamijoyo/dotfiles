@@ -138,22 +138,29 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=237
 let g:indent_guides_guide_size = 1
 
 " 補完
-NeoBundle 'Shougo/neocomplete'
-let g:neocomplete#enable_at_startup               = 1
-let g:neocomplete#auto_completion_start_length    = 3
-let g:neocomplete#enable_ignore_case              = 1
-let g:neocomplete#enable_smart_case               = 1
-let g:neocomplete#enable_camel_case               = 1
-let g:neocomplete#use_vimproc                     = 1
-let g:neocomplete#sources#buffer#cache_limit_size = 1000000
-let g:neocomplete#sources#tags#cache_limit_size   = 30000000
-let g:neocomplete#enable_fuzzy_completion         = 1
-" キャッシュしないファイル名
-let g:neocomplete#sources#buffer#disabled_pattern = '\.log\|\.log\.\'
-" 自動補完を行わないバッファ名
-let g:neocomplete#lock_buffer_name_pattern = '\.log\|\.log\.\|.*quickrun.*\'
+if !has('nvim')
+  NeoBundle 'Shougo/neocomplete'
+  let g:neocomplete#enable_at_startup               = 1
+  let g:neocomplete#auto_completion_start_length    = 3
+  let g:neocomplete#enable_ignore_case              = 1
+  let g:neocomplete#enable_smart_case               = 1
+  let g:neocomplete#enable_camel_case               = 1
+  let g:neocomplete#use_vimproc                     = 1
+  let g:neocomplete#sources#buffer#cache_limit_size = 1000000
+  let g:neocomplete#sources#tags#cache_limit_size   = 30000000
+  let g:neocomplete#enable_fuzzy_completion         = 1
+  " キャッシュしないファイル名
+  let g:neocomplete#sources#buffer#disabled_pattern = '\.log\|\.log\.\'
+  " 自動補完を行わないバッファ名
+  let g:neocomplete#lock_buffer_name_pattern = '\.log\|\.log\.\|.*quickrun.*\'
 
-autocmd CompleteDone * pclose
+  autocmd CompleteDone * pclose
+endif
+
+if has('nvim')
+  NeoBundle 'Shougo/deoplete.nvim'
+  let g:deoplete#enable_at_startup = 1
+endif
 
 " コメントアウト
 NeoBundle "tyru/caw.vim.git"
