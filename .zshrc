@@ -4,6 +4,9 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # デフォルトのエディタ
 export EDITOR=vim
 
+# neovimのためにXDGの設定
+export XDG_CONFIG_HOME=$HOME/.config
+
 # コマンドの履歴
 HISTFILE=~/.zsh_history
 HISTSIZE=100000

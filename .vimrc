@@ -101,11 +101,13 @@ nnoremap <silent>[nerdtree]r :NERDTree<CR>
 let NERDTreeShowHidden = 1
 
 " PowerLine
-NeoBundle 'alpaca-tc/alpaca_powertabline'
-NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
-NeoBundle 'Lokaltog/powerline-fontpatcher'
-let g:Powerline_symbols = 'fancy'
-set laststatus=2
+if !has('nvim')
+  NeoBundle 'alpaca-tc/alpaca_powertabline'
+  NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+  NeoBundle 'Lokaltog/powerline-fontpatcher'
+  let g:Powerline_symbols = 'fancy'
+  set laststatus=2
+endif
 
 " カラースキーマ
 NeoBundle 'nanotech/jellybeans.vim'
@@ -314,7 +316,10 @@ set novisualbell
 " マウス操作を有効にする
 set mouse=a
 " 端末224桁制限を超えて画面の右端でもマウスが使えるようにする
-set ttymouse=sgr
+if !has('nvim')
+  " neovimではデフォルトでマウスサポートしているので不要
+  set ttymouse=sgr
+endif
 " OSのクリップボードを使う
 set clipboard=unnamed
 " 改行時に前の行のインデントを継続する
