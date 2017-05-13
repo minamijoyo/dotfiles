@@ -109,6 +109,15 @@ if !has('nvim')
   set laststatus=2
 endif
 
+if has('nvim')
+  NeoBundle 'vim-airline/vim-airline'
+  NeoBundle 'vim-airline/vim-airline-themes'
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline_theme = 'jellybeans'
+  let g:airline_powerline_fonts = 1
+  set laststatus=2
+endif
+
 " カラースキーマ
 NeoBundle 'nanotech/jellybeans.vim'
 " カラースキーマの選択
