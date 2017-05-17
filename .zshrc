@@ -2,7 +2,8 @@
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # デフォルトのエディタ
-export EDITOR=vim
+export EDITOR=nvim
+alias vi="nvim"
 
 # neovimのためにXDGの設定
 export XDG_CONFIG_HOME=$HOME/.config
@@ -157,7 +158,6 @@ function set-git-config-minamijoyo() {
 alias ctags="`brew --prefix`/bin/ctags"
 
 # vimとclipboardの連携
-alias vi="vim"
 alias vim="reattach-to-user-namespace vim"
 
 # sttyのCtrl + S と Ctrl + Q の割り当てを解除してvimなどで使えるようにする
