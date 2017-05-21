@@ -277,6 +277,9 @@ nmap <Leader>o [go]
 nnoremap <silent>[go]o :GoRun<CR>
 let g:go_fmt_command = "goimports"
 
+" deopleteでgocodeを使えるようにする
+NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
+
 " Terraform関連
 NeoBundle 'hashivim/vim-terraform'
 let g:terraform_fmt_on_save = 1
