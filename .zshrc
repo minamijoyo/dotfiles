@@ -170,7 +170,10 @@ if [ -z $TMUX ]; then
 fi
 
 # dinghy用の環境変数の読み込み
-eval "$(dinghy env)"
+DINGHY_RUNNING=$(ps -ef | grep dinghy | grep -v grep | wc -l)
+if [ "$DINGHY_RUNNING" -ne "0" ]; then
+  eval "$(dinghy env)"
+fi
 
 # 環境変数の管理にdirenvを使う
 eval "$(direnv hook zsh)"
