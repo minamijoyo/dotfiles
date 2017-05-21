@@ -191,14 +191,27 @@ map <Leader>_ <Plug>(operator-decamelize)
 NeoBundle 'tpope/vim-surround'
 
 " シンタックスチェク
-NeoBundle 'scrooloose/syntastic'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+if !has('nvim')
+  NeoBundle 'scrooloose/syntastic'
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-command Reek SyntasticCheck reek
+  let g:syntastic_always_populate_loc_list = 1
+  let g:syntastic_auto_loc_list = 1
+  command Reek SyntasticCheck reek
+endif
+
+if has('nvim')
+  NeoBundle 'w0rp/ale'
+  " ファイルの保存時のみチェックする
+  let g:ale_lint_on_save = 1
+  let g:ale_lint_on_text_changed = 0
+  " ファイルのオープン時にはチェックしない
+  let g:ale_lint_on_enter = 0
+  " ロケーションリストを開く
+  let g:ale_open_list = 1
+endif
 
 " コマンドの非同期実行
 NeoBundle 'Shougo/vimproc', {
