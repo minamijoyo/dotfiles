@@ -169,15 +169,10 @@ if [ -z $TMUX ]; then
   tmux
 fi
 
-# dinghy用の環境変数の読み込み
-DINGHY_RUNNING=$(ps -ef | grep dinghy | grep -v grep | wc -l)
-if [ "$DINGHY_RUNNING" -ne "0" ]; then
-  eval "$(dinghy env)"
-fi
-
 # 環境変数の管理にdirenvを使う
 eval "$(direnv hook zsh)"
 
 # よく使うコマンドのエイリアス
 alias dosh="docker-compose run --rm --service-ports rails /bin/bash"
 alias domy="mycli -h `dinghy ip` -u root crowdworks_dev"
+alias doenv='eval "$(dinghy env)"'
