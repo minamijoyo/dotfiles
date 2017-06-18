@@ -80,12 +80,12 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 source /usr/local/bin/aws_zsh_completer.sh
 
 # gcloudの設定
-# if [ -f $HOME/google-cloud-sdk/path.zsh.inc ]; then
-#   source $HOME/google-cloud-sdk/path.zsh.inc
-# fi
-# if [ -f $HOME/google-cloud-sdk/completion.zsh.inc ]; then
-#   source $HOME/google-cloud-sdk/completion.zsh.inc
-# fi
+if [ -f $HOME/google-cloud-sdk/path.zsh.inc ]; then
+  source $HOME/google-cloud-sdk/path.zsh.inc
+fi
+if [ -f $HOME/google-cloud-sdk/completion.zsh.inc ]; then
+  source $HOME/google-cloud-sdk/completion.zsh.inc
+fi
 
 # cw-cli-toolsの設定
 export PATH=$PATH:~/src/github.com/crowdworksjp/cw-cli-tools/bin
