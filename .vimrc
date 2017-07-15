@@ -461,7 +461,10 @@ nnoremap <c-Right> gt
 " ノーマルモードのままで空行を挿入する
 nnoremap <Leader><CR> :<C-u>call append(expand('.'), '')<Cr>j
 " ノーマルモードに戻る待ち時間を減らすためESCキーのタイムアウトを短くする
-set timeout timeoutlen=1000 ttimeoutlen=50
+set timeout timeoutlen=1000
+" 日本語入力がたまに制御コードと認識されてしまうので、端末のキーコードについてタイムアウトする
+set ttimeout
+set ttimeoutlen=50
 
 " コピペで連続ペーストできるようにする
 vnoremap gp "0p
