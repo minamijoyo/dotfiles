@@ -283,6 +283,7 @@ NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
 " Terraform関連
 NeoBundle 'hashivim/vim-terraform'
 let g:terraform_fmt_on_save = 1
+NeoBundle 'juliosueiras/vim-terraform-completion'
 
 " Scala関連
 NeoBundle 'derekwyatt/vim-scala'
