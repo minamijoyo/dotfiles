@@ -17,6 +17,7 @@ SAVEHIST=100000
 export ZSH=~/.oh-my-zsh
 ZSH_THEME=""
 plugins=(git)
+export DISABLE_AUTO_UPDATE="true"
 source $ZSH/oh-my-zsh.sh
 
 # プロンプト設定
