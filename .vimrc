@@ -82,7 +82,7 @@ vnoremap [fugitive]o :<C-u>'<,'>Gbrowse<Enter>
 autocmd QuickFixCmdPost *grep* cwindow
 
 " gitの差分をエディタ上に表示
-NeoBundle 'vim-gitgutter'
+NeoBundle 'airblade/vim-gitgutter'
 " コミットログ確認
 NeoBundle 'cohama/agit.vim'
 " githubを開く
