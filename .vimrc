@@ -64,7 +64,9 @@ function! s:unite_my_settings()"{{{
 endfunction"}}}
 
 " gitコマンド実行
-NeoBundle 'tpope/vim-fugitive.git'
+NeoBundle 'tpope/vim-fugitive'
+" fugitiveでremoteにssh://が使えるようにrhubarbも入れる
+NeoBundle 'tpope/vim-rhubarb'
 nnoremap [fugitive] <Nop>
 vnoremap [fugitive] <Nop>
 nmap <Leader>g [fugitive]
