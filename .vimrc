@@ -290,6 +290,12 @@ NeoBundle 'juliosueiras/vim-terraform-completion'
 " Scala関連
 NeoBundle 'derekwyatt/vim-scala'
 au BufNewFile,BufRead *.scala setf scala
+NeoBundle 'ensime/ensime-vim'
+nnoremap [ensime] <Nop>
+nmap <Leader>e [ensime]
+noremap <silent>[ensime]d :EnDeclaration<CR>
+noremap <silent>[ensime]t :EnType<CR>
+noremap <silent>[ensime]c :EnTypeCheck<CR>
 
 " メモ帳
 NeoBundle 'glidenote/memolist.vim'

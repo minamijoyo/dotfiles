@@ -1,3 +1,4 @@
 Session.vim
 .envrc
-
+.sbt/0.13/plugins/project
+.sbt/0.13/plugins/target
