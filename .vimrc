@@ -295,7 +295,10 @@ nnoremap [ensime] <Nop>
 nmap <Leader>e [ensime]
 noremap <silent>[ensime]d :EnDeclaration<CR>
 noremap <silent>[ensime]t :EnType<CR>
+noremap <silent>[ensime]f :EnToggleFullType<CR>
 noremap <silent>[ensime]c :EnTypeCheck<CR>
+noremap <silent>[ensime]i :EnSuggestImport<CR>
+noremap <silent>[ensime]o :EnOrganizeImports<CR>
 
 " メモ帳
 NeoBundle 'glidenote/memolist.vim'
