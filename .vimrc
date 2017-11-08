@@ -127,6 +127,9 @@ NeoBundle 'ujihisa/unite-colorscheme'
 
 " 色情報が入ったファイルを開いた場合は表示を色付けする
 NeoBundle 'vim-scripts/AnsiEsc.vim'
+" 括弧の対応を分かりやすくするため色を変える
+NeoBundle 'luochen1990/rainbow'
+let g:rainbow_active = 1
 
 " 行末の半角スペースを可視化
 NeoBundle 'bronson/vim-trailing-whitespace'
