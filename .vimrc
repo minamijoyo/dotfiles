@@ -293,6 +293,9 @@ NeoBundle 'juliosueiras/vim-terraform-completion'
 " Scala関連
 NeoBundle 'derekwyatt/vim-scala'
 au BufNewFile,BufRead *.scala setf scala
+" コメントをjavadocではなくscaladocスタイルにする
+let g:scala_scaladoc_indent = 1
+
 NeoBundle 'ensime/ensime-vim'
 nnoremap [ensime] <Nop>
 nmap <Leader>e [ensime]
