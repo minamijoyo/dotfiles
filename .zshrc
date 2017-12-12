@@ -85,6 +85,10 @@ if [ -f $HOME/google-cloud-sdk/completion.zsh.inc ]; then
   source $HOME/google-cloud-sdk/completion.zsh.inc
 fi
 
+# terraformの設定
+autoload -U +X bashcompinit && bashcompinit
+complete -C $GOPATH/bin/terraform terraform
+
 # cw-cli-toolsの設定
 export PATH=$PATH:~/src/github.com/crowdworksjp/cw-cli-tools/bin
 
