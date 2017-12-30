@@ -1,0 +1,208 @@
+########################################
+# プラグイン管理
+########################################
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+########################################
+# 検索
+########################################
+# Unite
+[[plugins]]
+repo = 'Shougo/unite.vim'
+hook_add = '''
+    source $HOME/vim/plugins/unite.vim
+'''
+
+# 最近開いたファイル
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+# ヤンク履歴
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+
+# アウトラインの表示
+[[plugins]]
+repo = 'Shougo/unite-outline'
+
+# git連携
+[[plugins]]
+repo = 'kmnk/vim-unite-giti'
+
+# 検索にagを使う
+[[plugins]]
+repo = 'rking/ag.vim'
+hook_add = '''
+    let g:ag_prg="ag --vimgrep --hidden"
+'''
+
+# Quickfixの結果をまとめて置換
+[[plugins]]
+repo = 'thinca/vim-qfreplace'
+
+########################################
+# git
+########################################
+# gitコマンド実行
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''
+    source $HOME/vim/plugins/vim-fugitive.vim
+'''
+
+# fugitiveでremoteにssh://が使えるようにrhubarbも入れる
+[[plugins]]
+repo = 'tpope/vim-rhubarb'
+
+# gitの差分をエディタ上に表示
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+# コミットログ確認
+[[plugins]]
+repo = 'cohama/agit.vim'
+
+# githubを開く
+[[plugins]]
+repo = 'tonchis/vim-to-github'
+
+########################################
+# セッション
+########################################
+# セッション保存
+[[plugins]]
+repo = 'tpope/vim-obsession'
+
+########################################
+# ファイラ
+########################################
+# ファイラ
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+    source $HOME/vim/plugins/nerdtree.vim
+'''
+
+########################################
+# スタイル
+########################################
+# ステータスライン
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes']
+hook_add = '''
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline_theme = 'distinguished'
+    let g:airline_powerline_fonts = 1
+    set laststatus=2
+'''
+
+# airlineのテーマ
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+# カラースキーマ
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
+
+# カラースキーマの選択
+[[plugins]]
+repo = 'ujihisa/unite-colorscheme'
+
+# 色情報が入ったファイルを開いた場合は表示を色付けする
+[[plugins]]
+repo = 'vim-scripts/AnsiEsc.vim'
+
+# 括弧の対応を分かりやすくするため色を変える
+[[plugins]]
+repo = 'luochen1990/rainbow'
+hook_add = '''
+    let g:rainbow_active = 1
+'''
+
+# 行末の半角スペースを可視化
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+# インデントガイド
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+    source $HOME/vim/plugins/vim-indent-guides.vim
+'''
+
+########################################
+# 入力
+########################################
+# 補完
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+    let g:deoplete#enable_at_startup = 1
+'''
+
+# コメントアウト
+[[plugins]]
+repo = "tyru/caw.vim.git"
+hook_add = '''
+    source $HOME/vim/plugins/caw.vim
+'''
+
+# オペレータの拡張
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+# スネークケースとキャメルケースの入れ替え
+[[plugins]]
+repo = 'tyru/operator-camelize.vim'
+hook_add = '''
+    source $HOME/vim/plugins/operator-camelize.vim
+'''
+
+# 括弧の操作
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+########################################
+# コマンド実行
+########################################
+# シンタックスチェク
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''
+    source $HOME/vim/plugins/ale.vim
+'''
+
+# コマンドの非同期実行
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+# コマンドの実行結果をバッファに表示
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+hook_add = '''
+    source $HOME/vim/plugins/vim-quickrun.vim
+'''
+
+########################################
+# メモ
+########################################
+# メモ帳
+[[plugins]]
+repo = 'glidenote/memolist.vim'
+hook_add = '''
+    source $HOME/vim/plugins/memolist.vim
+'''
+
+########################################
+# ブラウザ
+########################################
+# カーソル下のURLをブラウザで開く
+# URLでなければその文字列をブラウザで検索する
+[[plugins]]
+repo = 'vim-scripts/open-browser.vim'
+hook_add = '''
+    source $HOME/vim/plugins/open-browser.vim
+'''

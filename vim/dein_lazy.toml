@@ -1,0 +1,86 @@
+########################################
+# ruby
+########################################
+# endを自動で挿入
+[[plugins]]
+repo = 'tpope/vim-endwise'
+on_ft = ['ruby']
+
+# ユーザ定義のテキストオブジェクト
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+on_ft = ['ruby']
+
+# rubyのブロックをテキストオブジェクトとして扱えるようにする
+[[plugins]]
+repo = 'rhysd/vim-textobj-ruby'
+on_ft = ['ruby']
+
+# Rails
+[[plugins]]
+repo = 'tpope/vim-rails'
+on_ft = ['ruby']
+
+# UniteのRails拡張
+[[plugins]]
+repo = 'basyura/unite-rails'
+on_ft = ['ruby']
+hook_add = '''
+    source $HOME/vim/plugins/unite-rails.vim
+'''
+
+########################################
+# js
+########################################
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = ['coffee']
+
+########################################
+# go
+########################################
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
+hook_add = '''
+    source $HOME/vim/plugins/vim-go.vim
+'''
+
+# deopleteでgocodeを使えるようにする
+[[plugins]]
+repo = 'zchee/deoplete-go'
+build = 'make'
+on_ft = ['go']
+
+########################################
+# terraform
+########################################
+[[plugins]]
+repo = 'hashivim/vim-terraform'
+on_ft = ['terraform']
+hook_add = '''
+    let g:terraform_fmt_on_save = 1
+'''
+
+# 補完
+[[plugins]]
+repo = 'juliosueiras/vim-terraform-completion'
+on_ft = ['terraform']
+
+########################################
+# scala
+########################################
+[[plugins]]
+repo = 'derekwyatt/vim-scala'
+on_ft = ['scala']
+hook_add = '''
+    source $HOME/vim/plugins/vim-scala.vim
+'''
+
+# 補完
+[[plugins]]
+repo = 'ensime/ensime-vim'
+on_ft = ['scala']
+hook_add = '''
+    source $HOME/vim/plugins/ensime-vim.vim
+'''
