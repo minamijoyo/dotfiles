@@ -41,6 +41,8 @@ if dein#check_install()
   call dein#install()
 endif
 
+filetype on
+
 """"""""""""""""""""""""""""""""""""""""
 " 基本設定
 """"""""""""""""""""""""""""""""""""""""
