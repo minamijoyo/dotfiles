@@ -41,9 +41,9 @@ if dein#check_install()
   call dein#install()
 endif
 
-" grep検索の実行後にQuickFix Listを表示する
-autocmd QuickFixCmdPost *grep* cwindow
-
+""""""""""""""""""""""""""""""""""""""""
+" 基本設定
+""""""""""""""""""""""""""""""""""""""""
 " 行番号を表示
 set number
 " 行列番号を表示する
