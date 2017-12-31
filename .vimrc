@@ -41,7 +41,8 @@ if dein#check_install()
   call dein#install()
 endif
 
-filetype on
+filetype plugin indent on
+syntax enable
 
 """"""""""""""""""""""""""""""""""""""""
 " 基本設定
