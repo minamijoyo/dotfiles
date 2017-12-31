@@ -176,5 +176,3 @@ eval "$(direnv hook zsh)"
 
 # よく使うコマンドのエイリアス
 alias dosh="docker-compose run --rm --service-ports rails /bin/bash"
-alias domy="mycli -h `dinghy ip` -u root crowdworks_dev"
-alias doenv='eval "$(dinghy env)"'
