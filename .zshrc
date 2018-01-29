@@ -88,6 +88,7 @@ fi
 # terraformの設定
 autoload -U +X bashcompinit && bashcompinit
 complete -C $GOPATH/bin/terraform terraform
+complete -o nospace -C $GOPATH/bin/tfschema tfschema
 
 # cw-cli-toolsの設定
 export PATH=$PATH:~/src/github.com/crowdworksjp/cw-cli-tools/bin
