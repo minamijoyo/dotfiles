@@ -18,7 +18,7 @@
   ci-status = !circleci-cli recent -l 5 -b $(git symbolic-ref --short HEAD)
   ci-open = !open https://circleci.com/gh/$(git rev-parse --show-toplevel | rev | cut -f1,2 -d '/' | rev)/tree/$(git symbolic-ref --short HEAD)
 [core]
-  editor = /usr/local/bin/vim
+  editor = /usr/local/bin/nvim
   excludesfile = ~/.gitignore_global
 [ghq]
   root = ~/src
