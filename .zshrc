@@ -22,13 +22,8 @@ source $ZSH/oh-my-zsh.sh
 
 # プロンプト設定
 # robbyrussellベースでカスタマイズ
-#local rails_var=""
-#if [ -n "$BUNDLE_GEMFILE" ]; then
-#  rails_var="* "
-#fi
 local ret_status="%(?:%{$fg[green]%}:%{$fg[red]%}%s)"
 PROMPT='[%{$fg[blue]%}%c%{$reset_color%}$(git_prompt_info)]${ret_status}$ %{$reset_color%}'
-RPROMPT='${BUNDLE_GEMFILE}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="@%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
