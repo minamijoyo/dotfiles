@@ -163,9 +163,8 @@ alias ctags="`brew --prefix`/bin/ctags"
 # vimとclipboardの連携
 alias vim="reattach-to-user-namespace vim"
 
-# sttyのCtrl + S と Ctrl + Q の割り当てを解除してvimなどで使えるようにする
-stty stop undef
-stty start undef
+# Ctrl+S/Ctrl+Q によるフロー制御を使わないようにしてvimなどでキーバインドを使えるようにする
+setopt no_flow_control
 
 # tmuxの自動起動
 if [ -z $TMUX ]; then
