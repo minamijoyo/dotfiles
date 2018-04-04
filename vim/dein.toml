@@ -164,6 +164,15 @@ hook_add = '''
 [[plugins]]
 repo = 'tpope/vim-surround'
 
+# LSP
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+build = 'bash install.sh'
+hook_add = '''
+    source $HOME/vim/plugins/LanguageClient-neovim.vim
+'''
+
 ########################################
 # コマンド実行
 ########################################
