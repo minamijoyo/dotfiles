@@ -70,7 +70,7 @@ export PATH=$PATH:$GOPATH/bin
 # export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 # aws-cliの補完
-source /usr/local/bin/aws_zsh_completer.sh
+# source /usr/local/bin/aws_zsh_completer.sh
 
 # gcloudの設定
 if [ -f $HOME/google-cloud-sdk/path.zsh.inc ]; then
