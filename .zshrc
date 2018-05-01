@@ -65,6 +65,7 @@ export PATH="$HOME/.rbenv/shims:$PATH"
 # goの設定
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
+eval "$(goenv init -)"
 
 # javaの設定
 # export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
