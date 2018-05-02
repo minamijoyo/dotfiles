@@ -20,6 +20,9 @@ setopt no_flow_control
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
+# プライベートリポジトリのプラグインも使うのでzplugのgitをssh経由にする
+ZPLUG_PROTOCOL=ssh
+
 # 標準的なコマンドの補完
 zplug "zsh-users/zsh-completions"
 # コマンド履歴のサジェスト
@@ -28,8 +31,11 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
 # gitのブランチ情報をプロンプトに表示
 zplug "olivierverdier/zsh-git-prompt", use:zshrc.sh
-# pecoなどで絞込
+# peco/percol/fzfなどでフィルタ絞込するためのフレームワーク
 zplug "mollifier/anyframe"
+# CWべんりスクリプト
+zplug "crowdworksjp/cw-cli-tools", at:use-myaws-instead-of-cw-ssh
+# zplug "~/src/github.com/crowdworksjp/cw-cli-tools", from:local, at:use-myaws-instead-of-cw-ssh
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -71,77 +77,18 @@ autoload -U +X bashcompinit && bashcompinit
 complete -C $GOPATH/bin/terraform terraform
 complete -o nospace -C $GOPATH/bin/tfschema tfschema
 
-# myawsの設定
-EC2_SSH_USER=morita
-
-function pssh() {
-  aws_profile_name=$1
-  ssh_proxy=$2
-  echo "Fetching ec2 host..."
-  local selected_host=$(myaws ec2 ls --profile=${aws_profile_name} --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg' | sort -k4 | peco | cut -f2)
-  if [ -n "${selected_host}" ]; then
-    if [ -z "${ssh_proxy}" ]; then
-      BUFFER="ssh $EC2_SSH_USER@${selected_host}"
-    else
-      BUFFER="ssh -t $EC2_SSH_USER@${ssh_proxy} ssh devops@${selected_host}"
-    fi
-    zle accept-line
-  fi
-  zle clear-screen
-}
-
-function pssh-main() { pssh main}
-function pssh-dev() { pssh dev}
-function pssh-prod-with-proxy() { pssh main main}
-function pssh-stg-with-proxy() { pssh main dev}
-function pssh-dev-with-proxy() { pssh dev dev}
-zle -N pssh-main
-zle -N pssh-dev
-zle -N pssh-prod-with-proxy
-zle -N pssh-stg-with-proxy
-zle -N pssh-dev-with-proxy
-bindkey '^rm' pssh-main
-bindkey '^re' pssh-dev
-bindkey '^rp' pssh-prod-with-proxy
-bindkey '^rs' pssh-stg-with-proxy
-bindkey '^rd' pssh-dev-with-proxy
-
-aws_profile_main="main"
-aws_profile_dev="dev"
-ssh_proxy_user="morita"
-ssh_proxy_host_prod="main"
-ssh_proxy_host_stg="dev"
-ssh_proxy_host_dev="dev"
-
-function myaws-ssh-with-proxy() {
-  ssh_proxy_user=$1
-  ssh_proxy_host=$2
-  selected_host=$3
-  if [ -n "$selected_host" ]; then
-    if [ "$ssh_proxy_host" = "none" ]; then
-      buffer="ssh $ssh_proxy_user@$selected_host"
-    else
-      buffer="ssh -t $ssh_proxy_user@$ssh_proxy_host ssh devops@$selected_host"
-    fi
-    print -z $buffer
-  fi
-}
-
-function anyframe-widget-execute-myaws-ssh () {
-  aws_profile=$1
-  ssh_proxy_user=$2
-  ssh_proxy_host=$3
-  myaws ec2 ls --profile=$aws_profile --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg' | sort -k4 \
-    | anyframe-selector-auto \
-    | cut -f2 \
-    | anyframe-action-execute myaws-ssh-with-proxy $ssh_proxy_user $ssh_proxy_host
-}
-
-function myaws-ssh-main() { anyframe-widget-execute-myaws-ssh $aws_profile_main $ssh_proxy_user "none" }
-function myaws-ssh-dev() { anyframe-widget-execute-myaws-ssh $aws_profile_dev $ssh_proxy_user "none" }
-function myaws-ssh-prod-with-proxy() { anyframe-widget-execute-myaws-ssh $aws_profile_main $ssh_proxy_user $ssh_proxy_host_prod }
-function myaws-ssh-stg-with-proxy() { anyframe-widget-execute-myaws-ssh $aws_profile_main $ssh_proxy_user $ssh_proxy_host_stg }
-function myaws-ssh-dev-with-proxy() { anyframe-widget-execute-myaws-ssh $aws_profile_dev $ssh_proxy_user $ssh_proxy_host_dev }
+# cw-cli-toolsの設定
+CW_CLI_TOOLS_SSH_USER=morita
+zle -N cw-ssh-main-without-proxy
+zle -N cw-ssh-dev-without-proxy
+zle -N cw-ssh-prod-with-proxy
+zle -N cw-ssh-stg-with-proxy
+zle -N cw-ssh-dev-with-proxy
+bindkey '^rm' cw-ssh-main-without-proxy
+bindkey '^re' cw-ssh-dev-without-proxy
+bindkey '^rp' cw-ssh-prod-with-proxy
+bindkey '^rs' cw-ssh-stg-with-proxy
+bindkey '^rd' cw-ssh-dev-with-proxy
 
 # よく使うコマンドのエイリアス
 alias dosh="docker-compose run --rm --service-ports rails /bin/bash"
