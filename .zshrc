@@ -25,6 +25,8 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
 # gitのブランチ情報をプロンプトに表示
 zplug "olivierverdier/zsh-git-prompt", use:zshrc.sh
+# pecoなどで絞込
+zplug "mollifier/anyframe"
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -53,11 +55,7 @@ alias wdir="echo ~/work/tmp/`date '+%Y%m%d'`"
 alias mkdirw="mkdir `wdir`"
 alias cdw="cd `wdir`"
 
-# anyframeでpecoと連携
-fpath=($HOME/.zsh/anyframe(N-/) $fpath)
-autoload -Uz anyframe-init
-anyframe-init
-
+# anyframeの設定
 bindkey '^r' anyframe-widget-put-history
 
 bindkey '^rr' anyframe-widget-cdr
