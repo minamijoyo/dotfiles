@@ -21,6 +21,8 @@ source $ZPLUG_HOME/init.zsh
 zplug "zsh-users/zsh-completions"
 # コマンド履歴のサジェスト
 zplug "zsh-users/zsh-autosuggestions"
+# コマンドのシンタックスハイライト
+zplug "zsh-users/zsh-syntax-highlighting"
 # gitのブランチ情報をプロンプトに表示
 zplug "olivierverdier/zsh-git-prompt", use:zshrc.sh
 
