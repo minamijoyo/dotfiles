@@ -13,23 +13,29 @@ HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 
-# oh-my-zshの設定
-export ZSH=~/.oh-my-zsh
-ZSH_THEME=""
-plugins=(git)
-export DISABLE_AUTO_UPDATE="true"
-source $ZSH/oh-my-zsh.sh
+# zplugの設定
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+# 補完
+zplug "zsh-users/zsh-completions"
+# gitのブランチ情報をプロンプトに表示
+zplug "olivierverdier/zsh-git-prompt", use:zshrc.sh
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load --verbose
 
 # プロンプト設定
-# robbyrussellベースでカスタマイズ
 local ret_status="%(?:%{$fg[green]%}:%{$fg[red]%}%s)"
-PROMPT='[%{$fg[blue]%}%c%{$reset_color%}$(git_prompt_info)]${ret_status}$ %{$reset_color%}'
-
-ZSH_THEME_GIT_PROMPT_PREFIX="@%{$fg[red]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%} x%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-
+PROMPT='[%{$fg[cyan]%}%c%{$reset_color%}@$(git_super_status)]${ret_status}$ %{$reset_color%}'
+ZSH_THEME_GIT_PROMPT_PREFIX=""
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
 
 # cdrでディレクトリ履歴の管理
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
