@@ -31,7 +31,7 @@ if ! zplug check --verbose; then
     fi
 fi
 
-zplug load --verbose
+zplug load
 
 # プロンプト設定
 local ret_status="%(?:%{$fg[green]%}:%{$fg[red]%}%s)"
