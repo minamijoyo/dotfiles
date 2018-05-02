@@ -106,6 +106,43 @@ bindkey '^rp' pssh-prod-with-proxy
 bindkey '^rs' pssh-stg-with-proxy
 bindkey '^rd' pssh-dev-with-proxy
 
+aws_profile_main="main"
+aws_profile_dev="dev"
+ssh_proxy_user="morita"
+ssh_proxy_host_prod="main"
+ssh_proxy_host_stg="dev"
+ssh_proxy_host_dev="dev"
+
+function myaws-ssh-with-proxy() {
+  ssh_proxy_user=$1
+  ssh_proxy_host=$2
+  selected_host=$3
+  if [ -n "$selected_host" ]; then
+    if [ "$ssh_proxy_host" = "none" ]; then
+      buffer="ssh $ssh_proxy_user@$selected_host"
+    else
+      buffer="ssh -t $ssh_proxy_user@$ssh_proxy_host ssh devops@$selected_host"
+    fi
+    print -z $buffer
+  fi
+}
+
+function anyframe-widget-execute-myaws-ssh () {
+  aws_profile=$1
+  ssh_proxy_user=$2
+  ssh_proxy_host=$3
+  myaws ec2 ls --profile=$aws_profile --fields='InstanceId PublicIpAddress LaunchTime Tag:Name Tag:attached_asg' | sort -k4 \
+    | anyframe-selector-auto \
+    | cut -f2 \
+    | anyframe-action-execute myaws-ssh-with-proxy $ssh_proxy_user $ssh_proxy_host
+}
+
+function myaws-ssh-main() { anyframe-widget-execute-myaws-ssh $aws_profile_main $ssh_proxy_user "none" }
+function myaws-ssh-dev() { anyframe-widget-execute-myaws-ssh $aws_profile_dev $ssh_proxy_user "none" }
+function myaws-ssh-prod-with-proxy() { anyframe-widget-execute-myaws-ssh $aws_profile_main $ssh_proxy_user $ssh_proxy_host_prod }
+function myaws-ssh-stg-with-proxy() { anyframe-widget-execute-myaws-ssh $aws_profile_main $ssh_proxy_user $ssh_proxy_host_stg }
+function myaws-ssh-dev-with-proxy() { anyframe-widget-execute-myaws-ssh $aws_profile_dev $ssh_proxy_user $ssh_proxy_host_dev }
+
 # よく使うコマンドのエイリアス
 alias dosh="docker-compose run --rm --service-ports rails /bin/bash"
 alias wdir="echo ~/work/tmp/`date '+%Y%m%d'`"
