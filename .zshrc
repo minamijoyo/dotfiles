@@ -17,8 +17,10 @@ SAVEHIST=100000
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-# 補完
+# 標準的なコマンドの補完
 zplug "zsh-users/zsh-completions"
+# コマンド履歴のサジェスト
+zplug "zsh-users/zsh-autosuggestions"
 # gitのブランチ情報をプロンプトに表示
 zplug "olivierverdier/zsh-git-prompt", use:zshrc.sh
 
