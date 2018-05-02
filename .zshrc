@@ -13,6 +13,9 @@ HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 
+# Ctrl+S/Ctrl+Q によるフロー制御を使わないようにしてvimなどでキーバインドを使えるようにする
+setopt no_flow_control
+
 # zplugの設定
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
@@ -43,18 +46,6 @@ PROMPT='[%{$fg[cyan]%}%c%{$reset_color%}@$(git_super_status)]${ret_status}$ %{$r
 ZSH_THEME_GIT_PROMPT_PREFIX=""
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
 
-# cdrでディレクトリ履歴の管理
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-add-zsh-hook chpwd chpwd_recent_dirs
-zstyle ':chpwd:*' recent-dirs-max 1000
-zstyle ':chpwd:*' recent-dirs-default yes
-zstyle ':completion:*' recent-dirs-insert both
-
-# 今日日付の作業ディレクトリ作成と移動用のエイリアス
-alias wdir="echo ~/work/tmp/`date '+%Y%m%d'`"
-alias mkdirw="mkdir `wdir`"
-alias cdw="cd `wdir`"
-
 # anyframeの設定
 bindkey '^r' anyframe-widget-put-history
 
@@ -75,28 +66,12 @@ export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
 eval "$(goenv init -)"
 
-# javaの設定
-# export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-
-# aws-cliの補完
-# source /usr/local/bin/aws_zsh_completer.sh
-
-# gcloudの設定
-if [ -f $HOME/google-cloud-sdk/path.zsh.inc ]; then
-  source $HOME/google-cloud-sdk/path.zsh.inc
-fi
-if [ -f $HOME/google-cloud-sdk/completion.zsh.inc ]; then
-  source $HOME/google-cloud-sdk/completion.zsh.inc
-fi
-
 # terraformの設定
 autoload -U +X bashcompinit && bashcompinit
 complete -C $GOPATH/bin/terraform terraform
 complete -o nospace -C $GOPATH/bin/tfschema tfschema
 
-# cw-cli-toolsの設定
-export PATH=$PATH:~/src/github.com/crowdworksjp/cw-cli-tools/bin
-
+# myawsの設定
 EC2_SSH_USER=morita
 
 function pssh() {
@@ -131,52 +106,18 @@ bindkey '^rp' pssh-prod-with-proxy
 bindkey '^rs' pssh-stg-with-proxy
 bindkey '^rd' pssh-dev-with-proxy
 
-# ghqとpecoの連携
-function peco-ghq () {
-  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N peco-ghq
-bindkey '^rg' peco-ghq
-
-# hubとpecoの連携
-function peco-hub-pr () {
-    local pr=$(hub issue 2> /dev/null | grep 'pull' | peco --query "$LBUFFER" | sed -e 's/.*( \(.*\) )$/\1/')
-    if [ -n "$pr" ]; then
-        BUFFER="open ${pr}"
-        zle accept-line
-    fi
-    zle clear-screen
-}
-zle -N peco-hub-pr
-bindkey '^rh' peco-hub-pr
-
-# カレントリポジトリのgitconfigをminamijoyoに設定
-function set-git-config-minamijoyo() {
-  git config user.name "Masayuki Morita"
-  git config user.email "minamijoyo@gmail.com"
-}
-
-# ctagsの設定
+# よく使うコマンドのエイリアス
+alias dosh="docker-compose run --rm --service-ports rails /bin/bash"
+alias wdir="echo ~/work/tmp/`date '+%Y%m%d'`"
+alias mkdirw="mkdir `wdir`"
+alias cdw="cd `wdir`"
 alias ctags="`brew --prefix`/bin/ctags"
-
-# vimとclipboardの連携
 alias vim="reattach-to-user-namespace vim"
 
-# Ctrl+S/Ctrl+Q によるフロー制御を使わないようにしてvimなどでキーバインドを使えるようにする
-setopt no_flow_control
+# 環境変数の管理にdirenvを使う
+eval "$(direnv hook zsh)"
 
 # tmuxの自動起動
 if [ -z $TMUX ]; then
   tmux
 fi
-
-# 環境変数の管理にdirenvを使う
-eval "$(direnv hook zsh)"
-
-# よく使うコマンドのエイリアス
-alias dosh="docker-compose run --rm --service-ports rails /bin/bash"
