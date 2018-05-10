@@ -16,6 +16,10 @@ SAVEHIST=100000
 # Ctrl+S/Ctrl+Q によるフロー制御を使わないようにしてvimなどでキーバインドを使えるようにする
 setopt no_flow_control
 
+# 補完の有効化
+autoload -U compinit
+compinit
+
 # zplugの設定
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
