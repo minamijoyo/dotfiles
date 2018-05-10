@@ -31,6 +31,8 @@ ZPLUG_PROTOCOL=ssh
 zplug "zsh-users/zsh-completions"
 # コマンド履歴のサジェスト
 zplug "zsh-users/zsh-autosuggestions"
+# コマンド入力中の上下キーでの履歴の絞込
+zplug "zsh-users/zsh-history-substring-search", defer:3
 # コマンドのシンタックスハイライト
 zplug "zsh-users/zsh-syntax-highlighting"
 # gitのブランチ情報をプロンプトに表示
@@ -56,7 +58,11 @@ PROMPT='[%{$fg[cyan]%}%c%{$reset_color%}@$(git_super_status)]${ret_status}$ %{$r
 ZSH_THEME_GIT_PROMPT_PREFIX=""
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
 
-# anyframeの設定
+# zsh-users/zsh-history-substring-searchの設定
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# mollifier/anyframeの設定
 bindkey '^r' anyframe-widget-put-history
 
 bindkey '^rr' anyframe-widget-cdr
