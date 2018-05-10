@@ -34,7 +34,7 @@ zplug "olivierverdier/zsh-git-prompt", use:zshrc.sh
 # peco/percol/fzfなどでフィルタ絞込するためのフレームワーク
 zplug "mollifier/anyframe"
 # CWべんりスクリプト
-zplug "crowdworksjp/cw-cli-tools", at:use-myaws-instead-of-cw-ssh
+zplug "crowdworksjp/cw-cli-tools"
 # zplug "~/src/github.com/crowdworksjp/cw-cli-tools", from:local, at:use-myaws-instead-of-cw-ssh
 
 if ! zplug check --verbose; then
