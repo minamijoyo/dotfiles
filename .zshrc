@@ -34,7 +34,7 @@ zplug "zsh-users/zsh-autosuggestions"
 # コマンド入力中の上下キーでの履歴の絞込
 zplug "zsh-users/zsh-history-substring-search", defer:3
 # コマンドのシンタックスハイライト
-zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # gitのブランチ情報をプロンプトに表示
 zplug "olivierverdier/zsh-git-prompt", use:zshrc.sh
 # peco/percol/fzfなどでフィルタ絞込するためのフレームワーク
