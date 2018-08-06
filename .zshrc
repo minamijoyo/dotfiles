@@ -107,6 +107,7 @@ alias mkdirw="mkdir `wdir`"
 alias cdw="cd `wdir`"
 alias ctags="`brew --prefix`/bin/ctags"
 alias vim="reattach-to-user-namespace vim"
+alias tfp="terraform plan | tee -a /dev/stderr | landscape"
 
 # 環境変数の管理にdirenvを使う
 eval "$(direnv hook zsh)"
