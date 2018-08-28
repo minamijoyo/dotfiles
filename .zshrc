@@ -87,6 +87,9 @@ autoload -U +X bashcompinit && bashcompinit
 complete -C $GOPATH/bin/terraform terraform
 complete -o nospace -C $GOPATH/bin/tfschema tfschema
 
+# assume-role
+source $(which assume-role)
+
 # cw-cli-toolsの設定
 CW_CLI_TOOLS_SSH_USER=morita
 zle -N cw-ssh-main-without-proxy
