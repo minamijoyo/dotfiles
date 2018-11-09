@@ -16,6 +16,9 @@ SAVEHIST=100000
 # Ctrl+S/Ctrl+Q によるフロー制御を使わないようにしてvimなどでキーバインドを使えるようにする
 setopt no_flow_control
 
+# ターミナルの文字コードの設定
+export LC_CTYPE=ja_JP.UTF-8
+
 # 補完の有効化
 autoload -U compinit
 compinit
