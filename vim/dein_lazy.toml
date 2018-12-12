@@ -1,6 +1,10 @@
 ########################################
 # ruby
 ########################################
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+on_ft = ['ruby']
+
 # endを自動で挿入
 [[plugins]]
 repo = 'tpope/vim-endwise'
