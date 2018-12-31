@@ -1,11 +1,11 @@
-let g:LanguageClient_serverCommands = {
-  \ 'go': ['go-langserver', '-gocodecompletion'],
-  \ }
 let g:LanguageClient_autoStart = 1
+let g:LanguageClient_serverCommands = {
+  \ 'go': ['golsp'],
+  \ }
 
-" デバッグ用の設定
 " let g:LanguageClient_serverCommands = {
-"   \ 'go': ['go-langserver', '-gocodecompletion', '-trace'],
 "   \ 'terraform': ['tfcode'],
 "   \ }
-" let g:LanguageClient_loggingLevel = 'DEBUG'
+let g:LanguageClient_loggingLevel = 'INFO'
+let g:LanguageClient_loggingFile = '/tmp/LanguageClient.log'
+let g:LanguageClient_serverStderr = '/tmp/LanguageServer.log'
