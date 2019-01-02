@@ -1,6 +1,9 @@
 " Leaderをスペースにする
 let mapleader = "\<Space>"
 
+" runtimepathにカスタマイズ用の設定ディレクトリを追加
+set runtimepath+=$HOME/vim/after/
+
 """"""""""""""""""""""""""""""""""""""""
 " dein
 """"""""""""""""""""""""""""""""""""""""
@@ -136,6 +139,9 @@ set ignorecase
 set hlsearch
 " 検索結果のハイライトが重いときがあるので欲しいときだけトグルで有効化する
 nnoremap <Leader>L :set hlsearch!<CR>
+" スペルチェックから日本語を除外
+" スペルチェックはファイルタイプごとに設定するのでここでは有効化しない
+set spelllang=en,cjk
 
 " 小文字のみで検索したときに大文字小文字を無視する
 set smartcase
