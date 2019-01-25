@@ -131,6 +131,10 @@ hook_add = '''
     source $HOME/vim/plugins/vim-indent-guides.vim
 '''
 
+# インデントのレベルによって色を変える
+[[plugins]]
+repo = 'thiagoalessio/rainbow_levels.vim'
+
 ########################################
 # 入力
 ########################################
