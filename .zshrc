@@ -5,6 +5,11 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export EDITOR=nvim
 alias vi="nvim"
 
+# EDITOR変数がvim系だとtmuxがvi-mode用にbindkeyが上書きされるので
+# 行頭と行末の移動だけEmacs風のCtrl+A/Eでできるように戻す
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+
 # neovimのためにXDGの設定
 export XDG_CONFIG_HOME=$HOME/.config
 
