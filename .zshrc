@@ -119,6 +119,7 @@ alias cdw="cd `wdir`"
 alias ctags="`brew --prefix`/bin/ctags"
 alias vim="reattach-to-user-namespace vim"
 alias tfp="terraform plan | tee -a /dev/stderr | iconv -f utf-8 -t utf-8 -c | landscape"
+alias tfsb='tfschema resource browse'
 
 # 環境変数の管理にdirenvを使う
 eval "$(direnv hook zsh)"
