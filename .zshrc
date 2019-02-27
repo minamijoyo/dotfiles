@@ -17,6 +17,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
+setopt hist_ignore_dups
 
 # Ctrl+S/Ctrl+Q によるフロー制御を使わないようにしてvimなどでキーバインドを使えるようにする
 setopt no_flow_control
