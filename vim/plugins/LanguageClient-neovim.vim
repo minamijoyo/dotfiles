@@ -1,8 +1,20 @@
 let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {
-  \ 'go': ['golsp'],
-  \ }
+let g:LanguageClient_rootMarkers = {
+        \ 'go': ['.git', 'go.mod'],
+        \ }
 
+let g:LanguageClient_serverCommands = {
+    \ 'go': ['bingo'],
+    \ }
+
+" let g:LanguageClient_serverCommands = {
+"   \ 'go': ['gopls'],
+"   \ }
+
+" let g:LanguageClient_serverCommands = {
+"   \ 'go': ['go-langserver', '-gocodecompletion'],
+"   \ }
+"
 " let g:LanguageClient_serverCommands = {
 "   \ 'terraform': ['tfcode'],
 "   \ }
