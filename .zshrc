@@ -17,7 +17,12 @@ export XDG_CONFIG_HOME=$HOME/.config
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
-setopt hist_ignore_dups
+setopt HIST_IGNORE_DUPS           # 前と重複する行は記録しない
+setopt HIST_IGNORE_ALL_DUPS       # 履歴中の重複行をファイル記録前に無くす
+setopt HIST_IGNORE_SPACE          # 行頭がスペースのコマンドは記録しない
+setopt HIST_FIND_NO_DUPS          # 履歴検索中、(連続してなくとも)重複を飛ばす
+setopt HIST_REDUCE_BLANKS         # 余分な空白は詰めて記録
+setopt HIST_NO_STORE              # histroyコマンドは記録しない
 
 # Ctrl+S/Ctrl+Q によるフロー制御を使わないようにしてvimなどでキーバインドを使えるようにする
 setopt no_flow_control
