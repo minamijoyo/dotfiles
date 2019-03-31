@@ -106,6 +106,9 @@ complete -o nospace -C $GOPATH/bin/tfschema tfschema
 # assume-role
 source $(which assume-role)
 
+# nodeの設定
+eval "$(nodenv init -)"
+
 # cw-cli-toolsの設定
 CW_CLI_TOOLS_SSH_USER=morita
 zle -N cw-ssh-main-without-proxy
