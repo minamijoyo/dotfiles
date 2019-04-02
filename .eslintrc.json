@@ -1,6 +1,6 @@
 {
-    "extends": ["eslint:recommended"],
-    "plugins": ["node"],
+    "extends": ["eslint:recommended", "prettier"],
+    "plugins": ["node", "prettier"],
     "parserOptions": {
       "ecmaVersion":  2017
     },
@@ -8,5 +8,7 @@
       "node": true
     },
     "globals": {},
-    "rules": {}
+    "rules": {
+      "prettier/prettier": "error"
+    }
 }
