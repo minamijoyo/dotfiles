@@ -84,11 +84,3 @@ on_ft = ['scala']
 hook_add = '''
     source $HOME/vim/plugins/vim-scala.vim
 '''
-
-# 補完
-[[plugins]]
-repo = 'ensime/ensime-vim'
-on_ft = ['scala']
-hook_add = '''
-    source $HOME/vim/plugins/ensime-vim.vim
-'''
