@@ -8,6 +8,8 @@
     }
   },
   "yaml.schemas": {
-    "http://json.schemastore.org/circleciconfig": "/.circleci/config.yml"
+    "http://json.schemastore.org/circleciconfig": "/.circleci/config.yml",
+    "http://json.schemastore.org/eslintrc": "/.eslintrc.json",
+    "http://json.schemastore.org/package": "/.package.json"
   }
 }
