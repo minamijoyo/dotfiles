@@ -131,6 +131,8 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias vim="reattach-to-user-namespace vim"
 alias tfp="terraform plan | tee -a /dev/stderr | iconv -f utf-8 -t utf-8 -c | landscape"
 alias tfsb='tfschema resource browse'
+alias en='(){ aws --profile minamijoyo translate translate-text --source-language-code ja --target-language-code en --text $@ | jq -r .TranslatedText }'
+alias ja='(){ aws --profile minamijoyo translate translate-text --source-language-code en --target-language-code ja --text $@ | jq -r .TranslatedText }'
 
 # 環境変数の管理にdirenvを使う
 eval "$(direnv hook zsh)"
