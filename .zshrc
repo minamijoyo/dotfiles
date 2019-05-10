@@ -96,6 +96,7 @@ export PATH="$HOME/.rbenv/shims:$PATH"
 # goの設定
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
+export GOENV_DISABLE_GOPATH=1
 eval "$(goenv init -)"
 
 # terraformの設定
