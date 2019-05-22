@@ -23,6 +23,8 @@ setopt HIST_IGNORE_SPACE          # 行頭がスペースのコマンドは記�
 setopt HIST_FIND_NO_DUPS          # 履歴検索中、(連続してなくとも)重複を飛ばす
 setopt HIST_REDUCE_BLANKS         # 余分な空白は詰めて記録
 setopt HIST_NO_STORE              # histroyコマンドは記録しない
+setopt INC_APPEND_HISTORY         # 履歴をインクリメンタルに追加
+setopt SHARE_HISTORY              # 他のセッションの履歴をリアルタイムで共有する
 
 # Ctrl+S/Ctrl+Q によるフロー制御を使わないようにしてvimなどでキーバインドを使えるようにする
 setopt no_flow_control
