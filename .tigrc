@@ -3,3 +3,6 @@ set main-view = id date author commit-title:graph=yes,refs=yes
 # 選択したコミットからrebaseを開始する
 bind main    <Ctrl-r> !git rebase -i %(commit)^
 bind diff    <Ctrl-r> !git rebase -i %(commit)^
+# 選択したコミットをクリップボードにコピー
+bind main    @ @bash -c "echo -n '%(commit)' | pbcopy"
+bind diff    @ @bash -c "echo -n '%(commit)' | pbcopy"
