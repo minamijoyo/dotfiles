@@ -18,6 +18,7 @@
   ci-status = !circleci-cli recent -l 5 -b $(git symbolic-ref --short HEAD)
   ci-open = !open https://circleci.com/gh/$(git rev-parse --show-toplevel | rev | cut -f1,2 -d '/' | rev)/tree/$(git symbolic-ref --short HEAD)
   local = !git config --local user.name 'Masayuki Morita' && git config --local user.email 'minamijoyo@gmail.com'
+  del-merged = !git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %
 [core]
   editor = /usr/local/bin/nvim
   excludesfile = ~/.gitignore_global
