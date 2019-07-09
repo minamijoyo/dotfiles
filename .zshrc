@@ -126,7 +126,7 @@ bindkey '^rs' cw-ssh-stg-with-proxy
 bindkey '^rd' cw-ssh-dev-with-proxy
 
 # よく使うコマンドのエイリアス
-alias dosh="docker-compose run --rm --service-ports -e COLUMNS=$(tput cols) -e LINES=$(tput lines) rails /bin/bash"
+alias dosh="docker-compose run --rm --name dosh --service-ports -e COLUMNS=$(tput cols) -e LINES=$(tput lines) rails /bin/bash"
 alias wdir="echo ~/work/tmp/`date '+%Y%m%d'`"
 alias mkdirw="mkdir `wdir`"
 alias cdw="cd `wdir`"
