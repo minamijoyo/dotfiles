@@ -142,7 +142,13 @@ repo = 'thiagoalessio/rainbow_levels.vim'
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 hook_add = '''
+    let g:deoplete#omni_patterns = {}
+    call deoplete#custom#option('omni_patterns', {
+    \ 'complete_method': 'omnifunc',
+    \ 'terraform': '[^ *\t"{=$]\w*',
+    \})
     let g:deoplete#enable_at_startup = 1
+    call deoplete#initialize()
 '''
 
 # コメントアウト
