@@ -135,6 +135,7 @@ alias dosh="docker-compose run --rm --name dosh --service-ports -e COLUMNS=$(tpu
 alias wdir="echo ~/work/tmp/`date '+%Y%m%d'`"
 alias mkdirw="mkdir `wdir`"
 alias cdw="cd `wdir`"
+alias cdtop="cd $(git rev-parse --show-toplevel)"
 alias ctags="`brew --prefix`/bin/ctags"
 alias vim="reattach-to-user-namespace vim"
 alias tfi="terraform init"
