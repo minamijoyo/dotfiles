@@ -144,8 +144,8 @@ alias tfip="terraform init && terraform plan"
 alias tfsb='tfschema resource browse'
 alias en='(){ aws --profile minamijoyo translate translate-text --source-language-code ja --target-language-code en --text $@ | jq -r .TranslatedText }'
 alias ja='(){ aws --profile minamijoyo translate translate-text --source-language-code en --target-language-code ja --text $@ | jq -r .TranslatedText }'
-alias ave='(){ aws-vault exec --assume-role-ttl=1h $@ }'
-alias avl='(){ open -na "Google Chrome" --args --incognito --user-data-dir=$HOME/Library/Application\ Support/Google/Chrome/aws-vault/$@  $(aws-vault login  --assume-role-ttl=1h $@ --stdout) }'
+alias ave='(){ aws-vault exec --duration=1h $@ }'
+alias avl='(){ open -na "Google Chrome" --args --incognito --user-data-dir=$HOME/Library/Application\ Support/Google/Chrome/aws-vault/$@  $(aws-vault login --duration=1h $@ --stdout) }'
 alias dr="direnv reload"
 
 # 環境変数の管理にdirenvを使う
