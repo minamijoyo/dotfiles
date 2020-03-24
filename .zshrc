@@ -106,9 +106,6 @@ autoload -U +X bashcompinit && bashcompinit
 complete -C $GOPATH/bin/terraform terraform
 complete -o nospace -C $GOPATH/bin/tfschema tfschema
 
-# assume-role
-source $(which assume-role)
-
 # nodeの設定
 eval "$(nodenv init -)"
 
