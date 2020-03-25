@@ -78,14 +78,6 @@ hook_add = '''
     let g:terraform_fmt_on_save = 1
 '''
 
-# 補完
-[[plugins]]
-repo = 'juliosueiras/vim-terraform-completion'
-on_ft = ['terraform']
-hook_add = '''
-    let g:terraform_registry_module_completion = 0
-'''
-
 ########################################
 # scala
 ########################################

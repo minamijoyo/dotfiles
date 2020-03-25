@@ -150,6 +150,10 @@ hook_add = '''
     call deoplete#initialize()
 '''
 
+# deopleteでvim-lspの補完を使うのに必要
+[[plugins]]
+repo = 'lighttiger2505/deoplete-vim-lsp'
+
 # コメントアウト
 [[plugins]]
 repo = "tyru/caw.vim.git"
@@ -172,9 +176,19 @@ hook_add = '''
 [[plugins]]
 repo = 'tpope/vim-surround'
 
+# vim/neovimの非同期ジョブの互換ライブラリ(vim-lspの依存で必要)
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+
 # LSP
 [[plugins]]
-repo = 'neoclide/coc.nvim'
+repo = 'prabirshrestha/vim-lsp'
+
+# vim-lspの自動設定
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+merged = 0
+
 ########################################
 # コマンド実行
 ########################################
