@@ -140,19 +140,11 @@ repo = 'thiagoalessio/rainbow_levels.vim'
 ########################################
 # 補完
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = '''
-    let g:deoplete#omni_patterns = {}
-    call deoplete#custom#option('omni_patterns', {
-    \ 'complete_method': 'omnifunc',
-    \})
-    let g:deoplete#enable_at_startup = 1
-    call deoplete#initialize()
-'''
+repo = 'prabirshrestha/asyncomplete.vim'
 
-# deopleteでvim-lspの補完を使うのに必要
+# asyncompleteでvim-lspの補完を使うのに必要
 [[plugins]]
-repo = 'lighttiger2505/deoplete-vim-lsp'
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
 
 # コメントアウト
 [[plugins]]
