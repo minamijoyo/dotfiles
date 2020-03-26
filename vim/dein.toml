@@ -175,6 +175,9 @@ repo = 'prabirshrestha/async.vim'
 # LSP
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
+hook_add = '''
+    let g:lsp_diagnostics_enabled = 0
+'''
 
 # vim-lspの自動設定
 [[plugins]]
