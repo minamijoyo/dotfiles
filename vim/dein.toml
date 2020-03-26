@@ -99,8 +99,8 @@ repo = 'vim-airline/vim-airline-themes'
 repo = 'nanotech/jellybeans.vim'
 
 # カラースキーマの選択
-[[plugins]]
-repo = 'ujihisa/unite-colorscheme'
+# [[plugins]]
+# repo = 'ujihisa/unite-colorscheme'
 
 # 色情報が入ったファイルを開いた場合は表示を色付けする
 [[plugins]]
