@@ -134,6 +134,9 @@ repo = 'thiagoalessio/rainbow_levels.vim'
 # 補完
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
+hook_add = '''
+    source $HOME/vim/plugins/asyncomplete.vim
+'''
 
 # asyncompleteのソースにlspを追加
 [[plugins]]
