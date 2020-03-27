@@ -135,16 +135,27 @@ repo = 'thiagoalessio/rainbow_levels.vim'
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
 
-# asyncompleteでvim-lspの補完を使うのに必要
+# asyncompleteのソースにlspを追加
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
+
+# asyncompleteのソースにbufferを追加
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-buffer.vim'
+hook_add = '''
+    source $HOME/vim/plugins/asyncomplete-buffer.vim
+'''
+
+# asyncompleteのソースにfileを追加
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-file.vim'
+hook_add = '''
+    source $HOME/vim/plugins/asyncomplete-file.vim
+'''
 
 # コメントアウト
 [[plugins]]
 repo = "tyru/caw.vim.git"
-hook_add = '''
-    source $HOME/vim/plugins/caw.vim
-'''
 
 # オペレータの拡張
 [[plugins]]
