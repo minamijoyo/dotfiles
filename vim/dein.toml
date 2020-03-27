@@ -188,6 +188,13 @@ hook_add = '''
 repo = 'mattn/vim-lsp-settings'
 merged = 0
 
+# VSCode(LSP)スニペット形式サポート
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+
+# vim-vsnipをvim-lspに組み込むのに必要
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip-integ'
 ########################################
 # コマンド実行
 ########################################
