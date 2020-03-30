@@ -191,13 +191,12 @@ hook_add = '''
 repo = 'mattn/vim-lsp-settings'
 merged = 0
 
-# VSCode(LSP)スニペット形式サポート
+# テンプレート
 [[plugins]]
-repo = 'hrsh7th/vim-vsnip'
-
-# vim-vsnipをvim-lspに組み込むのに必要
-[[plugins]]
-repo = 'hrsh7th/vim-vsnip-integ'
+repo = 'mattn/vim-sonictemplate'
+hook_add = '''
+    let g:sonictemplate_vim_template_dir = '$HOME/vim/template'
+'''
 ########################################
 # コマンド実行
 ########################################
