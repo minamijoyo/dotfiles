@@ -131,6 +131,25 @@ repo = 'thiagoalessio/rainbow_levels.vim'
 ########################################
 # 入力
 ########################################
+# コメントアウト
+[[plugins]]
+repo = "tyru/caw.vim.git"
+
+# オペレータの拡張
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+# スネークケースとキャメルケースの入れ替え
+[[plugins]]
+repo = 'tyru/operator-camelize.vim'
+hook_add = '''
+    source $HOME/vim/plugins/operator-camelize.vim
+'''
+
+# 括弧の操作
+[[plugins]]
+repo = 'tpope/vim-surround'
+
 # 補完
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
@@ -155,25 +174,6 @@ repo = 'prabirshrestha/asyncomplete-file.vim'
 hook_add = '''
     source $HOME/vim/plugins/asyncomplete-file.vim
 '''
-
-# コメントアウト
-[[plugins]]
-repo = "tyru/caw.vim.git"
-
-# オペレータの拡張
-[[plugins]]
-repo = 'kana/vim-operator-user'
-
-# スネークケースとキャメルケースの入れ替え
-[[plugins]]
-repo = 'tyru/operator-camelize.vim'
-hook_add = '''
-    source $HOME/vim/plugins/operator-camelize.vim
-'''
-
-# 括弧の操作
-[[plugins]]
-repo = 'tpope/vim-surround'
 
 # vim/neovimの非同期ジョブの互換ライブラリ(vim-lspの依存で必要)
 [[plugins]]
