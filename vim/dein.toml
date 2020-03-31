@@ -191,11 +191,25 @@ hook_add = '''
 repo = 'mattn/vim-lsp-settings'
 merged = 0
 
-# テンプレート
+# スニペット
 [[plugins]]
-repo = 'mattn/vim-sonictemplate'
+repo = 'SirVer/ultisnips'
 hook_add = '''
-    let g:sonictemplate_vim_template_dir = '$HOME/vim/template'
+    let g:UltiSnipsSnippetDirectories = ["UltiSnips", $HOME.'/vim/template/UltiSnips']
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpForwardTrigger = "<tab>"
+    let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+'''
+
+# スニペット集
+[[plugins]]
+repo = 'honza/vim-snippets'
+
+# asyncompleteのソースにultisnipsを追加
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-ultisnips.vim'
+hook_add = '''
+    source $HOME/vim/plugins/asyncomplete-ultisnips.vim
 '''
 ########################################
 # コマンド実行
