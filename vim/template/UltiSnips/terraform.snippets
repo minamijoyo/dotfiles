@@ -1,6 +1,57 @@
-# resource
-snippet resource
+snippet resource "resource definition" b
 resource "${1:type}" "${2:name}" {
-  ${3}
+  $3
+}
+endsnippet
+
+snippet data "data source definition" b
+data "${1:type}" "${2:name}" {
+  $3
+}
+endsnippet
+
+snippet module "module call" b
+module "${1:name}" {
+  source = "${2}"
+}
+endsnippet
+
+snippet provider "provider settings" b
+provider "${1:name}" {
+}
+endsnippet
+
+snippet variable "input variable definition" b
+variable "${1:name}" {
+  type        = ${2:type(string|number|bool|list|set|map|object|tuple)}
+  default     = ${3:default}
+  description = "${4:description}"
+}
+endsnippet
+
+snippet output "output value definition" b
+output "${1:name}" {
+  value       = "${2:value}"
+  description = "${3:description}"
+}
+endsnippet
+
+snippet locals "local values definition" b
+locals {
+  ${1:name} = ${2:value}
+}
+endsnippet
+
+snippet terraform "terraform settings" b
+terraform {
+  required_version = "${1:terraform_version}"
+
+  required_providers {
+    "${2:provider_name}" = "${3:provider_version}"
+  }
+
+  backend "${4:backend_type}" {
+    $5
+  }
 }
 endsnippet
