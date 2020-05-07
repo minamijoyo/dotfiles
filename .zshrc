@@ -2,8 +2,8 @@
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # デフォルトのエディタ
-export EDITOR=nvim
-alias vi="reattach-to-user-namespace nvim"
+export EDITOR=vim
+alias vi="reattach-to-user-namespace vim"
 
 # EDITOR変数がvim系だとtmuxがvi-mode用にbindkeyが上書きされるので
 # 行頭と行末の移動だけEmacs風のCtrl+A/Eでできるように戻す
