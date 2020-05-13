@@ -1,6 +1,5 @@
-nnoremap [go] <Nop>
-nmap <Leader>o [go]
-nnoremap <silent>[go]o :GoRun<CR>
 let g:go_fmt_command = "goimports"
-" goplsはvim-lsp経由で使うのでvim-goは無効化しておく
-let g:go_gopls_enabled = 0
+" 可能な限りvim-lspに寄せたいが、
+" デフォルトで定義されるキーマッピングがぶつかるので無効化する
+" gopls自体は無効化しない。
+let g:go_def_mapping_enabled = 0
