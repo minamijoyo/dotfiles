@@ -93,7 +93,7 @@ bindkey '^rb' anyframe-widget-checkout-git-branch
 bindkey '^r^b' anyframe-widget-checkout-git-branch
 
 # rbenvの設定
-export PATH="$HOME/.rbenv/shims:$PATH"
+# export PATH="$HOME/.rbenv/shims:$PATH"
 
 # goの設定
 export GOPATH=$HOME
@@ -107,7 +107,7 @@ complete -C $GOPATH/bin/terraform terraform
 complete -o nospace -C $GOPATH/bin/tfschema tfschema
 
 # nodeの設定
-eval "$(nodenv init -)"
+# eval "$(nodenv init -)"
 
 # cw-cli-toolsの設定
 CW_CLI_TOOLS_SSH_USER=morita
