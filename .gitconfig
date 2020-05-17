@@ -21,7 +21,7 @@
   local = !git config --local user.name 'Masayuki Morita' && git config --local user.email 'minamijoyo@gmail.com'
   del-merged = !git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %
 [core]
-  editor = /usr/local/bin/nvim
+  editor = /usr/local/bin/vim
   excludesfile = ~/.gitignore_global
 [ghq]
   root = ~/src
