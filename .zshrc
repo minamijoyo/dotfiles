@@ -93,7 +93,7 @@ bindkey '^rb' anyframe-widget-checkout-git-branch
 bindkey '^r^b' anyframe-widget-checkout-git-branch
 
 # rbenvの設定
-# export PATH="$HOME/.rbenv/shims:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
 
 # goの設定
 export GOPATH=$HOME
