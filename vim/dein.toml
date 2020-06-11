@@ -190,6 +190,9 @@ hook_add = '''
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
 merged = 0
+hook_add = '''
+    source $HOME/vim/plugins/vim-lsp-settings.vim
+'''
 
 # スニペット
 [[plugins]]
