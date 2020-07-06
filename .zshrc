@@ -129,10 +129,12 @@ bindkey '^rw' cw-aws-ssm-dev
 
 # よく使うコマンドのエイリアス
 alias dosh="docker-compose run --rm --name dosh --service-ports -e COLUMNS=$(tput cols) -e LINES=$(tput lines) rails /bin/bash"
+alias dc="docker-compose"
 alias wdir="echo ~/work/tmp/`date '+%Y%m%d'`"
 alias mkdirw="mkdir `wdir`"
 alias cdw="cd `wdir`"
 alias cdroot='(){ cd `git rev-parse --show-toplevel` }'
+alias cddiff='cd $(git --no-pager diff --name-only --no-color | xargs dirname | sort -u | head -1)'
 alias ctags="`brew --prefix`/bin/ctags"
 alias vim="reattach-to-user-namespace vim"
 alias tfi="terraform init"
