@@ -16,6 +16,7 @@
   pr = !hub pull-request
   gh-show = "!f(){ open https://github.com/$(git rev-parse --show-toplevel | rev | cut -f1,2 -d '/' | rev)/commit/$1;};f"
   release = "!f(){ git tag -a v$1 -m v$1 && git push origin v$1; };f"
+  cbpr = "!f(){ git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1; };f"
   ci-status = !circleci-cli recent -l 5 -b $(git symbolic-ref --short HEAD)
   ci-open = !open https://circleci.com/gh/$(git rev-parse --show-toplevel | rev | cut -f1,2 -d '/' | rev)/tree/$(git symbolic-ref --short HEAD)
   local = !git config --local user.name 'Masayuki Morita' && git config --local user.email 'minamijoyo@gmail.com'
