@@ -146,7 +146,7 @@ alias ja='(){ aws --profile minamijoyo translate translate-text --source-languag
 alias ave='(){ aws-vault exec --duration=4h $@ }'
 alias avl='(){ open -na "Google Chrome" --args --incognito --user-data-dir=$HOME/Library/Application\ Support/Google/Chrome/aws-vault/$@  $(aws-vault login --duration=4h $@ --stdout) }'
 alias dr="direnv reload"
-alias daws='(){ echo "source_up; use aws_profile $@" > .envrc && direnv allow }'
+alias diraws='(){ echo "source_up; use aws_profile $@" > .envrc && direnv allow }'
 
 # 環境変数の管理にdirenvを使う
 eval "$(direnv hook zsh)"
