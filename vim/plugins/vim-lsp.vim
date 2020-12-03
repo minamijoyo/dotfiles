@@ -10,7 +10,7 @@ nnoremap <silent> <C-]> :LspDefinition<CR>
 if executable('terraform-ls')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'terraform-ls',
-        \ 'cmd': {server_info->['terraform-ls', 'serve', '-tf-exec=/usr/local/bin/direnv-terraform']},
+        \ 'cmd': {server_info->['terraform-ls', 'serve']},
         \ 'whitelist': ['terraform'],
         \ })
 endif
