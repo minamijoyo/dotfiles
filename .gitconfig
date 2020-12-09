@@ -6,6 +6,8 @@
 [alias]
   st = status
   co = checkout
+  cd = !git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+  rd = !git rebase $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
   cb = checkout -b
   br = branch -v --sort=authordate
   pH = push origin HEAD
