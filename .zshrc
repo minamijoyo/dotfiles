@@ -109,24 +109,6 @@ complete -o nospace -C $GOPATH/bin/tfschema tfschema
 # nodeの設定
 # eval "$(nodenv init -)"
 
-# cw-cli-toolsの設定
-CW_CLI_TOOLS_SSH_USER=morita
-CW_CLI_TOOLS_AWS_AUTH_TYPE=assumeRole
-zle -N cw-ssh-main-without-proxy
-zle -N cw-ssh-dev-without-proxy
-zle -N cw-ssh-prod-with-proxy
-zle -N cw-ssh-stg-with-proxy
-zle -N cw-ssh-dev-with-proxy
-zle -N cw-aws-ssm-main
-zle -N cw-aws-ssm-dev
-bindkey '^rm' cw-ssh-main-without-proxy
-bindkey '^re' cw-ssh-dev-without-proxy
-bindkey '^rp' cw-ssh-prod-with-proxy
-bindkey '^rs' cw-ssh-stg-with-proxy
-bindkey '^rd' cw-ssh-dev-with-proxy
-bindkey '^ra' cw-aws-ssm-main
-bindkey '^rw' cw-aws-ssm-dev
-
 # よく使うコマンドのエイリアス
 alias dosh="docker-compose run --rm --name dosh --service-ports -e COLUMNS=$(tput cols) -e LINES=$(tput lines) rails /bin/bash"
 alias dc="docker-compose"
