@@ -3,3 +3,5 @@ Session.vim
 .sbt/0.13/plugins/project
 .sbt/0.13/plugins/target
 .config/dlv/
+.config/gh/
+.config/pgcli/
