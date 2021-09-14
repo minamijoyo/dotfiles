@@ -3,7 +3,7 @@ vnoremap [fugitive] <Nop>
 nmap <Leader>g [fugitive]
 vmap <Leader>g [fugitive]
 nnoremap [fugitive]d :<C-u>Gdiff<Enter>
-nnoremap [fugitive]g :<C-u>Gstatus<Enter>
+nnoremap [fugitive]g :<C-u>Git<Enter>
 nnoremap [fugitive]c :<C-u>Gcommit -v<Enter>
 nnoremap [fugitive]a :<C-u>Gcommit -v --amend<Enter>
 nnoremap [fugitive]b :<C-u>Gblame<Enter>
