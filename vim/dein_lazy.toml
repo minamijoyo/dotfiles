@@ -81,3 +81,9 @@ on_ft = ['scala']
 hook_add = '''
     source $HOME/vim/plugins/vim-scala.vim
 '''
+
+########################################
+# sql
+########################################
+[[plugins]]
+repo = 'mattn/vim-sqlfmt'
