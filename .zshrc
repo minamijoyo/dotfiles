@@ -109,6 +109,10 @@ complete -o nospace -C $GOPATH/bin/tfschema tfschema
 # nodeの設定
 # eval "$(nodenv init -)"
 
+# sdkmanの設定
+# export SDKMAN_DIR="$HOME/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
 # よく使うコマンドのエイリアス
 alias dosh="docker-compose run --rm --name dosh --service-ports -e COLUMNS=$(tput cols) -e LINES=$(tput lines) rails /bin/bash"
 alias dc="docker-compose"
