@@ -120,19 +120,11 @@ alias wdir="echo ~/work/tmp/`date '+%Y%m%d'`"
 alias mkdirw="mkdir `wdir`"
 alias cdw="cd `wdir`"
 alias cdroot='(){ cd `git rev-parse --show-toplevel` }'
-alias cddiff='cd $(git --no-pager diff --name-only --no-color | xargs dirname | sort -u | head -1)'
-alias ctags="`brew --prefix`/bin/ctags"
 alias vim="reattach-to-user-namespace vim"
-alias tfi="terraform init"
 alias tfp="terraform plan"
 alias tfip="terraform init && terraform plan"
-alias tfsb='tfschema resource browse'
-alias en='(){ aws --profile minamijoyo translate translate-text --source-language-code ja --target-language-code en --text $@ | jq -r .TranslatedText }'
-alias ja='(){ aws --profile minamijoyo translate translate-text --source-language-code en --target-language-code ja --text $@ | jq -r .TranslatedText }'
 alias ave='(){ aws-vault exec --duration=4h $@ }'
 alias avl='(){ open -na "Google Chrome" --args --incognito --user-data-dir=$HOME/Library/Application\ Support/Google/Chrome/aws-vault/$@  $(aws-vault login --duration=4h $@ --stdout) }'
-alias dr="direnv reload"
-alias diraws='(){ echo "source_up; use aws_profile $@" > .envrc && direnv allow }'
 
 # 環境変数の管理にdirenvを使う
 eval "$(direnv hook zsh)"
