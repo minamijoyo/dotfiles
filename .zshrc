@@ -55,8 +55,6 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "olivierverdier/zsh-git-prompt", use:zshrc.sh
 # peco/percol/fzfなどでフィルタ絞込するためのフレームワーク
 zplug "mollifier/anyframe"
-# 絵文字の補完
-zplug "b4b4r07/emoji-cli"
 # CWべんりスクリプト
 zplug "crowdworksjp/cw-cli-tools"
 # zplug "~/src/github.com/crowdworksjp/cw-cli-tools", from:local, at:use-aws-vault
