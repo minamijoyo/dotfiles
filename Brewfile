@@ -17,6 +17,7 @@ brew "git"
 brew "gnu-sed"
 brew "goenv", args: ["HEAD"]
 brew "jq"
+brew "mas"
 brew "peco"
 brew "reattach-to-user-namespace"
 brew "shellcheck"
@@ -37,3 +38,7 @@ brew "minamijoyo/tfmigrate"
 brew "minamijoyo/tfschema/tfschema"
 
 cask "aws-vault"
+
+mas "Keynote", id: 409183694
+mas "Monosnap", id: 540348655
+mas "Slack", id: 803453959
