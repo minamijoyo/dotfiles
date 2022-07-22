@@ -1,5 +1,5 @@
 # デフォルトパス
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # デフォルトのエディタ
 export EDITOR=vim
@@ -37,7 +37,7 @@ autoload -U compinit
 compinit
 
 # zplugの設定
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME="$(brew --prefix)/opt/zplug"
 source $ZPLUG_HOME/init.zsh
 
 # プライベートリポジトリのプラグインも使うのでzplugのgitをssh経由にする

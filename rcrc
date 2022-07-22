@@ -1,2 +1,2 @@
-EXCLUDES="*.md"
+EXCLUDES="*.md *.sh Brewfile.lock.json"
 DOTFILES_DIRS="$HOME/src/github.com/minamijoyo/dotfiles"

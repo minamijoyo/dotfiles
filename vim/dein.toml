@@ -11,7 +11,7 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'Shougo/unite.vim'
 hook_add = '''
-    source $HOME/vim/plugins/unite.vim
+    source $HOME/.vim/plugins/unite.vim
 '''
 
 # 最近開いたファイル
@@ -48,7 +48,7 @@ repo = 'thinca/vim-qfreplace'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 hook_add = '''
-    source $HOME/vim/plugins/vim-fugitive.vim
+    source $HOME/.vim/plugins/vim-fugitive.vim
 '''
 
 # fugitiveでremoteにssh://が使えるようにrhubarbも入れる
@@ -66,7 +66,7 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
-    source $HOME/vim/plugins/nerdtree.vim
+    source $HOME/.vim/plugins/nerdtree.vim
 '''
 
 ########################################
@@ -113,7 +113,7 @@ repo = 'bronson/vim-trailing-whitespace'
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 hook_add = '''
-    source $HOME/vim/plugins/vim-indent-guides.vim
+    source $HOME/.vim/plugins/vim-indent-guides.vim
 '''
 
 # インデントのレベルによって色を変える
@@ -135,7 +135,7 @@ repo = 'kana/vim-operator-user'
 [[plugins]]
 repo = 'tyru/operator-camelize.vim'
 hook_add = '''
-    source $HOME/vim/plugins/operator-camelize.vim
+    source $HOME/.vim/plugins/operator-camelize.vim
 '''
 
 # 括弧の操作
@@ -146,7 +146,7 @@ repo = 'tpope/vim-surround'
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
 hook_add = '''
-    source $HOME/vim/plugins/asyncomplete.vim
+    source $HOME/.vim/plugins/asyncomplete.vim
 '''
 
 # asyncompleteのソースにlspを追加
@@ -157,14 +157,14 @@ repo = 'prabirshrestha/asyncomplete-lsp.vim'
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-buffer.vim'
 hook_add = '''
-    source $HOME/vim/plugins/asyncomplete-buffer.vim
+    source $HOME/.vim/plugins/asyncomplete-buffer.vim
 '''
 
 # asyncompleteのソースにfileを追加
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-file.vim'
 hook_add = '''
-    source $HOME/vim/plugins/asyncomplete-file.vim
+    source $HOME/.vim/plugins/asyncomplete-file.vim
 '''
 
 # vim/neovimの非同期ジョブの互換ライブラリ(vim-lspの依存で必要)
@@ -175,7 +175,7 @@ repo = 'prabirshrestha/async.vim'
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 hook_add = '''
-    source $HOME/vim/plugins/vim-lsp.vim
+    source $HOME/.vim/plugins/vim-lsp.vim
 '''
 
 # vim-lspの自動設定
@@ -183,7 +183,7 @@ hook_add = '''
 repo = 'mattn/vim-lsp-settings'
 merged = 0
 hook_add = '''
-    source $HOME/vim/plugins/vim-lsp-settings.vim
+    source $HOME/.vim/plugins/vim-lsp-settings.vim
 '''
 
 # スニペット
@@ -204,7 +204,7 @@ repo = 'honza/vim-snippets'
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-ultisnips.vim'
 hook_add = '''
-    source $HOME/vim/plugins/asyncomplete-ultisnips.vim
+    source $HOME/.vim/plugins/asyncomplete-ultisnips.vim
 '''
 ########################################
 # コマンド実行
@@ -213,7 +213,7 @@ hook_add = '''
 [[plugins]]
 repo = 'w0rp/ale'
 hook_add = '''
-    source $HOME/vim/plugins/ale.vim
+    source $HOME/.vim/plugins/ale.vim
 '''
 
 # コマンドの非同期実行
@@ -225,7 +225,7 @@ build = 'make'
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 hook_add = '''
-    source $HOME/vim/plugins/vim-quickrun.vim
+    source $HOME/.vim/plugins/vim-quickrun.vim
 '''
 
 ########################################
@@ -235,7 +235,7 @@ hook_add = '''
 [[plugins]]
 repo = 'glidenote/memolist.vim'
 hook_add = '''
-    source $HOME/vim/plugins/memolist.vim
+    source $HOME/.vim/plugins/memolist.vim
 '''
 
 ########################################
@@ -246,5 +246,5 @@ hook_add = '''
 [[plugins]]
 repo = 'vim-scripts/open-browser.vim'
 hook_add = '''
-    source $HOME/vim/plugins/open-browser.vim
+    source $HOME/.vim/plugins/open-browser.vim
 '''

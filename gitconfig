@@ -24,7 +24,7 @@
   del-merged = !git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %
 [core]
   editor = /usr/local/bin/vim
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore
 [ghq]
   root = ~/src
 [push]

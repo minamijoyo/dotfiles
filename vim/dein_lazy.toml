@@ -30,7 +30,7 @@ on_ft = ['ruby']
 repo = 'basyura/unite-rails'
 on_ft = ['ruby']
 hook_add = '''
-    source $HOME/vim/plugins/unite-rails.vim
+    source $HOME/.vim/plugins/unite-rails.vim
 '''
 
 ########################################
@@ -59,7 +59,7 @@ on_ft = ['typescript']
 repo = 'fatih/vim-go'
 on_ft = ['go']
 hook_add = '''
-    source $HOME/vim/plugins/vim-go.vim
+    source $HOME/.vim/plugins/vim-go.vim
 '''
 
 ########################################
