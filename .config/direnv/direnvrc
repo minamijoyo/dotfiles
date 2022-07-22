@@ -1,5 +1,0 @@
-use_aws_profile(){
-  profile_name=$1
-  export $(aws-vault exec --duration=4h $profile_name -- env | grep AWS_ | grep -v AWS_VAULT
-  )
-}
