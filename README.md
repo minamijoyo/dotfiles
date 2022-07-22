@@ -2,7 +2,7 @@
 
 ```
 $ xcode-select --install
-$ git clone https://github.com/minamijoyo/dotfiles $HOME/src/github.com/minamijoyo/dotfiles
+$ git clone git@github.com:minamijoyo/dotfiles.git $HOME/src/github.com/minamijoyo/dotfiles
 $ cd $HOME/src/github.com/minamijoyo/dotfiles
 $ ./setup.sh
 ```
