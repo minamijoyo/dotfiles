@@ -35,7 +35,7 @@ brew "zsh-completions"
 brew "minamijoyo/hcledit/hcledit"
 brew "minamijoyo/myaws/myaws"
 brew "minamijoyo/tfedit/tfedit"
-brew "minamijoyo/tfmigrate"
+brew "minamijoyo/tfmigrate/tfmigrate"
 brew "minamijoyo/tfschema/tfschema"
 
 cask "1password"
