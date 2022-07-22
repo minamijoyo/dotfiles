@@ -59,14 +59,6 @@ repo = 'tpope/vim-rhubarb'
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 
-# コミットログ確認
-[[plugins]]
-repo = 'cohama/agit.vim'
-
-# githubを開く
-[[plugins]]
-repo = 'tonchis/vim-to-github'
-
 ########################################
 # ファイラ
 ########################################
