@@ -11,4 +11,5 @@ xcode-select --install > /dev/null
 # Install package
 brew bundle --file Brewfile
 
-
+# Create symlink
+rcup -v -d .

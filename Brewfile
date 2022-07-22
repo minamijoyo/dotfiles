@@ -19,6 +19,7 @@ brew "goenv", args: ["HEAD"]
 brew "jq"
 brew "mas"
 brew "peco"
+brew "rcm"
 brew "reattach-to-user-namespace"
 brew "shellcheck"
 brew "tfenv"
