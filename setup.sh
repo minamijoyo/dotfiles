@@ -10,4 +10,4 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew bundle --file Brewfile
 
 # Create symlink
-rcup -v -d .
+RCRC=rcrc rcup -v
