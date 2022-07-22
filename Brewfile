@@ -37,8 +37,18 @@ brew "minamijoyo/tfedit/tfedit"
 brew "minamijoyo/tfmigrate"
 brew "minamijoyo/tfschema/tfschema"
 
+cask "1password"
+cask "alfred"
 cask "aws-vault"
+cask "dash"
+cask "docker"
+cask "google-chrome"
+cask "google-japanese-ime"
+cask "iterm2"
+cask "jasper"
+cask "slack"
+cask "visual-studio-code"
+cask "zoom"
 
 mas "Keynote", id: 409183694
 mas "Monosnap", id: 540348655
-mas "Slack", id: 803453959
