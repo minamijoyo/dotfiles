@@ -1,6 +1,8 @@
 [user]
   name = Masayuki Morita
-  email = masayuki.morita@crowdworks.co.jp
+  email = minamijoyo@gmail.com
+[includeIf "gitdir:~/src/github.com/crowdworksjp/"]
+  path = ~/.gitconfig_cw
 [color]
   ui = true
 [alias]
@@ -20,7 +22,6 @@
   cbpr = "!f(){ git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1; };f"
   ci-status = !circleci-cli recent -l 5 -b $(git symbolic-ref --short HEAD)
   ci-open = !open https://circleci.com/gh/$(git rev-parse --show-toplevel | rev | cut -f1,2 -d '/' | rev)/tree/$(git symbolic-ref --short HEAD)
-  local = !git config --local user.name 'Masayuki Morita' && git config --local user.email 'minamijoyo@gmail.com'
   del-merged = !git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %
 [core]
   editor = /usr/local/bin/vim
