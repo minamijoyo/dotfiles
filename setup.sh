@@ -59,5 +59,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 # その他
 ## 不要なアプリを削除
-#
+## iCloud => Macを探す => on
+## 1Password/Google/Slack などいろいろSignIn
 ## キーボード => 入力ソース => + => 日本語 => ひらがな (Google)
+## VPN
