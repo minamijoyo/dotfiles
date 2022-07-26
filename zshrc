@@ -32,10 +32,6 @@ setopt no_flow_control
 # ターミナルの文字コードの設定
 export LC_CTYPE=ja_JP.UTF-8
 
-# 補完の有効化
-autoload -U compinit
-compinit
-
 # asdfの設定
 source $(brew --prefix asdf)/libexec/asdf.sh
 
@@ -70,6 +66,9 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
+
+# 補完の有効化
+autoload -Uz compinit && compinit
 
 # プロンプト設定
 local ret_status="%(?:%{$fg[green]%}:%{$fg[red]%}%s)"
