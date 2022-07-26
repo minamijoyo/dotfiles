@@ -36,6 +36,9 @@ export LC_CTYPE=ja_JP.UTF-8
 autoload -U compinit
 compinit
 
+# asdfの設定
+source $(brew --prefix asdf)/libexec/asdf.sh
+
 # zplugの設定
 export ZPLUG_HOME="$(brew --prefix)/opt/zplug"
 source $ZPLUG_HOME/init.zsh
@@ -90,26 +93,14 @@ bindkey '^r^g' anyframe-widget-cd-ghq-repository
 bindkey '^rb' anyframe-widget-checkout-git-branch
 bindkey '^r^b' anyframe-widget-checkout-git-branch
 
-# rbenvの設定
-export PATH="$HOME/.rbenv/shims:$PATH"
-
 # goの設定
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
-export GOENV_DISABLE_GOPATH=1
-eval "$(goenv init -)"
 
 # terraformの設定
 autoload -U +X bashcompinit && bashcompinit
 complete -C $GOPATH/bin/terraform terraform
 complete -o nospace -C $GOPATH/bin/tfschema tfschema
-
-# nodeの設定
-# eval "$(nodenv init -)"
-
-# sdkmanの設定
-# export SDKMAN_DIR="$HOME/.sdkman"
-# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # よく使うコマンドのエイリアス
 alias dosh="docker-compose run --rm --name dosh --service-ports -e COLUMNS=$(tput cols) -e LINES=$(tput lines) rails /bin/bash"

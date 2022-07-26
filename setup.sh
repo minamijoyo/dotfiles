@@ -35,6 +35,12 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Install packages
 brew bundle --file Brewfile
 
+asdf plugin add terraform
+asdf plugin add golang
+asdf plugin add python
+asdf plugin add ruby
+asdf plugin add nodejs
+
 # Create directories
 mkdir -p ~/work/tmp
 
