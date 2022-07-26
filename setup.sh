@@ -69,3 +69,5 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 ## 1Password/Google/Slack などいろいろSignIn
 ## キーボード => 入力ソース => + => 日本語 => ひらがな (Google)
 ## VPN
+## Dash => Preferences => Snippets でスニペット読み込み
+## Jasper => Export => Import でストリーム読み込み
