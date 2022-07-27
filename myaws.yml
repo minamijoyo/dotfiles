@@ -1,0 +1,14 @@
+profile: default
+region: ap-northeast-1
+ec2:
+  ls:
+    all: false
+    fields:
+      - InstanceId
+      - InstanceType
+      - PublicIpAddress
+      - PrivateIpAddress
+      - StateName
+      - LaunchTime
+      - Tag:Name
+      - Tag:attached_asg

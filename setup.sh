@@ -71,3 +71,4 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 ## VPN
 ## Dash => Preferences => Snippets でスニペット読み込み
 ## Jasper => Export => Import でストリーム読み込み
+## aws-vaultとcw-cli-toolsの設定
