@@ -43,9 +43,11 @@ cask "docker"
 cask "google-japanese-ime"
 cask "iterm2"
 cask "jasper"
+cask "raycast"
 cask "session-manager-plugin"
 cask "slack"
 cask "visual-studio-code"
+cask "wezterm"
 cask "zoom"
 
 mas "Keynote", id: 409183694
