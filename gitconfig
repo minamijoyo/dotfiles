@@ -24,7 +24,7 @@
   ci-open = !open https://circleci.com/gh/$(git rev-parse --show-toplevel | rev | cut -f1,2 -d '/' | rev)/tree/$(git symbolic-ref --short HEAD)
   del-merged = !git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %
 [core]
-  editor = /usr/local/bin/vim
+  editor = vim
   excludesfile = ~/.gitignore
 [ghq]
   root = ~/src
