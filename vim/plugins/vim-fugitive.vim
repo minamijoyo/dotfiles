@@ -8,5 +8,5 @@ nnoremap [fugitive]c :<C-u>Gcommit -v<Enter>
 nnoremap [fugitive]a :<C-u>Gcommit -v --amend<Enter>
 nnoremap [fugitive]b :<C-u>Git blame<Enter>
 nnoremap [fugitive]p :<C-u>Gpush origin HEAD<Enter>
-nnoremap [fugitive]o :<C-u>Gbrowse<Enter>
-vnoremap [fugitive]o :<C-u>'<,'>Gbrowse<Enter>
+nnoremap [fugitive]o :<C-u>GBrowse<Enter>
+vnoremap [fugitive]o :<C-u>'<,'>GBrowse<Enter>
