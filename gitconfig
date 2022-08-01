@@ -14,9 +14,8 @@
   pH = push origin HEAD
   pF = push --force-with-lease origin HEAD
   root = rev-parse --show-toplevel
-  browse = !hub browse
-  open = !hub browse -- pull/$(git symbolic-ref --short HEAD)
-  pr = !hub pull-request
+  open = !gh pr view --web
+  pr = !gh pr create --web
   gh-show = "!f(){ open https://github.com/$(git rev-parse --show-toplevel | rev | cut -f1,2 -d '/' | rev)/commit/$1;};f"
   release = "!f(){ git tag -a v$1 -m v$1 && git push origin v$1; };f"
   cbpr = "!f(){ git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1; };f"
