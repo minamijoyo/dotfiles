@@ -43,6 +43,7 @@ asdf plugin add nodejs
 
 # Create directories
 mkdir -p ~/work/tmp
+mkdir -p ~/.terraform.d/plugin-cache
 
 # Create symlinks
 RCRC=rcrc rcup -v
