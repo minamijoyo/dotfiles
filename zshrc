@@ -98,8 +98,8 @@ export PATH=$PATH:$GOPATH/bin
 
 # terraformの設定
 autoload -U +X bashcompinit && bashcompinit
-complete -C $GOPATH/bin/terraform terraform
-complete -o nospace -C $GOPATH/bin/tfschema tfschema
+complete -C terraform terraform
+complete -o nospace -C tfschema tfschema
 
 # よく使うコマンドのエイリアス
 alias dosh="docker-compose run --rm --name dosh --service-ports -e COLUMNS=$(tput cols) -e LINES=$(tput lines) rails /bin/bash"
