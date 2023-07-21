@@ -5,6 +5,7 @@ set -e
 # Setup for macOS
 # - Update macOS to the latest
 # - Sign In Apple ID.
+# - Change hostname
 # - Generate a new ssh key and register it to GitHub.
 #
 # ```
