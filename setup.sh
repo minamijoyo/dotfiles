@@ -76,4 +76,17 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 ## VPN
 ## Dash => Preferences => Snippets でスニペット読み込み
 ## Jasper => Export => Import でストリーム読み込み
-## aws-vaultとcw-cli-toolsの設定
+## Grammarlyのインストール
+
+# iTerm2の設定
+# Settings => Profiles => Defautl => Window => Transparency: 30
+#
+# aws-vaultの設定
+# アクセスキーを登録
+# aws-vault add xxx
+# aws-vault exec xxx --no-session -- aws sts get-caller-identity
+# タイムアウトを調整
+# open ~/Library/Keychains/aws-vault.keychain-db
+
+# raycastの設定
+# Settings => Extensions => Search Browser Bookmarks => Alias: ch
