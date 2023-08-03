@@ -33,6 +33,7 @@ setopt no_flow_control
 export LC_CTYPE=ja_JP.UTF-8
 
 # asdfの設定
+export ASDF_GOLANG_MOD_VERSION_ENABLED=false
 source $(brew --prefix asdf)/libexec/asdf.sh
 
 # zplugの設定
