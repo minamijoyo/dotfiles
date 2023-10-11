@@ -186,6 +186,13 @@ hook_add = '''
     source $HOME/.vim/plugins/vim-lsp-settings.vim
 '''
 
+# GitHub Copilot
+[[plugins]]
+repo = 'github/copilot.vim'
+hook_add = '''
+    source $HOME/.vim/plugins/copilot.vim
+'''
+
 # スニペット
 [[plugins]]
 repo = 'SirVer/ultisnips'
