@@ -5,4 +5,5 @@ imap <c-k> <Plug>(copilot-previous)
 let g:copilot_filetypes = {
   \ 'markdown': v:true,
   \ 'gitcommit': v:true,
+  \ 'yaml': v:true,
   \ }
