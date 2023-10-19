@@ -131,6 +131,8 @@ endif
 nnoremap <Leader>l :set cursorline! cursorcolumn!<CR>
 " カレント行にアンダーラインを引く
 highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+" Copilotの補完が見づらいので色を調整
+highlight CopilotSuggestion ctermfg=96
 " 対応括弧をハイライト表示する
 set showmatch
 " 小文字の検索でも大文字も見つかるようにする
