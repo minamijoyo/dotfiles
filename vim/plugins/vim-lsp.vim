@@ -14,3 +14,9 @@ if executable('terraform-ls')
         \ 'whitelist': ['terraform'],
         \ })
 endif
+
+" ファイル保存時に自動でorganizeImportsを実行する
+augroup lsp_organize_imports
+  autocmd!
+  autocmd BufWritePre *.py call execute('LspCodeActionSync source.organizeImports')
+augroup END
