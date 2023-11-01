@@ -10,7 +10,7 @@ let g:lsp_settings = {
 \     'initialization_options': {
 \       'settings': {
 \         'lint': {
-\           'run': 'onSave',
+\           'run': 'onType',
 \         },
 \       },
 \     },
