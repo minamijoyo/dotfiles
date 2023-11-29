@@ -103,6 +103,7 @@ complete -C terraform terraform
 complete -o nospace -C tfschema tfschema
 
 # よく使うコマンドのエイリアス
+alias pvi="poetry run vi"
 alias dosh="docker compose run --rm --name dosh --service-ports -e COLUMNS=$(tput cols) -e LINES=$(tput lines) rails /bin/bash"
 alias dc="docker compose"
 alias wdir="echo ~/work/tmp/`date '+%Y%m%d'`"
