@@ -12,3 +12,7 @@ let g:ale_terraform_tflint_options='--disable-rule=terraform_unused_declarations
 let g:ale_fixers = {
 \    'python': ['black'],
 \}
+" GitHub ActionsのワークフローのYAMLファイルだけactionlintを有効化
+au BufRead,BufNewFile */.github/*/*.y{,a}ml let b:ale_linters = {'yaml': ['actionlint']}
+" actionlintのshellcheckで指摘した行がYAMLの行として解釈されてしまうので無効化
+let g:ale_yaml_actionlint_options = '-shellcheck= '
