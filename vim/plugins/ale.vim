@@ -9,9 +9,6 @@ let g:ale_lint_on_enter = 0
 let g:ale_open_list = 1
 " terraform_unused_declarationsは1ファイルだけチェックすると誤検知するので無効化
 let g:ale_terraform_tflint_options='--disable-rule=terraform_unused_declarations'
-let g:ale_fixers = {
-\    'python': ['black'],
-\}
 " GitHub ActionsのワークフローのYAMLファイルだけactionlintを有効化
 au BufRead,BufNewFile */.github/*/*.y{,a}ml let b:ale_linters = {'yaml': ['actionlint']}
 " actionlintのshellcheckで指摘した行がYAMLの行として解釈されてしまうので無効化
