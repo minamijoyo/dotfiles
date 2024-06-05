@@ -11,5 +11,6 @@ let g:ale_open_list = 1
 let g:ale_terraform_tflint_options='--disable-rule=terraform_unused_declarations'
 " GitHub ActionsのワークフローのYAMLファイルだけactionlintを有効化
 au BufRead,BufNewFile */.github/*/*.y{,a}ml let b:ale_linters = {'yaml': ['actionlint']}
+" actionlintの設定ファイルを指定
 " actionlintのshellcheckで指摘した行がYAMLの行として解釈されてしまうので無効化
-let g:ale_yaml_actionlint_options = '-shellcheck= '
+let g:ale_yaml_actionlint_options = '-config-file=$HOME/.config/actionlint/actionlint.yaml -shellcheck= '
