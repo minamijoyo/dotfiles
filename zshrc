@@ -9,6 +9,8 @@ alias vi="reattach-to-user-namespace vim"
 # 行頭と行末の移動だけEmacs風のCtrl+A/Eでできるように戻す
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
+# tmux上でiTermAIが^Kを挿入してしまう問題の回避
+bindkey "^K" kill-line
 
 # neovimのためにXDGの設定
 export XDG_CONFIG_HOME=$HOME/.config
