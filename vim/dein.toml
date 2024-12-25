@@ -193,6 +193,13 @@ hook_add = '''
     source $HOME/.vim/plugins/copilot.vim
 '''
 
+# ollama
+[[plugins]]
+repo = 'madox2/vim-ai'
+hook_add = '''
+    source $HOME/.vim/plugins/vim-ai.vim
+'''
+
 # スニペット
 [[plugins]]
 repo = 'SirVer/ultisnips'
