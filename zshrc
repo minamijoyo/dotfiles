@@ -104,6 +104,29 @@ autoload -U +X bashcompinit && bashcompinit
 complete -C terraform terraform
 complete -o nospace -C tfschema tfschema
 
+# Shell-GPTの設定
+_sgpt_shell() {
+if [[ -n "$BUFFER" ]]; then
+    _sgpt_prev_cmd=$BUFFER
+    BUFFER+="⌛"
+    zle -I && zle redisplay
+    BUFFER=$(sgpt --shell <<< "$_sgpt_prev_cmd" --no-interaction)
+    zle end-of-buffer-or-history
+fi
+}
+zle -N _sgpt_shell
+bindkey ^l _sgpt_shell
+
+_sgpt_describe_shell() {
+if [[ -n "$BUFFER" ]]; then
+    _sgpt_prev_cmd=$BUFFER
+    description_result=$(sgpt --describe-shell <<< "$_sgpt_prev_cmd" --no-interaction)
+    print "\n# $description_result"
+fi
+}
+zle -N _sgpt_describe_shell
+bindkey ^d _sgpt_describe_shell
+
 # よく使うコマンドのエイリアス
 alias pvi="poetry run vi"
 alias dosh="docker compose run --rm --name dosh --service-ports -e COLUMNS=$(tput cols) -e LINES=$(tput lines) rails /bin/bash"
