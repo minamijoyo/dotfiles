@@ -108,7 +108,6 @@ complete -o nospace -C tfschema tfschema
 _sgpt_shell() {
 if [[ -n "$BUFFER" ]]; then
     _sgpt_prev_cmd=$BUFFER
-    BUFFER+="⌛"
     zle -I && zle redisplay
     BUFFER=$(sgpt --shell <<< "$_sgpt_prev_cmd" --no-interaction)
     zle end-of-buffer-or-history
@@ -120,8 +119,7 @@ bindkey ^l _sgpt_shell
 _sgpt_describe_shell() {
 if [[ -n "$BUFFER" ]]; then
     _sgpt_prev_cmd=$BUFFER
-    description_result=$(sgpt --describe-shell <<< "$_sgpt_prev_cmd" --no-interaction)
-    print "\n# $description_result"
+    tmux popup "sgpt --describe-shell <<< \"$_sgpt_prev_cmd\" --no-interaction"
 fi
 }
 zle -N _sgpt_describe_shell
