@@ -104,7 +104,7 @@ autoload -U +X bashcompinit && bashcompinit
 complete -C terraform terraform
 complete -o nospace -C tfschema tfschema
 
-# Shell-GPTの設定
+# Shell GPTの設定
 _sgpt_shell() {
 if [[ -n "$BUFFER" ]]; then
     _sgpt_prev_cmd=$BUFFER
@@ -114,7 +114,7 @@ if [[ -n "$BUFFER" ]]; then
 fi
 }
 zle -N _sgpt_shell
-bindkey ^l _sgpt_shell
+bindkey ^g _sgpt_shell
 
 _sgpt_describe_shell() {
 if [[ -n "$BUFFER" ]]; then
@@ -123,7 +123,33 @@ if [[ -n "$BUFFER" ]]; then
 fi
 }
 zle -N _sgpt_describe_shell
-bindkey ^d _sgpt_describe_shell
+bindkey ^h _sgpt_describe_shell
+
+_capture_last_cmd_output() {
+  _last_cmd=$(fc -l -n -1)
+  _pane_output=$(tmux capture-pane -p -S '-' -J -t "$_pane_id")
+  _prompt_regex="]$ "
+  _last_output=$(echo "$_pane_output" | tac | gsed -e "0,/$_prompt_regex/d" | gsed "/$_prompt_regex/,\$d" | tac)
+  pbcopy <<EOF
+$ $_last_cmd
+$_last_output
+EOF
+}
+zle -N _capture_last_cmd_output
+bindkey ^y _capture_last_cmd_output
+
+_sgpt_why() {
+  _capture_last_cmd_output
+  _sgpt_why_prompt=$(cat <<EOF
+Explain the following error message and suggest how to fix it:
+$ $_last_cmd
+$_last_output
+EOF
+)
+  tmux popup "sgpt <<< \"$_sgpt_why_prompt\""
+}
+zle -N _sgpt_why
+bindkey ^w _sgpt_why
 
 # よく使うコマンドのエイリアス
 alias pvi="poetry run vi"
