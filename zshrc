@@ -164,6 +164,8 @@ alias tfp="terraform plan"
 alias tfip="terraform init && terraform plan"
 alias ave='(){ aws-vault exec --duration=4h $@ }'
 alias avl='(){ open -na "Google Chrome" --args --incognito --user-data-dir=$HOME/Library/Application\ Support/Google/Chrome/aws-vault/$@  $(aws-vault login --duration=4h $@ --stdout) }'
+alias git-origin-https='(){ git remote set-url origin https://github.com/$(git remote get-url origin | sed "s/https:\/\/github.com\///" | sed "s/git@github.com://") }'
+alias git-minamijoyo-https='(){ git remote set-url minamijoyo $(git remote get-url origin | sed -E "s/github.com\/(.+)\/(.+)/github.com\/minamijoyo\/\2/") }'
 
 # 環境変数の管理にdirenvを使う
 eval "$(direnv hook zsh)"
