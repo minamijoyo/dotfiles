@@ -79,6 +79,10 @@ set noswapfile
 set nowritebackup
 " バックアップをしない
 set nobackup
+" 編集中のファイルが変更されたら自動で読み直す
+set autoread
+set updatetime=1000
+autocmd CursorHold,CursorHoldI * checktime
 " バックスペースで各種消せるようにする
 set backspace=indent,eol,start
 " ビープ音を消す
