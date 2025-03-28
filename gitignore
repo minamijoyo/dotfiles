@@ -2,3 +2,4 @@ Session.vim
 .envrc
 tags
 terraform-ls.tf
+.aider*

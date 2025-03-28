@@ -1,0 +1,23 @@
+# https://aider.chat/docs/config/aider_conf.html
+
+#############
+# Main model:
+model: gpt-4o
+
+#################
+# Model settings:
+architect: true
+auto-accept-architect: false
+
+##################
+# Output settings:
+dark-mode: true
+
+###############
+# Git settings:
+attribute-author: false
+attribute-committer: false
+
+########################
+# Fixing and committing:
+watch-files: true
