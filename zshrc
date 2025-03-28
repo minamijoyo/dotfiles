@@ -104,6 +104,9 @@ autoload -U +X bashcompinit && bashcompinit
 complete -C terraform terraform
 complete -o nospace -C tfschema tfschema
 
+# pipxの設定
+export PATH="$PATH:$HOME/.local/bin"
+
 # Shell GPTの設定
 _sgpt_shell() {
 if [[ -n "$BUFFER" ]]; then
