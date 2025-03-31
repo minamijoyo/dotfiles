@@ -17,6 +17,8 @@ dark-mode: true
 # Git settings:
 attribute-author: false
 attribute-committer: false
+# $HOMEや~は展開されないのでフルパスで指定する
+aiderignore: /etc/aider/.aiderignore
 
 ########################
 # Fixing and committing:
