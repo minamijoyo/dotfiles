@@ -226,3 +226,6 @@ function! CheckUpdate(timer)
     silent! checktime
     call timer_start(1000,'CheckUpdate')
 endfunction
+
+" 現在開いているファイルの相対パスをクリップボードにコピーする
+nnoremap <leader>cp :let @+ = expand('%')<CR>
