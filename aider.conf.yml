@@ -9,6 +9,10 @@ model: gpt-4o
 architect: true
 auto-accept-architect: false
 
+#################
+# Cache settings:
+cache-prompts: true
+
 ##################
 # Output settings:
 dark-mode: true
