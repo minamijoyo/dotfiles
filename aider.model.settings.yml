@@ -7,11 +7,11 @@
   extra_params:
     num_ctx: 16384
 
-- name: ollama_chat/cogito:8b
+- name: ollama_chat/qwen3:30b-a3b
   edit_format: diff
-  weak_model_name: ollama_chat/cogito:8b
+  weak_model_name: ollama_chat/qwen3:30b-a3b
   use_repo_map: true
-  editor_model_name: ollama_chat/cogito:8b
+  editor_model_name: ollama_chat/qwen3:30b-a3b
   editor_edit_format: editor-diff
   extra_params:
     num_ctx: 16384
