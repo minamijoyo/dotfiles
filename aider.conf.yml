@@ -29,3 +29,7 @@ aiderignore: /etc/aider/.aiderignore
 ########################
 # Fixing and committing:
 watch-files: true
+
+############
+# Analytics:
+analytics-disable: true
