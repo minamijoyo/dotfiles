@@ -2,7 +2,7 @@
 
 #############
 # Main model:
-model: gpt-4o
+model: bedrock/us.anthropic.claude-3-7-sonnet-20250219-v1:0
 
 #################
 # Model settings:
