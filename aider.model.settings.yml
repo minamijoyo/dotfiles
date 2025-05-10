@@ -13,5 +13,11 @@
   use_repo_map: true
   editor_model_name: ollama_chat/qwen3:30b-a3b
   editor_edit_format: editor-diff
+  system_prompt_prefix: "/no_think"
+  use_temperature: 0.7
   extra_params:
-    num_ctx: 16384
+    max_tokens: 24000
+    top_p: 0.8
+    top_k: 20
+    min_p: 0.0
+    temperature: 0.7
