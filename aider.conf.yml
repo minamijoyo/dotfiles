@@ -23,6 +23,8 @@ auto-commits: false
 dirty-commits: false
 attribute-author: false
 attribute-committer: false
+subtree-only: true
+
 # $HOMEや~は展開されないのでフルパスで指定する
 aiderignore: /etc/aider/.aiderignore
 
