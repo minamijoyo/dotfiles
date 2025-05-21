@@ -1,3 +1,4 @@
 self-hosted-runner:
   labels:
     - ubuntu-22.04-2core-arm64
+    - ubuntu-24.04-2core-arm64
