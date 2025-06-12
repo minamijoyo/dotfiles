@@ -3,3 +3,4 @@ Session.vim
 tags
 terraform-ls.tf
 .aider*
+.claude/settings.local.json
