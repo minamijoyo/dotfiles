@@ -15,7 +15,18 @@
       "Bash(goimports:*)"
     ],
     "deny": [
-      "Bash(curl:*)"
+      "Read(.env)",
+      "Read(.envrc)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(rm -rf:*)",
+      "Bash(terraform apply:*)",
+      "Bash(terraform destroy:*)",
+      "Bash(terraform state:*)",
+      "Bash(tofu apply:*)",
+      "Bash(tofu destroy:*)",
+      "Bash(tofu state:*)",
+      "Bash(tfmigrate apply:*)"
     ]
   }
 }
