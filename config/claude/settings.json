@@ -1,0 +1,21 @@
+{
+  "includeCoAuthoredBy": false,
+  "env": {
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+  },
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(git add:*)",
+      "Bash(go build:*)",
+      "Bash(go test:*)",
+      "Bash(go tool cover:*)",
+      "Bash(goimports:*)"
+    ],
+    "deny": [
+      "Bash(curl:*)"
+    ]
+  }
+}
