@@ -36,8 +36,11 @@
       "Bash(curl:*)",
       "Bash(wget:*)",
       "Bash(nc:*)",
-      "Bash(terraform:*)",
-      "Bash(tofu:*)",
+      "Bash(terraform apply:*)",
+      "Bash(terraform destroy:*)",
+      "Bash(terraform state:*)",
+      "Bash(terraform taint:*)",
+      "Bash(terraform import:*)",
       "Bash(tfmigrate apply:*)",
       "mcp__terraform__searchModules",
       "mcp__terraform__moduleDetails"
