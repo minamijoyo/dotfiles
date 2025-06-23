@@ -1,8 +1,13 @@
 {
   "includeCoAuthoredBy": false,
   "env": {
-    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
   },
+  "enableAllProjectMcpServers": false,
+  "enabledMcpjsonServers": [
+    "terraform",
+    "aws-documentation"
+  ],
   "permissions": {
     "allow": [
       "Bash(find:*)",
@@ -12,7 +17,11 @@
       "Bash(go build:*)",
       "Bash(go test:*)",
       "Bash(go tool cover:*)",
-      "Bash(goimports:*)"
+      "Bash(goimports:*)",
+      "mcp__terraform__resolveProviderDocID",
+      "mcp__terraform__getProviderDocs",
+      "mcp__aws-documentation__search_documentation",
+      "mcp__aws-documentation__read_documentation"
     ],
     "deny": [
       "Read(.env)",
@@ -27,13 +36,11 @@
       "Bash(curl:*)",
       "Bash(wget:*)",
       "Bash(nc:*)",
-      "Bash(terraform apply:*)",
-      "Bash(terraform destroy:*)",
-      "Bash(terraform state:*)",
-      "Bash(tofu apply:*)",
-      "Bash(tofu destroy:*)",
-      "Bash(tofu state:*)",
-      "Bash(tfmigrate apply:*)"
+      "Bash(terraform:*)",
+      "Bash(tofu:*)",
+      "Bash(tfmigrate apply:*)",
+      "mcp__terraform__searchModules",
+      "mcp__terraform__moduleDetails"
     ]
   }
 }
