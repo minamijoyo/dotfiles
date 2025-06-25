@@ -26,10 +26,12 @@
     "deny": [
       "Read(.env)",
       "Read(.envrc)",
+      "Read(direnvrc)",
       "Read(id_rsa)",
       "Read(id_ed25519)",
       "Write(.env)",
       "Write(.envrc)",
+      "Write(direnvrc)",
       "Write(.terraformrc)",
       "Bash(sudo:*)",
       "Bash(rm -rf:*)",
