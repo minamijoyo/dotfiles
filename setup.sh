@@ -40,8 +40,10 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew bundle --file Brewfile
 
 asdf plugin add terraform
+asdf plugin add opentofu
 asdf plugin add golang
 asdf plugin add python
+asdf plugin add poetry
 asdf plugin add ruby
 asdf plugin add nodejs
 
@@ -75,7 +77,6 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 ## キーボード => 入力ソース => + => 日本語 => ひらがな (Google)
 ## VPN
 ## Dash => Preferences => Snippets でスニペット読み込み
-## Jasper => Export => Import でストリーム読み込み
 ## Grammarlyのインストール
 
 # iTerm2の設定
@@ -89,4 +90,9 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 # open ~/Library/Keychains/aws-vault.keychain-db
 
 # raycastの設定
-# Settings => Extensions => Search Browser Bookmarks => Alias: ch
+# Settings => Extensions => Search Browser Bookmarks => Alias: bk
+#                        => GitHub => Login
+#
+# aiderの設定
+# mkdir -p /etc/aider
+# sudo ln -s $(pwd)/aiderignore /etc/aider/.aiderignore
