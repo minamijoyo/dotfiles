@@ -80,9 +80,14 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 ## Grammarlyのインストール
 
 # iTerm2の設定
-# Settings => Profiles => Defautl => Window => Transparency: 30
+# Settings => Profiles => Default => Window => Transparency: 30
+#                                 => Colors => Color Presets: Dark Background
+# シェルプロンプトのカスタマイズなどがグローバルなPythonに依存
+# asdf install python latest
+# asdf set --home python latest
 #
 # aws-vaultの設定
+# ~/.aws/config を設定
 # アクセスキーを登録
 # aws-vault add xxx
 # aws-vault exec xxx --no-session -- aws sts get-caller-identity
@@ -90,9 +95,11 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 # open ~/Library/Keychains/aws-vault.keychain-db
 
 # raycastの設定
-# Settings => Extensions => Search Browser Bookmarks => Alias: bk
-#                        => GitHub => Login
+# Store => Google Chrome => Install
+#       => GitHub => Install
+# Settings => Extensions => Search Bookmarks => Alias: bk
+# GitHub => My Issues => Login
 #
 # aiderの設定
-# mkdir -p /etc/aider
+# sudo mkdir -p /etc/aider
 # sudo ln -s $(pwd)/aiderignore /etc/aider/.aiderignore
