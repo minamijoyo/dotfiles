@@ -13,7 +13,7 @@ set -e
 #
 # Login to GitHub
 # $ brew install git
-# $ brew install git-credential-manager-core --cask
+# $ brew install --cask git-credential-manager
 # $ git credential-manager configure
 # $ brew install gh
 # $ gh auth login
