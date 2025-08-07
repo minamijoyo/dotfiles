@@ -19,12 +19,9 @@ set -e
 # $ gh auth login
 #
 # Clone this repository and run the setup script.
-# $ git clone minamijoyo/dotfiles $HOME/src/github.com/minamijoyo/dotfiles
+# $ git clone https://github.com/minamijoyo/dotfiles $HOME/src/github.com/minamijoyo/dotfiles
 # $ cd $HOME/src/github.com/minamijoyo/dotfiles
 # $ ./setup.sh
-
-# Install xcode
-xcode-select --install
 
 # Install Rosetta 2
 sudo softwareupdate --install-rosetta
