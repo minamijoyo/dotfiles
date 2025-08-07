@@ -6,35 +6,28 @@ set -e
 # - Update macOS to the latest
 # - Sign In Apple ID.
 # - Change hostname
-# - Generate a new ssh key and register it to GitHub.
 #
-# ```
-# $ ssh-keygen -t ed25519 -C "minamijoyo@gmail.com"
-# $ pbcopy < ~/.ssh/id_ed25519.pub
-# $ ssh -T git@github.com
-# $ ssh-add ~/.ssh/id_ed25519
-# ```
+# Install brew
+# $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# $ eval "$(/opt/homebrew/bin/brew shellenv)"
 #
-# - Install xcode to use git.
+# Login to GitHub
+# $ brew install git
+# $ brew install git-credential-manager-core --cask
+# $ git credential-manager configure
+# $ brew install gh
+# $ gh auth login
 #
-# ```
-# $ xcode-select --install
-# ```
-#
-# - Clone this repository and run the setup script.
-#
-# ```
-# $ git clone git@github.com:minamijoyo/dotfiles.git $HOME/src/github.com/minamijoyo/dotfiles
+# Clone this repository and run the setup script.
+# $ git clone minamijoyo/dotfiles $HOME/src/github.com/minamijoyo/dotfiles
 # $ cd $HOME/src/github.com/minamijoyo/dotfiles
 # $ ./setup.sh
-# ```
+
+# Install xcode
+xcode-select --install
 
 # Install Rosetta 2
 sudo softwareupdate --install-rosetta
-
-# Install brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install packages
 brew bundle --file Brewfile
