@@ -1,6 +1,3 @@
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
 tap "minamijoyo/hcledit"
 tap "minamijoyo/myaws"
 tap "minamijoyo/tfedit"
