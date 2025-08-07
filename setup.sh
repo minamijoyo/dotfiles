@@ -18,6 +18,16 @@ set -e
 # $ brew install gh
 # $ gh auth login
 #
+# zplugがsshに依存しているのでssh鍵も必要
+# $ mkdir -p ~/.ssh
+# $ chmod 700 ~/.ssh
+# $ curl --silent https://api.github.com/meta | jq --raw-output '"github.com "+.ssh_keys[]' >> ~/.ssh/known_hosts
+# $ chmod 600 ~/.ssh/known_hosts
+# $ ssh-keygen -t ed25519 -C "minamijoyo@gmail.com"
+# $ pbcopy < ~/.ssh/id_ed25519.pub
+# $ ssh -T git@github.com
+# $ ssh-add ~/.ssh/id_ed25519
+#
 # Clone this repository and run the setup script.
 # $ git clone https://github.com/minamijoyo/dotfiles $HOME/src/github.com/minamijoyo/dotfiles
 # $ cd $HOME/src/github.com/minamijoyo/dotfiles
