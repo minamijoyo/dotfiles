@@ -42,8 +42,8 @@ source $(brew --prefix asdf)/libexec/asdf.sh
 export ZPLUG_HOME="$(brew --prefix)/opt/zplug"
 source $ZPLUG_HOME/init.zsh
 
-# プライベートリポジトリのプラグインも使うのでzplugのgitをssh経由にする
-ZPLUG_PROTOCOL=ssh
+# zplugのgitをhttps経由にする
+ZPLUG_PROTOCOL=https
 
 # 標準的なコマンドの補完
 zplug "zsh-users/zsh-completions"
