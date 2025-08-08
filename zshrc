@@ -96,8 +96,7 @@ bindkey '^rb' anyframe-widget-checkout-git-branch
 bindkey '^r^b' anyframe-widget-checkout-git-branch
 
 # goの設定
-export GOPATH=$HOME
-export PATH=$PATH:$GOPATH/bin
+source ${ASDF_DATA_DIR:-$HOME/.asdf}/plugins/golang/set-env.zsh
 
 # terraformの設定
 autoload -U +X bashcompinit && bashcompinit
