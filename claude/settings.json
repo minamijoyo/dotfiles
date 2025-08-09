@@ -3,6 +3,11 @@
   "env": {
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
   },
+  "statusLine": {
+    "type": "command",
+    "command": "ccusage statusline",
+    "padding": 0
+  },
   "enableAllProjectMcpServers": false,
   "enabledMcpjsonServers": [
     "terraform",
