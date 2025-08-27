@@ -1,7 +1,11 @@
 {
   "includeCoAuthoredBy": false,
   "env": {
-    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "CLAUDE_CODE_AUTO_CONNECT_IDE": false,
+    "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": true,
+    "CLAUDE_CODE_IDE_SKIP_VALID_CHECK": true,
+    "DISABLE_MICROCOMPACT": true"
   },
   "statusLine": {
     "type": "command",
