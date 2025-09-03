@@ -1,2 +1,2 @@
-EXCLUDES="*.md *.sh Brewfile.lock.json"
+EXCLUDES="README.md setup.sh Brewfile.lock.json"
 DOTFILES_DIRS="$HOME/src/github.com/minamijoyo/dotfiles"
