@@ -108,7 +108,10 @@ export PATH="$PATH:$HOME/.local/bin"
 
 # Claude Codeの設定
 # v1.0.30から設定ファイルのパスが変わっているので環境変数で指定する
-export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
+export CLAUDE_CODE_ENABLE_TELEMETRY=1
+export DISABLE_AUTOUPDATER=1
+export DISABLE_BUG_COMMAND=1
+export DISABLE_ERROR_REPORTING=1
 
 # Shell GPTの設定
 _sgpt_shell() {
