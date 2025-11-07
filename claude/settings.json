@@ -36,6 +36,8 @@
       "Bash(go test:*)",
       "Bash(go tool cover:*)",
       "Bash(goimports:*)",
+      "Bash(qiita get_item:*)",
+      "Skill(qiita_team_get_item)",
       "mcp__terraform__resolveProviderDocID",
       "mcp__terraform__getProviderDocs",
       "mcp__aws-documentation__search_documentation",
