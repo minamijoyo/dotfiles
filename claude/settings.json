@@ -1,25 +1,15 @@
 {
-  "includeCoAuthoredBy": false,
   "env": {
     "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
     "DISABLE_AUTOUPDATER": "1",
     "DISABLE_BUG_COMMAND": "1",
     "DISABLE_ERROR_REPORTING": "1",
-    "CLAUDE_CODE_AUTO_CONNECT_IDE": false,
-    "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": true,
-    "CLAUDE_CODE_IDE_SKIP_VALID_CHECK": true,
-    "DISABLE_MICROCOMPACT": true
+    "CLAUDE_CODE_AUTO_CONNECT_IDE": "false",
+    "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": "true",
+    "CLAUDE_CODE_IDE_SKIP_VALID_CHECK": "true",
+    "DISABLE_MICROCOMPACT": "true"
   },
-  "statusLine": {
-    "type": "command",
-    "command": "ccusage statusline",
-    "padding": 0
-  },
-  "enableAllProjectMcpServers": false,
-  "enabledMcpjsonServers": [
-    "terraform",
-    "aws-documentation"
-  ],
+  "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
       "Bash(find:*)",
@@ -67,5 +57,16 @@
       "mcp__terraform__searchModules",
       "mcp__terraform__moduleDetails"
     ]
-  }
+  },
+  "enableAllProjectMcpServers": false,
+  "enabledMcpjsonServers": [
+    "terraform",
+    "aws-documentation"
+  ],
+  "statusLine": {
+    "type": "command",
+    "command": "ccusage statusline",
+    "padding": 0
+  },
+  "alwaysThinkingEnabled": true
 }
