@@ -71,5 +71,18 @@
     "command": "ccusage statusline",
     "padding": 0
   },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": false,
+    "allowUnsandboxedCommands": false,
+    "network": {
+      "allowedDomains": [],
+      "allowUnixSockets": [],
+      "allowAllUnixSockets": false,
+      "allowLocalBinding": false
+    },
+    "enableWeakerNestedSandbox": false,
+    "excludedCommands": []
+  },
   "alwaysThinkingEnabled": true
 }
