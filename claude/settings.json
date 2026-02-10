@@ -9,7 +9,10 @@
     "CLAUDE_CODE_IDE_SKIP_VALID_CHECK": "true",
     "DISABLE_MICROCOMPACT": "true"
   },
-  "includeCoAuthoredBy": false,
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "permissions": {
     "allow": [
       "Bash(find:*)",
