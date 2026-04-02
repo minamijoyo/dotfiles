@@ -82,12 +82,13 @@
     "autoAllowBashIfSandboxed": false,
     "allowUnsandboxedCommands": false,
     "network": {
-      "allowedDomains": [],
+      "allowedDomains": ["github.com", "api.github.com"],
       "allowUnixSockets": [],
       "allowAllUnixSockets": false,
       "allowLocalBinding": false
     },
     "enableWeakerNestedSandbox": false,
+    "enableWeakerNetworkIsolation": true,
     "excludedCommands": []
   },
   "alwaysThinkingEnabled": true
