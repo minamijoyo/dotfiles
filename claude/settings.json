@@ -14,10 +14,6 @@
     "commit": "",
     "pr": ""
   },
-  "spinnerVerbs": {
-    "mode": "replace",
-    "verbs": ["Working"]
-  },
   "permissions": {
     "allow": [
       "Bash(find:*)",
@@ -78,18 +74,28 @@
   },
   "sandbox": {
     "enabled": true,
-    "failIfUnavailable": true,
     "autoAllowBashIfSandboxed": false,
     "allowUnsandboxedCommands": false,
     "network": {
-      "allowedDomains": ["github.com", "api.github.com"],
+      "allowedDomains": [
+        "github.com",
+        "api.github.com"
+      ],
       "allowUnixSockets": [],
       "allowAllUnixSockets": false,
       "allowLocalBinding": false
     },
     "enableWeakerNestedSandbox": false,
     "enableWeakerNetworkIsolation": true,
-    "excludedCommands": []
+    "excludedCommands": [],
+    "failIfUnavailable": true
   },
-  "alwaysThinkingEnabled": true
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [
+      "Working"
+    ]
+  },
+  "alwaysThinkingEnabled": true,
+  "autoUpdatesChannel": "stable"
 }
