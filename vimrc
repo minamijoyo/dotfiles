@@ -229,3 +229,9 @@ endfunction
 
 " 現在開いているファイルの相対パスをクリップボードにコピーする
 nnoremap <leader>cp :let @+ = expand('%')<CR>
+
+" 補完を抑止するのに.env系ファイルに独自のファイルタイプを割り当てる
+augroup dotenv_detect
+  autocmd!
+  autocmd BufRead,BufNewFile *.env,*.envrc,direnvrc set filetype=dotenv
+augroup END

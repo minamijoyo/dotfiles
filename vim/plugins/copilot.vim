@@ -7,4 +7,5 @@ let g:copilot_filetypes = {
   \ 'gitcommit': v:true,
   \ 'yaml': v:true,
   \ 'csv': v:false,
+  \ 'dotenv': v:false,
   \ }
