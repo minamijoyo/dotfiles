@@ -106,6 +106,9 @@ complete -o nospace -C tfschema tfschema
 # pipxの設定
 export PATH="$PATH:$HOME/.local/bin"
 
+# 作業スクリプト
+export PATH="$HOME/src/github.com/minamijoyo/local-configs/scripts:$PATH"
+
 # Claude Codeの設定
 # v1.0.30から設定ファイルのパスが変わっているので環境変数で指定する
 export CLAUDE_CODE_ENABLE_TELEMETRY=1
