@@ -106,9 +106,6 @@ complete -o nospace -C tfschema tfschema
 # pipxの設定
 export PATH="$PATH:$HOME/.local/bin"
 
-# 作業スクリプト
-export PATH="$HOME/src/github.com/minamijoyo/local-configs/scripts:$PATH"
-
 # Claude Codeの設定
 # v1.0.30から設定ファイルのパスが変わっているので環境変数で指定する
 export CLAUDE_CODE_ENABLE_TELEMETRY=1
@@ -136,6 +133,9 @@ alias cclocal='(){ ollama launch claude --model qwen3.5:35b-a3b-coding-nvfp4 -- 
 
 # 環境変数の管理にdirenvを使う
 eval "$(direnv hook zsh)"
+
+# ローカルの設定ファイルを読み込む
+source "$HOME/src/github.com/minamijoyo/local-configs/local.zsh"
 
 # tmuxの自動起動
 if [ -z $TMUX ]; then
