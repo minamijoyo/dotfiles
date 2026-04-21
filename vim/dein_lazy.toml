@@ -53,6 +53,20 @@ repo = 'leafgarland/typescript-vim'
 on_ft = ['typescript']
 
 ########################################
+# Python
+########################################
+[[plugins]]
+repo = 'goerz/jupytext.vim'
+on_ft = ['python']
+hook_add = '''
+    source $HOME/.vim/plugins/jupytext.vim
+'''
+
+[[plugins]]
+repo = 'jupyter-vim/jupyter-vim'
+on_ft = ['python']
+
+########################################
 # go
 ########################################
 [[plugins]]
