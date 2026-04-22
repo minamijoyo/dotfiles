@@ -115,7 +115,6 @@ export DISABLE_ERROR_REPORTING=1
 export CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY=1
 
 # よく使うコマンドのエイリアス
-alias pvi="poetry run vi"
 alias dosh="docker compose run --rm --name dosh --service-ports -e COLUMNS=$(tput cols) -e LINES=$(tput lines) rails /bin/bash"
 alias dc="docker compose"
 alias wdir="echo ~/work/tmp/`date '+%Y%m%d'`"
