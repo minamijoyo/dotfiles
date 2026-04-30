@@ -1,0 +1,31 @@
+schemaVersion: "1"
+kind: agent
+name: ccbase
+agent:
+  image: "docker/sandbox-templates:claude-code-docker"
+  aiFilename: CLAUDE.md
+  persistence: persistent
+  entrypoint:
+    run: [claude]
+
+network:
+  serviceDomains:
+    api.anthropic.com: anthropic
+    console.anthropic.com: anthropic
+  serviceAuth:
+    anthropic:
+      headerName: x-api-key
+      valueFormat: "%s"
+  allowedDomains:
+    - api.anthropic.com:443
+    - platform.claude.com:443
+
+credentials:
+  sources:
+    anthropic:
+      env:
+        - ANTHROPIC_API_KEY
+
+environment:
+  variables:
+    IS_SANDBOX: "1"
