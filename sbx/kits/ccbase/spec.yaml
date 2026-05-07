@@ -20,12 +20,6 @@ network:
     - api.anthropic.com:443
     - platform.claude.com:443
 
-credentials:
-  sources:
-    anthropic:
-      env:
-        - ANTHROPIC_API_KEY
-
 environment:
   variables:
     IS_SANDBOX: "1"
