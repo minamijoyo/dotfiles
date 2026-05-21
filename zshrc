@@ -100,10 +100,8 @@ autoload -U +X bashcompinit && bashcompinit
 complete -C terraform terraform
 complete -o nospace -C tfschema tfschema
 
-# pipxの設定
-export PATH="$PATH:$HOME/.local/bin"
-
 # Claude Codeの設定
+export PATH="$PATH:$HOME/.local/bin"
 # v1.0.30から設定ファイルのパスが変わっているので環境変数で指定する
 export CLAUDE_CODE_ENABLE_TELEMETRY=1
 export DISABLE_AUTOUPDATER=1
