@@ -2,9 +2,9 @@
   name = Masayuki Morita
   email = minamijoyo@gmail.com
 [includeIf "gitdir:~/src/github.com/crowdworksjp/"]
-  path = ~/.gitconfig_cw
+  path = ~/src/github.com/minamijoyo/local-configs/gitconfig_cw
 [includeIf "gitdir:~/src/github.com/onecrowdworks/"]
-  path = ~/.gitconfig_cw
+  path = ~/src/github.com/minamijoyo/local-configs/gitconfig_cw
 [color]
   ui = true
 [alias]
