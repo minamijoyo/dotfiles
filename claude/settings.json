@@ -31,11 +31,7 @@
       "Bash(go tool cover:*)",
       "Bash(goimports:*)",
       "Bash(qiita get_item:*)",
-      "Skill(qiita_team_get_item)",
-      "mcp__terraform__resolveProviderDocID",
-      "mcp__terraform__getProviderDocs",
-      "mcp__aws-documentation__search_documentation",
-      "mcp__aws-documentation__read_documentation"
+      "Skill(qiita_team_get_item)"
     ],
     "deny": [
       "Read(.env)",
@@ -57,21 +53,10 @@
       "Bash(terraform state:*)",
       "Bash(terraform taint:*)",
       "Bash(terraform import:*)",
-      "Bash(tfmigrate apply:*)",
-      "mcp__terraform__searchModules",
-      "mcp__terraform__moduleDetails"
+      "Bash(tfmigrate apply:*)"
     ]
   },
   "enableAllProjectMcpServers": false,
-  "enabledMcpjsonServers": [
-    "terraform",
-    "aws-documentation"
-  ],
-  "statusLine": {
-    "type": "command",
-    "command": "ccusage statusline",
-    "padding": 0
-  },
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": false,
