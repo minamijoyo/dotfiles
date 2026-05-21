@@ -89,14 +89,8 @@ bindkey '^[[B' history-substring-search-down
 # mollifier/anyframeの設定
 bindkey '^r' anyframe-widget-put-history
 
-bindkey '^rr' anyframe-widget-cdr
-bindkey '^r^r' anyframe-widget-cdr
-
 bindkey '^rg' anyframe-widget-cd-ghq-repository
 bindkey '^r^g' anyframe-widget-cd-ghq-repository
-
-bindkey '^rb' anyframe-widget-checkout-git-branch
-bindkey '^r^b' anyframe-widget-checkout-git-branch
 
 # goの設定
 source ${ASDF_DATA_DIR:-$HOME/.asdf}/plugins/golang/set-env.zsh
