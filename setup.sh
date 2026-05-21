@@ -89,7 +89,3 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 #       => GitHub => Install
 # Settings => Extensions => Search Bookmarks => Alias: bk
 # GitHub => My Issues => Login
-#
-# aiderの設定
-# sudo mkdir -p /etc/aider
-# sudo ln -s $(pwd)/aiderignore /etc/aider/.aiderignore
