@@ -51,10 +51,6 @@ hook_add = '''
     source $HOME/.vim/plugins/vim-fugitive.vim
 '''
 
-# fugitiveでremoteにssh://が使えるようにrhubarbも入れる
-[[plugins]]
-repo = 'tpope/vim-rhubarb'
-
 # gitの差分をエディタ上に表示
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
@@ -90,14 +86,6 @@ repo = 'vim-airline/vim-airline-themes'
 [[plugins]]
 repo = 'nanotech/jellybeans.vim'
 
-# カラースキーマの選択
-# [[plugins]]
-# repo = 'ujihisa/unite-colorscheme'
-
-# 色情報が入ったファイルを開いた場合は表示を色付けする
-[[plugins]]
-repo = 'vim-scripts/AnsiEsc.vim'
-
 # 括弧の対応を分かりやすくするため色を変える
 [[plugins]]
 repo = 'luochen1990/rainbow'
@@ -130,13 +118,6 @@ repo = "tyru/caw.vim.git"
 # オペレータの拡張
 [[plugins]]
 repo = 'kana/vim-operator-user'
-
-# スネークケースとキャメルケースの入れ替え
-[[plugins]]
-repo = 'tyru/operator-camelize.vim'
-hook_add = '''
-    source $HOME/.vim/plugins/operator-camelize.vim
-'''
 
 # 括弧の操作
 [[plugins]]
@@ -193,33 +174,6 @@ hook_add = '''
     source $HOME/.vim/plugins/copilot.vim
 '''
 
-# ollama
-[[plugins]]
-repo = 'madox2/vim-ai'
-hook_add = '''
-    source $HOME/.vim/plugins/vim-ai.vim
-'''
-
-# スニペット
-[[plugins]]
-repo = 'SirVer/ultisnips'
-hook_add = '''
-    let g:UltiSnipsSnippetDirectories = ["UltiSnips", $HOME.'/vim/template/UltiSnips']
-    let g:UltiSnipsExpandTrigger="<tab>"
-    let g:UltiSnipsJumpForwardTrigger = "<tab>"
-    let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-'''
-
-# スニペット集
-[[plugins]]
-repo = 'honza/vim-snippets'
-
-# asyncompleteのソースにultisnipsを追加
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete-ultisnips.vim'
-hook_add = '''
-    source $HOME/.vim/plugins/asyncomplete-ultisnips.vim
-'''
 ########################################
 # コマンド実行
 ########################################

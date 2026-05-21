@@ -41,10 +41,6 @@ repo = 'pangloss/vim-javascript'
 on_ft = ['javascript']
 
 [[plugins]]
-repo = 'kchmck/vim-coffee-script'
-on_ft = ['coffee']
-
-[[plugins]]
 repo = 'posva/vim-vue'
 on_ft = ['vue']
 
@@ -61,10 +57,6 @@ on_ft = ['python']
 hook_add = '''
     source $HOME/.vim/plugins/jupytext.vim
 '''
-
-[[plugins]]
-repo = 'jupyter-vim/jupyter-vim'
-on_ft = ['python']
 
 ########################################
 # go
