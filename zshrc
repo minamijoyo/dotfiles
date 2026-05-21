@@ -34,6 +34,9 @@ setopt no_flow_control
 # ターミナルの文字コードの設定
 export LC_CTYPE=ja_JP.UTF-8
 
+# brewの設定
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 # asdfの設定
 export ASDF_GOLANG_MOD_VERSION_ENABLED=false
 source $(brew --prefix asdf)/libexec/asdf.sh
