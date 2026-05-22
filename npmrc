@@ -1,8 +1,10 @@
-engine-strict=true
-ignore-scripts=true
-audit=true
 min-release-age=7
-save-exact=true
-audit-level=high
-strict-peer-deps=true
+ignore-scripts=true
 allow-git=none
+allow-remote=none
+allow-file=none
+allow-directory=none
+engine-strict=true
+strict-peer-deps=true
+audit=true
+audit-level=high
