@@ -25,6 +25,14 @@ network:
     - "*.ap-northeast-3.amazonaws.com:443"
     - "*.us-east-1.amazonaws.com:443"
     - "*.us-east-2.amazonaws.com:443"
+    - docker.io:443
+    - auth.docker.io:443
+    - registry-1.docker.io:443
+    - production.cloudfront.docker.com:443
+    - public.ecr.aws:443
+    - deb.debian.org:80
+    - pypi.org:443
+    - files.pythonhosted.org:443
 
 environment:
   variables:
