@@ -19,6 +19,7 @@ network:
   allowedDomains:
     - api.anthropic.com:443
     - platform.claude.com:443
+    - github.com:443
     - api.github.com:443
     - raw.githubusercontent.com:443
     - "*.ap-northeast-1.amazonaws.com:443"
