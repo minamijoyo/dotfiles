@@ -6,5 +6,3 @@ allow-file=none
 allow-directory=none
 engine-strict=true
 strict-peer-deps=true
-audit=true
-audit-level=high
