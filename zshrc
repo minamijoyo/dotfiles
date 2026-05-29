@@ -37,9 +37,8 @@ export LC_CTYPE=ja_JP.UTF-8
 # brewの設定
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-# asdfの設定
-export ASDF_GOLANG_MOD_VERSION_ENABLED=false
-source $(brew --prefix asdf)/libexec/asdf.sh
+# miseの設定
+eval "$(mise activate zsh)"
 
 # zplugの設定
 export ZPLUG_HOME="$(brew --prefix)/opt/zplug"
@@ -91,9 +90,6 @@ bindkey '^r' anyframe-widget-put-history
 
 bindkey '^rg' anyframe-widget-cd-ghq-repository
 bindkey '^r^g' anyframe-widget-cd-ghq-repository
-
-# goの設定
-source ${ASDF_DATA_DIR:-$HOME/.asdf}/plugins/golang/set-env.zsh
 
 # terraformの設定
 autoload -U +X bashcompinit && bashcompinit

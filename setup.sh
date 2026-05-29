@@ -29,14 +29,6 @@ sudo softwareupdate --install-rosetta
 # Install packages
 brew bundle --file Brewfile
 
-asdf plugin add terraform
-asdf plugin add opentofu
-asdf plugin add golang
-asdf plugin add python
-asdf plugin add poetry
-asdf plugin add ruby
-asdf plugin add nodejs
-
 # Create directories
 mkdir -p ~/work/tmp
 mkdir -p ~/.terraform.d/plugin-cache
@@ -73,8 +65,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 # Settings => Profiles => Default => Window => Transparency: 30
 #                                 => Colors => Color Presets: Dark Background
 # シェルプロンプトのカスタマイズなどがグローバルなPythonに依存
-# asdf install python latest
-# asdf set --home python latest
+# mise install -g
 #
 # aws-vaultの設定
 # ~/.aws/config を設定

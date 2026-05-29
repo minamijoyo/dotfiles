@@ -1,0 +1,21 @@
+[settings]
+minimum_release_age = "7d"
+idiomatic_version_file_enable_tools = [
+  "go",
+  "node",
+  "opentofu",
+  "python",
+  "ruby",
+  "terraform",
+]
+
+[settings.ruby]
+compile = false
+
+[tools]
+go = "1.26"
+node = "24"
+opentofu = "1.12"
+python = "3.13"
+ruby = "3.4"
+terraform = "1.15"
