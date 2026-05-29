@@ -17,10 +17,21 @@ idiomatic_version_file_enable_tools = [
 compile = false
 
 [tools]
+direnv = "latest"
+gh = "latest"
+ghq = "latest"
 go = "1.26"
+jq = "latest"
 node = "24"
 opentofu = "1.12"
+peco = "latest"
+pinact = "latest"
 poetry = "2.4.1"
 python = "3.13"
+ripgrep = "latest"
 ruby = "3.4"
+shellcheck = "latest"
 terraform = "1.15"
+tflint = "latest"
+tmux = "latest"
+uv = "latest"
