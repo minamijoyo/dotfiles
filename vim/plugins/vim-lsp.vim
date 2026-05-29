@@ -10,5 +10,5 @@ nnoremap <silent> <C-]> :LspDefinition<CR>
 augroup lsp_organize_imports_and_format
   autocmd!
   autocmd BufWritePre *.py call execute('LspCodeActionSync source.organizeImports')
-  autocmd BufWritePre *.py call execute('LspDocumentFormatSync --server=ruff-lsp')
+  autocmd BufWritePre *.py call execute('LspDocumentFormatSync --server=ruff')
 augroup END
