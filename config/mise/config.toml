@@ -1,5 +1,7 @@
 [settings]
 minimum_release_age = "7d"
+lockfile = true
+lockfile_platforms = ["macos-arm64"]
 idiomatic_version_file_enable_tools = [
   "go",
   "node",
