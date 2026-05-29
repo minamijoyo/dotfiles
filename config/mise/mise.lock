@@ -75,6 +75,10 @@ checksum = "sha256:ba7ffd6a63e3c96458a582cce7753fb450a4ebc75099b885b2b6c6f57e562
 url = "https://github.com/suzuki-shunsuke/pinact/releases/download/v3.10.1/pinact_darwin_arm64.tar.gz"
 provenance = "github-attestations"
 
+[[tools."pipx:jupytext"]]
+version = "1.19.3"
+backend = "pipx:jupytext"
+
 [[tools."pipx:poetry"]]
 version = "2.4.1"
 backend = "pipx:poetry"
