@@ -83,6 +83,10 @@ backend = "pipx:jupytext"
 version = "2.4.1"
 backend = "pipx:poetry"
 
+[[tools."pipx:sqlparse"]]
+version = "0.5.5"
+backend = "pipx:sqlparse"
+
 [[tools.poetry]]
 version = "2.4.1"
 backend = "pipx:poetry"
