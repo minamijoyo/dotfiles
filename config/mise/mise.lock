@@ -24,6 +24,14 @@ backend = "aqua:opentofu/opentofu"
 checksum = "sha256:9ad35307131102371d770cfc1a9806225fd5040acf1a3d3d8c3b5ad5418cd454"
 url = "https://github.com/opentofu/opentofu/releases/download/v1.12.0/tofu_1.12.0_darwin_arm64.tar.gz"
 
+[[tools."pipx:poetry"]]
+version = "2.4.1"
+backend = "pipx:poetry"
+
+[[tools.poetry]]
+version = "2.4.1"
+backend = "pipx:poetry"
+
 [[tools.python]]
 version = "3.13.13"
 backend = "core:python"
