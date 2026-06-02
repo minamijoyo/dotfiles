@@ -22,6 +22,7 @@ network:
     - github.com:443
     - api.github.com:443
     - raw.githubusercontent.com:443
+    - release-assets.githubusercontent.com:443
     - "*.ap-northeast-1.amazonaws.com:443"
     - "*.ap-northeast-3.amazonaws.com:443"
     - "*.us-east-1.amazonaws.com:443"
@@ -34,6 +35,8 @@ network:
     - deb.debian.org:80
     - pypi.org:443
     - files.pythonhosted.org:443
+    - mise.en.dev:443
+    - mise-versions.jdx.dev:443
 
 environment:
   variables:
