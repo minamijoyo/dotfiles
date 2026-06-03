@@ -1,0 +1,5 @@
+[solver]
+min-release-age = 7
+
+[virtualenvs]
+in-project = false

@@ -10,15 +10,7 @@ RUN sudo apt update -y && sudo apt install -y curl \
   && echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.asc] https://mise.en.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list \
   && sudo apt update -y \
   && sudo apt install -y mise \
-  && echo 'eval "$(mise activate bash)"' >> /etc/sandbox-persistent.sh \
-  && mkdir -p ~/.config/mise/ && touch ~/.config/mise/config.toml \
-  && mise config set settings.minimum_release_age 7d \
-  && mise config set settings.disable_backends asdf,vfox
-
-# Install poetry
-RUN mise use -g poetry \
-  && poetry config solver.min-release-age 7
-  && poetry config virtualenvs.in-project false
+  && echo 'eval "$(mise activate bash)"' >> ~/.bashrc
 
 # Install GitHub CLI
 RUN (type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
