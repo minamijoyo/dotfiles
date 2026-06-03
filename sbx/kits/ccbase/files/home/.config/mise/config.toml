@@ -5,7 +5,6 @@ idiomatic_version_file_enable_tools = [
   "go",
   "node",
   "opentofu",
-  "poetry",
   "python",
   "ruby",
   "terraform",
