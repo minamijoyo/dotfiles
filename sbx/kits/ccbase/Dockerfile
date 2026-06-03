@@ -14,6 +14,7 @@ RUN sudo apt update -y && sudo apt install -y curl \
   && sudo apt update -y \
   && sudo apt install -y mise \
   && echo 'eval "$(mise activate bash)"' >> ~/.bashrc
+ENV MISE_MINIMUM_RELEASE_AGE=7d
 
 # Install GitHub CLI
 RUN (type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
