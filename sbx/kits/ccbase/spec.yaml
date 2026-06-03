@@ -31,6 +31,7 @@ network:
     - registry-1.docker.io:443
     - production.cloudfront.docker.com:443
     - public.ecr.aws:443
+    - d5l0dvt14r5h8.cloudfront.net:443 # public.ecr.aws
     - deb.debian.org:80
     - pypi.org:443
     - files.pythonhosted.org:443
