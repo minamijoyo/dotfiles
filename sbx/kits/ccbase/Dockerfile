@@ -1,7 +1,10 @@
 FROM docker/sandbox-templates:claude-code-docker
 
-# Install build-essential for native library builds
-RUN sudo apt update -y && sudo apt install -y build-essential
+# Install dependencies not managed by mise
+RUN sudo apt update -y && sudo apt install -y \
+  build-essential \
+  direnv \
+  && echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
 
 # Install mise
 RUN sudo apt update -y && sudo apt install -y curl \
