@@ -13,7 +13,7 @@ RUN sudo apt update -y && sudo apt install -y curl \
   && echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.asc] https://mise.en.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list \
   && sudo apt update -y \
   && sudo apt install -y mise \
-  && echo 'eval "$(mise activate bash)"' >> ~/.bashrc
+  && echo 'eval "$(mise activate bash)"' >> /etc/sandbox-persistent.sh
 ENV MISE_MINIMUM_RELEASE_AGE=7d
 
 # Install GitHub CLI
