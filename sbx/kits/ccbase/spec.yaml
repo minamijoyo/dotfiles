@@ -37,6 +37,8 @@ network:
     - files.pythonhosted.org:443
     - mise-versions.jdx.dev:443
     - tuf-repo-cdn.sigstore.dev:443
+    - sh.rustup.rs:443
+    - static.rust-lang.org:443
 
 environment:
   variables:
