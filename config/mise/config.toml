@@ -19,6 +19,7 @@ compile = false
 direnv = "latest"
 gh = "latest"
 ghq = "latest"
+"github:fencesandbox/fence" = "latest"
 go = "1.26"
 jq = "latest"
 node = "24"

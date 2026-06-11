@@ -25,6 +25,18 @@ backend = "aqua:x-motemen/ghq"
 checksum = "sha256:5e3100de0c5a248eebe6ab176ad94d6e12386af70a58c535368a4301861b1398"
 url = "https://github.com/x-motemen/ghq/releases/download/v1.10.1/ghq_darwin_arm64.zip"
 
+[[tools."github:fencesandbox/fence"]]
+version = "0.1.59"
+backend = "github:fencesandbox/fence"
+
+[tools."github:fencesandbox/fence"."platforms.macos-arm64"]
+checksum = "sha256:e87132590e5af1b757fe5d94f32096c5ab4425dde1adf1870206388962ef7652"
+url = "https://github.com/fencesandbox/fence/releases/download/v0.1.59/fence_0.1.59_Darwin_arm64.tar.gz"
+url_api = "https://api.github.com/repos/fencesandbox/fence/releases/assets/433655261"
+
+[tools."github:fencesandbox/fence"."platforms.macos-arm64".provenance.slsa]
+url = "https://github.com/fencesandbox/fence/releases/download/v0.1.59/multiple.intoto.jsonl"
+
 [[tools.go]]
 version = "1.26.3"
 backend = "core:go"
