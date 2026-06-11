@@ -15,6 +15,9 @@ idiomatic_version_file_enable_tools = [
 [settings.ruby]
 compile = false
 
+[settings.pipx]
+registry_url="https://pypi.flatt.tech/simple/{}/"
+
 [tools]
 direnv = "latest"
 gh = "latest"
