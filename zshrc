@@ -91,6 +91,9 @@ bindkey '^r' anyframe-widget-put-history
 bindkey '^rg' anyframe-widget-cd-ghq-repository
 bindkey '^r^g' anyframe-widget-cd-ghq-repository
 
+# Goの設定
+export GOPROXY=https://golang.flatt.tech
+
 # terraformの設定
 autoload -U +X bashcompinit && bashcompinit
 complete -C terraform terraform
