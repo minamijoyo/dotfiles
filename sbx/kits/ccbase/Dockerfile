@@ -4,7 +4,14 @@ FROM docker/sandbox-templates:claude-code-docker
 RUN sudo apt update -y && sudo apt install -y \
   build-essential \
   direnv \
-  && echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
+  && echo 'eval "$(direnv hook bash)"' >> /etc/sandbox-persistent.sh
+
+# Takumi Guard
+ENV NPM_CONFIG_REGISTRY=https://npm.flatt.tech/ \
+  PIP_INDEX_URL=https://pypi.flatt.tech/simple/ \
+  UV_DEFAULT_INDEX=https://pypi.flatt.tech/simple/ \
+  GOPROXY=https://golang.flatt.tech \
+  MISE_PIPX_REGISTRY_URL=https://pypi.flatt.tech/simple/{}/
 
 # Install mise
 RUN sudo apt update -y && sudo apt install -y curl \
