@@ -1,10 +1,6 @@
 [user]
   name = Masayuki Morita
   email = minamijoyo@gmail.com
-[includeIf "gitdir:~/src/github.com/crowdworksjp/"]
-  path = ~/src/github.com/minamijoyo/local-configs/gitconfig_cw
-[includeIf "gitdir:~/src/github.com/onecrowdworks/"]
-  path = ~/src/github.com/minamijoyo/local-configs/gitconfig_cw
 [color]
   ui = true
 [alias]
@@ -31,7 +27,8 @@
 [pull]
 	ff = only
 [credential]
-	helper = 
-	helper = /usr/local/share/gcm-core/git-credential-manager
-[credential "https://dev.azure.com"]
+	helper =
+	helper = "!f(){ ENV GHTKN_APP=minamijoyo/write ghtkn git-credential; };f"
 	useHttpPath = true
+[include]
+  path = ~/src/github.com/minamijoyo/local-configs/gitconfig_local

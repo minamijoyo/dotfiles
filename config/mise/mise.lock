@@ -25,6 +25,15 @@ backend = "aqua:x-motemen/ghq"
 checksum = "sha256:5e3100de0c5a248eebe6ab176ad94d6e12386af70a58c535368a4301861b1398"
 url = "https://github.com/x-motemen/ghq/releases/download/v1.10.1/ghq_darwin_arm64.zip"
 
+[[tools.ghtkn]]
+version = "0.2.5"
+backend = "aqua:suzuki-shunsuke/ghtkn"
+
+[tools.ghtkn."platforms.macos-arm64"]
+checksum = "sha256:160b3a3ac0a67dde2bb3eba623b608dd3331540647e87f4aa39784cba3c9c521"
+url = "https://github.com/suzuki-shunsuke/ghtkn/releases/download/v0.2.5/ghtkn_darwin_arm64.tar.gz"
+provenance = "github-attestations"
+
 [[tools."github:fencesandbox/fence"]]
 version = "0.1.59"
 backend = "github:fencesandbox/fence"
@@ -124,10 +133,11 @@ url = "https://github.com/BurntSushi/ripgrep/releases/download/15.1.0/ripgrep-15
 version = "3.4.9"
 backend = "core:ruby"
 
-[tools.ruby."platforms.macos-arm64"]
-checksum = "sha256:eb0383a31596fb1c37d141b4e74ec3eacd1733b5c88ba981e3a79968d02da022"
-url = "https://github.com/jdx/ruby/releases/download/3.4.9-3/ruby-3.4.9.macos.tar.gz"
-provenance = "github-attestations"
+[tools.ruby.options]
+compile = "false"
+precompiled_url = "jdx/ruby"
+ruby_build_repo = "https://github.com/rbenv/ruby-build.git"
+ruby_install = "false"
 
 [[tools.shellcheck]]
 version = "0.11.0"
