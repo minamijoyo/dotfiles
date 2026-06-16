@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -eu
+
+if [ -z "${GH_TOKEN:-}" ] && [ -z "${GITHUB_TOKEN:-}" ]; then
+  GH_TOKEN="$(ghtkn get)"
+  export GH_TOKEN
+fi
+
+exec $(mise which gh) "$@"

@@ -40,6 +40,9 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # miseの設定
 eval "$(mise activate zsh)"
 
+# カスタムスクリプト
+export PATH="$HOME/scripts:$PATH"
+
 # zplugの設定
 export ZPLUG_HOME="$(brew --prefix)/opt/zplug"
 source $ZPLUG_HOME/init.zsh
