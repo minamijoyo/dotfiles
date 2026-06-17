@@ -124,7 +124,7 @@ alias tfip="terraform init && terraform plan"
 alias ave='(){ aws-vault exec --duration=4h $@ }'
 alias avl='(){ open -na "Google Chrome" --args --incognito --user-data-dir=$HOME/Library/Application\ Support/Google/Chrome/aws-vault/$@  $(aws-vault login --duration=4h $@ --stdout) }'
 alias cclocal='(){ ollama launch claude --model qwen3.6:35b-a3b-coding-nvfp4 -- $@ }'
-alias ghauth='(){ ghtkn auth $@ </dev/null 2>&1 | tee >(grep -oE "[A-Z0-9]{4}-[A-Z0-9]{4}" --line-buffered | head -n1 | tr -d "\n" | pbcopy) }'
+alias ghauth='(){ ghtkn auth "$@" 2>&1 | tee >(grep -oE "[A-Z0-9]{4}-[A-Z0-9]{4}" --line-buffered | head -n1 | tr -d "\n" | pbcopy) }'
 
 # 環境変数の管理にdirenvを使う
 eval "$(direnv hook zsh)"
