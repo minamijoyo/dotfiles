@@ -39,6 +39,9 @@ network:
     - tuf-repo-cdn.sigstore.dev:443
     - sh.rustup.rs:443
     - static.rust-lang.org:443
+    - npm.flatt.tech:443
+    - pypi.flatt.tech:443
+    - golang.flatt.tech:443
 
 environment:
   variables:
