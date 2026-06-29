@@ -26,12 +26,12 @@ checksum = "sha256:5e3100de0c5a248eebe6ab176ad94d6e12386af70a58c535368a4301861b1
 url = "https://github.com/x-motemen/ghq/releases/download/v1.10.1/ghq_darwin_arm64.zip"
 
 [[tools.ghtkn]]
-version = "0.2.5"
+version = "0.3.1"
 backend = "aqua:suzuki-shunsuke/ghtkn"
 
 [tools.ghtkn."platforms.macos-arm64"]
-checksum = "sha256:160b3a3ac0a67dde2bb3eba623b608dd3331540647e87f4aa39784cba3c9c521"
-url = "https://github.com/suzuki-shunsuke/ghtkn/releases/download/v0.2.5/ghtkn_darwin_arm64.tar.gz"
+checksum = "sha256:5d036a0fa2c4065284e62ae35cbc499fb8243fb182fa5002863f9419cd5fb949"
+url = "https://github.com/suzuki-shunsuke/ghtkn/releases/download/v0.3.1/ghtkn_darwin_arm64.tar.gz"
 provenance = "github-attestations"
 
 [[tools."github:fencesandbox/fence"]]
@@ -47,12 +47,8 @@ url_api = "https://api.github.com/repos/fencesandbox/fence/releases/assets/43365
 url = "https://github.com/fencesandbox/fence/releases/download/v0.1.59/multiple.intoto.jsonl"
 
 [[tools.go]]
-version = "1.26.3"
+version = "1.26.2"
 backend = "core:go"
-
-[tools.go."platforms.macos-arm64"]
-checksum = "sha256:875cf54a15311eee2c99b9dd67c68c4a49351d489ab622bf2cfd28c8f2078d3c"
-url = "https://dl.google.com/go/go1.26.3.darwin-arm64.tar.gz"
 
 [[tools.jq]]
 version = "1.8.1"
@@ -72,12 +68,12 @@ checksum = "sha256:39189dab4eeb15706c424af0ac08a3044c9e48f7db12a7d77f6b7aafc7dd5
 url = "https://nodejs.org/dist/v24.16.0/node-v24.16.0-darwin-arm64.tar.gz"
 
 [[tools.opentofu]]
-version = "1.12.0"
+version = "1.12.3"
 backend = "aqua:opentofu/opentofu"
 
 [tools.opentofu."platforms.macos-arm64"]
-checksum = "sha256:9ad35307131102371d770cfc1a9806225fd5040acf1a3d3d8c3b5ad5418cd454"
-url = "https://github.com/opentofu/opentofu/releases/download/v1.12.0/tofu_1.12.0_darwin_arm64.tar.gz"
+checksum = "sha256:0c8ddee4294f7cea34d82b122fa805febce41d21905a54dc9ce9f79ee8145284"
+url = "https://github.com/opentofu/opentofu/releases/download/v1.12.3/tofu_1.12.3_darwin_arm64.tar.gz"
 
 [[tools.peco]]
 version = "0.6.0"
