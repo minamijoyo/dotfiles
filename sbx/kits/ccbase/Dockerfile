@@ -41,3 +41,6 @@ RUN ARCH="$(uname -m)" && curl "https://awscli.amazonaws.com/awscli-exe-linux-$A
   && rm -rf aws awscliv2.zip
 
 ENV AWS_PAGER=""
+
+# Set a simple prompt
+RUN echo 'export PS1="[\W@\h]\$ "' >> /etc/sandbox-persistent.sh
