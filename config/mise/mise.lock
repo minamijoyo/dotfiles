@@ -50,6 +50,10 @@ url = "https://github.com/fencesandbox/fence/releases/download/v0.1.59/multiple.
 version = "1.26.2"
 backend = "core:go"
 
+[tools.go."platforms.macos-arm64"]
+checksum = "sha256:32af1522bf3e3ff3975864780a429cc0b41d190ec7bf90faa661d6d64566e7af"
+url = "https://dl.google.com/go/go1.26.2.darwin-arm64.tar.gz"
+
 [[tools.jq]]
 version = "1.8.1"
 backend = "aqua:jqlang/jq"
