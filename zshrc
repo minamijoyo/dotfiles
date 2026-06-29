@@ -94,6 +94,10 @@ bindkey '^r' anyframe-widget-put-history
 bindkey '^rg' anyframe-widget-cd-ghq-repository
 bindkey '^r^g' anyframe-widget-cd-ghq-repository
 
+function anyframe-widget-ghtkn-auth() { yq < "$HOME/.config/ghtkn/ghtkn.yaml" '.apps[].name' | sort | anyframe-selector-auto | anyframe-action-execute ghtkn auth -p }
+zle -N anyframe-widget-ghtkn-auth
+bindkey '^r^t' anyframe-widget-ghtkn-auth
+
 # Goの設定
 export GOPROXY=https://golang.flatt.tech
 
@@ -124,7 +128,6 @@ alias tfip="terraform init && terraform plan"
 alias ave='(){ aws-vault exec --duration=4h $@ }'
 alias avl='(){ open -na "Google Chrome" --args --incognito --user-data-dir=$HOME/Library/Application\ Support/Google/Chrome/aws-vault/$@  $(aws-vault login --duration=4h $@ --stdout) }'
 alias cclocal='(){ ollama launch claude --model qwen3.6:35b-a3b-coding-nvfp4 -- $@ }'
-alias ghauth='(){ ghtkn auth "$@" 2>&1 | tee >(grep -oE "[A-Z0-9]{4}-[A-Z0-9]{4}" --line-buffered | head -n1 | tr -d "\n" | pbcopy) }'
 
 # 環境変数の管理にdirenvを使う
 eval "$(direnv hook zsh)"
