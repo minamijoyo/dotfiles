@@ -8,6 +8,14 @@ backend = "aqua:direnv/direnv"
 checksum = "sha256:4f569f3a36732bfd8b8fea7bfcc6ad87a59745c109022164d0ca4832451d5369"
 url = "https://github.com/direnv/direnv/releases/download/v2.37.1/direnv.darwin-arm64"
 
+[[tools.fzf]]
+version = "0.73.1"
+backend = "aqua:junegunn/fzf"
+
+[tools.fzf."platforms.macos-arm64"]
+checksum = "sha256:d27fd68c04fb9b42f7c73a3f7d38069a74d308e40174f64a072c747213e97286"
+url = "https://github.com/junegunn/fzf/releases/download/v0.73.1/fzf-0.73.1-darwin_arm64.tar.gz"
+
 [[tools.gh]]
 version = "2.92.0"
 backend = "aqua:cli/cli"

@@ -94,9 +94,9 @@ bindkey '^r' anyframe-widget-put-history
 bindkey '^rg' anyframe-widget-cd-ghq-repository
 bindkey '^r^g' anyframe-widget-cd-ghq-repository
 
-function anyframe-widget-ghtkn-auth() { yq < "$HOME/.config/ghtkn/ghtkn.yaml" '.apps[].name' | sort | anyframe-selector-auto | anyframe-action-execute ghtkn auth -p }
-zle -N anyframe-widget-ghtkn-auth
-bindkey '^r^t' anyframe-widget-ghtkn-auth
+function fzf-ghtkn-auth() { ghtkn auth -p $(yq '.apps[].name' "$HOME/.config/ghtkn/ghtkn.yaml" | sort | fzf) }
+zle -N fzf-ghtkn-auth
+bindkey '^r^t' fzf-ghtkn-auth
 
 # Goの設定
 export GOPROXY=https://golang.flatt.tech
