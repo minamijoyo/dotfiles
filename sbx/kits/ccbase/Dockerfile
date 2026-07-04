@@ -42,5 +42,6 @@ RUN ARCH="$(uname -m)" && curl "https://awscli.amazonaws.com/awscli-exe-linux-$A
 
 ENV AWS_PAGER=""
 
-# Set a simple prompt
+# Customize env vars
 RUN echo 'export PS1="[\W@\h]\$ "' >> /etc/sandbox-persistent.sh
+RUN echo 'export PATH="$PATH:$HOME/go/bin"' >> /etc/sandbox-persistent.sh
