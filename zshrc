@@ -130,7 +130,7 @@ alias avl='(){ open -na "Google Chrome" --args --incognito --user-data-dir=$HOME
 alias cclocal='(){ ollama launch claude --model qwen3.6:35b-a3b-coding-nvfp4 -- $@ }'
 alias sbxb='(){ docker build -t minamijoyo/ccbase ./sbx/kits/ccbase && sbx template load <(docker image save minamijoyo/ccbase) }'
 alias sbxr='(){ sbx rm -f $(basename $(pwd)) }'
-alias sbxc='(){ sbx create ccbase --name $(basename $(pwd)) --kit ~/src/github.com/minamijoyo/dotfiles/sbx/kits/ccbase . }'
+alias sbxc='(){ sbx create ccbase --name $(basename $(pwd)) --kit ~/src/github.com/minamijoyo/dotfiles/sbx/kits/ccbase ~/src/github.com/minamijoyo/dotfiles/sbx/kits/cato . }'
 alias sbxe='(){ sbx exec -it -w $(pwd) $(basename $(pwd)) bash }'
 
 # 環境変数の管理にdirenvを使う

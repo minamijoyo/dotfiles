@@ -1,0 +1,17 @@
+schemaVersion: "1"
+kind: mixin
+name: cato
+
+network:
+  allowedDomains:
+    - clientdownload.catonetworks.com:443
+    - clients.catonetworks.com:443
+
+commands:
+  install:
+    - description: Install CATO CA certificate
+      user: "0"
+      command: |
+        curl -fsSL https://clientdownload.catonetworks.com/public/certificates/CatoNetworksTrustedRootCA.pem -o /tmp/cato-root-ca.crt \
+        && install -m 0644 /tmp/cato-root-ca.crt /usr/local/share/ca-certificates/cato-root-ca.crt \
+        && update-ca-certificates
