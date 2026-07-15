@@ -1,5 +1,7 @@
 FROM docker/sandbox-templates:claude-code-docker
 
+RUN claude update
+
 # Install dependencies not managed by mise
 RUN sudo apt update -y && sudo apt install -y \
   build-essential \
