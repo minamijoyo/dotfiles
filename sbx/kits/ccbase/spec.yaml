@@ -1,7 +1,7 @@
 schemaVersion: "1"
-kind: agent
+kind: sandbox
 name: ccbase
-agent:
+sandbox:
   image: "minamijoyo/ccbase"
   aiFilename: CLAUDE.md
   entrypoint:
