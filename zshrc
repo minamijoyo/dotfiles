@@ -132,6 +132,7 @@ alias sbxb='(){ docker build -t minamijoyo/ccbase ./sbx/kits/ccbase && sbx templ
 alias sbxr='(){ sbx rm -f $(basename $(git rev-parse --show-toplevel)) }'
 alias sbxc='(){ sbx create ccbase --name $(basename $(git rev-parse --show-toplevel)) --kit ~/src/github.com/minamijoyo/dotfiles/sbx/kits/ccbase --kit ~/src/github.com/minamijoyo/dotfiles/sbx/kits/cato . }'
 alias sbxe='(){ sbx exec -it -w $(pwd) $(basename $(git rev-parse --show-toplevel)) bash }'
+alias sbxg='(){ ghtkn get $@ | sbx secret set $(basename $(git rev-parse --show-toplevel)) github -f }'
 
 # 環境変数の管理にdirenvを使う
 eval "$(direnv hook zsh)"
