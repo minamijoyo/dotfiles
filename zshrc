@@ -129,9 +129,9 @@ alias ave='(){ aws-vault exec --duration=4h $@ }'
 alias avl='(){ open -na "Google Chrome" --args --incognito --user-data-dir=$HOME/Library/Application\ Support/Google/Chrome/aws-vault/$@  $(aws-vault login --duration=4h $@ --stdout) }'
 alias cclocal='(){ ollama launch claude --model qwen3.6:35b-a3b-coding-nvfp4 -- $@ }'
 alias sbxb='(){ docker build -t minamijoyo/ccbase ./sbx/kits/ccbase && sbx template load <(docker image save minamijoyo/ccbase) }'
-alias sbxr='(){ sbx rm -f $(basename $(pwd)) }'
-alias sbxc='(){ sbx create ccbase --name $(basename $(pwd)) --kit ~/src/github.com/minamijoyo/dotfiles/sbx/kits/ccbase --kit ~/src/github.com/minamijoyo/dotfiles/sbx/kits/cato . }'
-alias sbxe='(){ sbx exec -it -w $(pwd) $(basename $(pwd)) bash }'
+alias sbxr='(){ sbx rm -f $(basename $(git rev-parse --show-toplevel)) }'
+alias sbxc='(){ sbx create ccbase --name $(basename $(git rev-parse --show-toplevel)) --kit ~/src/github.com/minamijoyo/dotfiles/sbx/kits/ccbase --kit ~/src/github.com/minamijoyo/dotfiles/sbx/kits/cato . }'
+alias sbxe='(){ sbx exec -it -w $(pwd) $(basename $(git rev-parse --show-toplevel)) bash }'
 
 # 環境変数の管理にdirenvを使う
 eval "$(direnv hook zsh)"
