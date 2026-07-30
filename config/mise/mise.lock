@@ -34,12 +34,12 @@ checksum = "sha256:5e3100de0c5a248eebe6ab176ad94d6e12386af70a58c535368a4301861b1
 url = "https://github.com/x-motemen/ghq/releases/download/v1.10.1/ghq_darwin_arm64.zip"
 
 [[tools.ghtkn]]
-version = "0.3.1"
+version = "0.3.4"
 backend = "aqua:suzuki-shunsuke/ghtkn"
 
 [tools.ghtkn."platforms.macos-arm64"]
-checksum = "sha256:5d036a0fa2c4065284e62ae35cbc499fb8243fb182fa5002863f9419cd5fb949"
-url = "https://github.com/suzuki-shunsuke/ghtkn/releases/download/v0.3.1/ghtkn_darwin_arm64.tar.gz"
+checksum = "sha256:7463d826f7b834e696d4132a022106d35bbc52182d06fd9eceb72e64dcab888f"
+url = "https://github.com/suzuki-shunsuke/ghtkn/releases/download/v0.3.4/ghtkn_darwin_arm64.tar.gz"
 provenance = "github-attestations"
 
 [[tools."github:fencesandbox/fence"]]
