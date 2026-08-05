@@ -79,6 +79,14 @@ backend = "core:node"
 checksum = "sha256:39189dab4eeb15706c424af0ac08a3044c9e48f7db12a7d77f6b7aafc7dd5df6"
 url = "https://nodejs.org/dist/v24.16.0/node-v24.16.0-darwin-arm64.tar.gz"
 
+[[tools.npm]]
+version = "12.0.1"
+backend = "aqua:npm/cli"
+
+[tools.npm."platforms.macos-arm64"]
+checksum = "blake3:26accda21c8437ff7551888d1accc31b57bbbcfe55998845ae5ca0853ac791be"
+url = "https://registry.npmjs.org/npm/-/npm-12.0.1.tgz"
+
 [[tools.opentofu]]
 version = "1.12.3"
 backend = "aqua:opentofu/opentofu"
