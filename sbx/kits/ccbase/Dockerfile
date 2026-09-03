@@ -6,6 +6,7 @@ RUN claude update
 RUN sudo apt update -y && sudo apt install -y \
   build-essential \
   direnv \
+  vim \
   && echo 'eval "$(direnv hook bash)"' >> /etc/sandbox-persistent.sh
 
 # Takumi Guard
