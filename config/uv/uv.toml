@@ -1,5 +1,5 @@
 exclude-newer = "7 days"
+preview-features = ["malware-check"]
 
-[[index]]
-url = "https://pypi.flatt.tech/simple/"
-default = true
+[audit]
+malware-check = true
