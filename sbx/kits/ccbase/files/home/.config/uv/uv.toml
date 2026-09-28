@@ -1,0 +1,5 @@
+exclude-newer = "7 days"
+preview-features = ["malware-check"]
+
+[audit]
+malware-check = true
