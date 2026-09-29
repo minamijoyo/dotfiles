@@ -130,7 +130,7 @@ alias avl='(){ open -na "Google Chrome" --args --incognito --user-data-dir=$HOME
 alias cclocal='(){ ollama launch claude --model qwen3.6:35b-a3b-coding-nvfp4 -- $@ }'
 alias sbxb='(){ docker build -t minamijoyo/ccbase ./sbx/kits/ccbase && sbx template load <(docker image save minamijoyo/ccbase) }'
 alias sbxr='(){ sbx rm -f $(basename $(git rev-parse --show-toplevel)) }'
-alias sbxc='(){ sbx create ccbase --name $(basename $(git rev-parse --show-toplevel)) --kit ~/src/github.com/minamijoyo/dotfiles/sbx/kits/ccbase --kit ~/src/github.com/minamijoyo/dotfiles/sbx/kits/cato . }'
+alias sbxc='(){ sbx create --name $(basename $(git rev-parse --show-toplevel)) --kit ~/src/github.com/minamijoyo/dotfiles/sbx/kits/cato ~/src/github.com/minamijoyo/dotfiles/sbx/kits/ccbase . }'
 alias sbxe='(){ sbx exec -it -w $(pwd) $(basename $(git rev-parse --show-toplevel)) bash }'
 alias sbxg='(){ ghtkn get $@ | sbx secret set $(basename $(git rev-parse --show-toplevel)) github -f }'
 
