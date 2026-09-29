@@ -33,6 +33,7 @@ network:
     - iam.amazonaws.com:443
     - sts.amazonaws.com:443
     - 169.254.169.254:80 # AWS metadata service
+    - awscli.amazonaws.com:443
     - docker.io:443
     - auth.docker.io:443
     - registry-1.docker.io:443
