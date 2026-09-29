@@ -46,12 +46,15 @@ network:
     - tuf-repo-cdn.sigstore.dev:443
     - sh.rustup.rs:443
     - static.rust-lang.org:443
+    - index.crates.io:443
+    - static.crates.io:443
     - npm.flatt.tech:443
     - pypi.flatt.tech:443
     - golang.flatt.tech:443
     - huggingface.co:443
     - us.aws.cdn.hf.co:443
     - cas-server.xethub.hf.co:443
+    - download.pytorch.org:443
     - proxy.golang.org:443
     - releases.hashicorp.com:443
     - checkpoint-api.hashicorp.com:443
