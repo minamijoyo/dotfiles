@@ -132,7 +132,7 @@ alias sbxb='(){ docker build -t minamijoyo/ccbase ./sbx/kits/ccbase && sbx templ
 alias sbxr='(){ sbx rm -f $(basename $(git rev-parse --show-toplevel)) }'
 alias sbxc='(){ sbx create --name $(basename $(git rev-parse --show-toplevel)) --kit ~/src/github.com/minamijoyo/dotfiles/sbx/kits/cato ~/src/github.com/minamijoyo/dotfiles/sbx/kits/ccbase . }'
 alias sbxe='(){ sbx exec -it -w $(pwd) $(basename $(git rev-parse --show-toplevel)) bash }'
-alias sbxa='(){ sbx exec -it -e AWS_REGION=ap-northeast-1 --env-file=<(aws --profile=$@ configure export-credentials --format env-no-export) -w $(pwd) $(basename $(git rev-parse --show-toplevel)) bash }'
+alias sbxa='(){ sbx exec -it -e AWS_PROFILE=$2 -e AWS_REGION=ap-northeast-1 --env-file=<(aws --profile=$1 configure export-credentials --format env-no-export) -w $(pwd) $(basename $(git rev-parse --show-toplevel)) /home/agent/hooks/init.sh }'
 alias sbxg='(){ ghtkn get $@ | sbx secret set $(basename $(git rev-parse --show-toplevel)) github -f }'
 
 # 環境変数の管理にdirenvを使う
