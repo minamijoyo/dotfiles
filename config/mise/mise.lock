@@ -72,12 +72,12 @@ url = "https://github.com/jqlang/jq/releases/download/jq-1.8.1/jq-macos-arm64"
 provenance = "github-attestations"
 
 [[tools.node]]
-version = "24.16.0"
+version = "24.22.1"
 backend = "core:node"
 
 [tools.node."platforms.macos-arm64"]
-checksum = "sha256:39189dab4eeb15706c424af0ac08a3044c9e48f7db12a7d77f6b7aafc7dd5df6"
-url = "https://nodejs.org/dist/v24.16.0/node-v24.16.0-darwin-arm64.tar.gz"
+checksum = "sha256:89c682593d76cd44233fa53b1563264e7de9cbb189cad169135c5b4fadfbc0a7"
+url = "https://nodejs.org/dist/v24.22.1/node-v24.22.1-darwin-arm64.tar.gz"
 
 [[tools.npm]]
 version = "12.0.1"
@@ -159,12 +159,8 @@ checksum = "sha256:56affdd8de5527894dca6dc3d7e0a99a873b0f004d7aabc30ae407d3f48b0
 url = "https://github.com/koalaman/shellcheck/releases/download/v0.11.0/shellcheck-v0.11.0.darwin.aarch64.tar.xz"
 
 [[tools.terraform]]
-version = "1.16.5"
+version = "1.15.9"
 backend = "aqua:hashicorp/terraform"
-
-[tools.terraform."platforms.macos-arm64"]
-checksum = "sha256:ecdef65e24193d627f27c39baeda31295f08c938d8a3d4764f442fb916d4b7dc"
-url = "https://releases.hashicorp.com/terraform/1.16.5/terraform_1.16.5_darwin_arm64.zip"
 
 [[tools.tflint]]
 version = "0.62.1"
