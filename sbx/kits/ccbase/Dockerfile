@@ -12,7 +12,6 @@ RUN sudo apt update -y && sudo apt install -y \
 # Takumi Guard
 ENV NPM_CONFIG_REGISTRY=https://npm.flatt.tech/ \
   PIP_INDEX_URL=https://pypi.flatt.tech/simple/ \
-  UV_DEFAULT_INDEX=https://pypi.flatt.tech/simple/ \
   GOPROXY=https://golang.flatt.tech \
   MISE_PIPX_REGISTRY_URL=https://pypi.flatt.tech/simple/{}/
 
