@@ -56,6 +56,7 @@ network:
     - us.aws.cdn.hf.co:443
     - cas-server.xethub.hf.co:443
     - download.pytorch.org:443
+    - download-r2.pytorch.org:443
     - proxy.golang.org:443
     - releases.hashicorp.com:443
     - checkpoint-api.hashicorp.com:443
