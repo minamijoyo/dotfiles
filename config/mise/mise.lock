@@ -152,7 +152,7 @@ checksum = "sha256:378e973289176ca0c6054054ee7f631a065874a352bf43f0fa60ef079b6ba
 url = "https://github.com/BurntSushi/ripgrep/releases/download/15.1.0/ripgrep-15.1.0-aarch64-apple-darwin.tar.gz"
 
 [[tools.ruby]]
-version = "3.4.9"
+version = "3.4.13"
 backend = "core:ruby"
 
 [tools.ruby.options]
@@ -162,8 +162,23 @@ ruby_build_repo = "https://github.com/rbenv/ruby-build.git"
 ruby_install = "false"
 
 [tools.ruby."platforms.macos-arm64"]
-checksum = "sha256:f7569e4f455ddd7c1e17b50ace8d7adf91b4205d6e9fdc382316ea95b8cf75eb"
-url = "https://github.com/jdx/ruby/releases/download/3.4.9-7/ruby-3.4.9.macos.tar.gz"
+checksum = "sha256:ad38145d8e2f5e45405adbcfe1fb1b20ce17619ab4ffb0b117df04d974c7dbb2"
+url = "https://github.com/jdx/ruby/releases/download/3.4.13-1/ruby-3.4.13.macos.tar.gz"
+provenance = "github-attestations"
+
+[[tools.ruby]]
+version = "3.4.12"
+backend = "core:ruby"
+
+[tools.ruby.options]
+compile = "false"
+precompiled_url = "jdx/ruby"
+ruby_build_repo = "https://github.com/rbenv/ruby-build.git"
+ruby_install = "false"
+
+[tools.ruby."platforms.macos-arm64"]
+checksum = "sha256:865b429c511c40a96fe3c25466bbf9b300e5cae22c70c7dd68e0af003b849de4"
+url = "https://github.com/jdx/ruby/releases/download/3.4.12-1/ruby-3.4.12.macos.tar.gz"
 provenance = "github-attestations"
 
 [[tools.shellcheck]]
