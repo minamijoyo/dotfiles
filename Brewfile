@@ -28,7 +28,6 @@ brew "minamijoyo/tfupdate/tfupdate"
 
 cask "1password"
 cask "1password-cli"
-cask "aws-vault-binary"
 cask "dash"
 cask "docker-desktop"
 cask "git-credential-manager"

@@ -19,6 +19,7 @@ compile = false
 registry_url="https://pypi.flatt.tech/simple/{}/"
 
 [tools]
+aws-vault = "latest"
 direnv = "latest"
 fzf = "latest"
 gh = "latest"
