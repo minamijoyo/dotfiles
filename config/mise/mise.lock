@@ -19,12 +19,13 @@ checksum = "sha256:4f569f3a36732bfd8b8fea7bfcc6ad87a59745c109022164d0ca4832451d5
 url = "https://github.com/direnv/direnv/releases/download/v2.37.1/direnv.darwin-arm64"
 
 [[tools.fzf]]
-version = "0.73.1"
+version = "0.75.0"
 backend = "aqua:junegunn/fzf"
 
 [tools.fzf."platforms.macos-arm64"]
-checksum = "sha256:d27fd68c04fb9b42f7c73a3f7d38069a74d308e40174f64a072c747213e97286"
-url = "https://github.com/junegunn/fzf/releases/download/v0.73.1/fzf-0.73.1-darwin_arm64.tar.gz"
+checksum = "sha256:1e76698eb481436e42119bea6aa6e2bd9552ff090789d769c286e3c3a4e0ded6"
+url = "https://github.com/junegunn/fzf/releases/download/v0.75.0/fzf-0.75.0-darwin_arm64.tar.gz"
+url_api = "https://api.github.com/repos/junegunn/fzf/releases/assets/720590797"
 
 [[tools.gh]]
 version = "2.103.3"
@@ -66,12 +67,12 @@ url_api = "https://api.github.com/repos/fencesandbox/fence/releases/assets/43365
 url = "https://github.com/fencesandbox/fence/releases/download/v0.1.59/multiple.intoto.jsonl"
 
 [[tools.go]]
-version = "1.26.9"
+version = "1.26.11"
 backend = "core:go"
 
 [tools.go."platforms.macos-arm64"]
-checksum = "sha256:f9bb7c0a02506c5d9bf0d1eb1f7ee6c7684f844ae49558308a0427b830e022cc"
-url = "https://dl.google.com/go/go1.26.9.darwin-arm64.tar.gz"
+checksum = "sha256:e3a42e67a7a8acf450ebada2b074c7ca863000ca514907b7185b45e8f5cdff57"
+url = "https://dl.google.com/go/go1.26.11.darwin-arm64.tar.gz"
 
 [[tools.golangci-lint]]
 version = "2.15.0"
@@ -83,12 +84,13 @@ url = "https://github.com/golangci/golangci-lint/releases/download/v2.15.0/golan
 provenance = "github-attestations"
 
 [[tools.jq]]
-version = "1.8.1"
+version = "1.8.2"
 backend = "aqua:jqlang/jq"
 
 [tools.jq."platforms.macos-arm64"]
-checksum = "sha256:a9fe3ea2f86dfc72f6728417521ec9067b343277152b114f4e98d8cb0e263603"
-url = "https://github.com/jqlang/jq/releases/download/jq-1.8.1/jq-macos-arm64"
+checksum = "sha256:2d75340ba57a4b4b4c8708a21c2dc8e958a48aaa8bba13b27f77f6e4c0eca07e"
+url = "https://github.com/jqlang/jq/releases/download/jq-1.8.2/jq-macos-arm64"
+url_api = "https://api.github.com/repos/jqlang/jq/releases/assets/453012783"
 provenance = "github-attestations"
 
 [[tools.node]]
@@ -145,12 +147,12 @@ version = "2.4.1"
 backend = "pipx:poetry"
 
 [[tools.python]]
-version = "3.13.11"
+version = "3.13.18"
 backend = "core:python"
 
 [tools.python."platforms.macos-arm64"]
-checksum = "sha256:718a87bf84d81cb81355488ca37be1f66c2252304be2090721016948de96e7ca"
-url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260127/cpython-3.13.11+20260127-aarch64-apple-darwin-install_only_stripped.tar.gz"
+checksum = "blake3:44b4e09152c620a2256c55f27c639131674bf5d6303002ccce9895bcf4286ca3"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20261124/cpython-3.13.18+20261124-aarch64-apple-darwin-install_only_stripped.tar.gz"
 provenance = "github-attestations"
 
 [[tools.ripgrep]]
@@ -218,9 +220,11 @@ url = "https://github.com/astral-sh/uv/releases/download/0.11.16/uv-aarch64-appl
 provenance = "github-attestations"
 
 [[tools.yq]]
-version = "4.53.3"
+version = "4.54.3"
 backend = "aqua:mikefarah/yq"
 
 [tools.yq."platforms.macos-arm64"]
-checksum = "sha256:877de31753a4dd2401aa048937aa9a7fc4d5f6ce858cf31508c5802954297213"
-url = "https://github.com/mikefarah/yq/releases/download/v4.53.3/yq_darwin_arm64"
+checksum = "sha512:03ed7026ba8be7b8d534ed029a950115e7fb2838bd84555e012004751fd073c6240b2f020d2f6a70ed394e76550a55b66427a4fe82b481e1560c53e8e220cfdf"
+url = "https://github.com/mikefarah/yq/releases/download/v4.54.3/yq_darwin_arm64"
+url_api = "https://api.github.com/repos/mikefarah/yq/releases/assets/726219940"
+provenance = "cosign"
