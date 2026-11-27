@@ -1,0 +1,7 @@
+schemaVersion: "1"
+agent: claude
+entrypoint: ["/bin/bash"]
+cmd: []
+kits:
+  - ${{ env.fileDir }}/src/github.com/minamijoyo/dotfiles/sbx/kits/ccbase
+  - ${{ env.fileDir }}/src/github.com/minamijoyo/dotfiles/sbx/kits/cato

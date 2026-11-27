@@ -9,3 +9,7 @@ idiomatic_version_file_enable_tools = [
   "ruby",
   "terraform",
 ]
+
+[tools]
+awscli = "latest"
+python = "latest"

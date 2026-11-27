@@ -1,17 +1,20 @@
-schemaVersion: "1"
+# syntax=docker/sandbox-kit:3
+schemaVersion: "3"
 kind: mixin
-name: cato
 
-network:
-  allowedDomains:
-    - clientdownload.catonetworks.com:443
-    - clients.catonetworks.com:443
-
-commands:
-  install:
-    - description: Install CATO CA certificate
-      user: "0"
-      command: |
-        curl -fsSL https://clientdownload.catonetworks.com/public/certificates/CatoNetworksTrustedRootCA.pem -o /tmp/cato-root-ca.crt \
-        && install -m 0644 /tmp/cato-root-ca.crt /usr/local/share/ca-certificates/cato-root-ca.crt \
-        && update-ca-certificates
+capabilities:
+  - type: com.docker.sandbox/network-policy@2
+    config:
+      install:
+        allow:
+          - clientdownload.catonetworks.com:443
+          - clients.catonetworks.com:443
+  - type: com.docker.sandbox/lifecycle@1
+    config:
+      install:
+        - description: Install CATO CA certificate
+          user: "0"
+          command: |
+            curl -fsSL https://clientdownload.catonetworks.com/public/certificates/CatoNetworksTrustedRootCA.pem -o /tmp/cato-root-ca.crt \
+            && install -m 0644 /tmp/cato-root-ca.crt /usr/local/share/ca-certificates/cato-root-ca.crt \
+            && update-ca-certificates && rm -f /tmp/cato-root-ca.crt
