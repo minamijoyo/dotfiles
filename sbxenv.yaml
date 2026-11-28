@@ -5,3 +5,10 @@ cmd: []
 kits:
   - ${{ env.fileDir }}/src/github.com/minamijoyo/dotfiles/sbx/kits/ccbase
   - ${{ env.fileDir }}/src/github.com/minamijoyo/dotfiles/sbx/kits/cato
+lifecycle:
+  initialize:
+    - name: Set git identity
+      # kit v3のgit-identity@1はincludeIfを解決できないのでホスト側で解決する
+      command: |
+        git config user.name "$(git config --get user.name)"
+        git config user.email "$(git config --get user.email)"
