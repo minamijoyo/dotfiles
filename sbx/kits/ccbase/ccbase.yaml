@@ -8,10 +8,16 @@ capabilities:
       install:
         - description: Set env vars
           command: cat ~/hooks/sandbox-persistent.sh >> /etc/sandbox-persistent.sh
+          user: "0"
         - description: Set PS1
           command: echo 'unset PROMPT_COMMAND; export PS1="[\W@\h]\$ "' >> ~/.bashrc
+          user: "1000"
         - description: Customize claude settings
           command: cp ~/claude/settings.json ~/.claude/settings.json
+          user: "1000"
+        - description: mise install
+          command: mise install
+          user: "1000"
   - type: com.docker.sandbox/network-policy@2
     config:
       runtime:
