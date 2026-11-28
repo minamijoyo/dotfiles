@@ -1,5 +1,5 @@
-eval "$(direnv hook bash)"
 eval "$(mise activate bash)"
+eval "$(direnv hook bash)"
 export PATH="$PATH:$HOME/go/bin"
 export UV_PROJECT_ENVIRONMENT="$(mise where python)"
 

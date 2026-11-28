@@ -12,4 +12,5 @@ idiomatic_version_file_enable_tools = [
 
 [tools]
 awscli = "latest"
+direnv = "latest"
 python = "latest"

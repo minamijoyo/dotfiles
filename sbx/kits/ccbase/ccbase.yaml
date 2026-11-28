@@ -10,14 +10,24 @@ capabilities:
           command: cat ~/hooks/sandbox-persistent.sh >> /etc/sandbox-persistent.sh
           user: "0"
         - description: Set PS1
-          command: echo 'unset PROMPT_COMMAND; export PS1="[\W@\h]\$ "' >> ~/.bashrc
+          # PROMPT_COMMANDのリセット後にdirenv hookを読み直す必要があることに注意
+          command: echo 'unset PROMPT_COMMAND; export PS1="[\W@\h]\$ "; . /etc/sandbox-persistent.sh' >> ~/.bashrc
           user: "1000"
         - description: Customize claude settings
           command: cp ~/claude/settings.json ~/.claude/settings.json
           user: "1000"
-        - description: mise install
+        - description: mise install (global)
           command: mise install
           user: "1000"
+      startup:
+        - description: mise install (project)
+          command: mise install
+          user: "1000"
+          background: false
+        - description: direnv allow
+          command: bash -c 'eval "$(mise activate bash)" && eval "$(direnv hook bash)" && direnv allow'
+          user: "1000"
+          background: false
   - type: com.docker.sandbox/network-policy@2
     config:
       runtime:

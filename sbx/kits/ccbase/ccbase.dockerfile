@@ -2,8 +2,7 @@ FROM sbx/shell
 
 # Install dependencies not managed by mise
 RUN sudo apt update -y && sudo apt install -y \
-  build-essential \
-  direnv
+  build-essential
 
 # Install mise
 RUN sudo apt update -y && sudo apt install -y extrepo \
