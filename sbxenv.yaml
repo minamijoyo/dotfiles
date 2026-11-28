@@ -13,3 +13,13 @@ lifecycle:
       command: |
         git config user.name "$(git config --get user.name)"
         git config user.email "$(git config --get user.email)"
+env:
+  # aws-vault serverモード
+  AWS_REGION: ap-northeast-1
+  X_AWS_CONTAINER_CREDENTIALS_FULL_URI: ${{ env.args.aws_container_credentials_full_uri }}
+  X_AWS_CONTAINER_AUTHORIZATION_TOKEN: ${{ env.args.aws_container_authorization_token }}
+args:
+  aws_container_credentials_full_uri:
+    default: localhost
+  aws_container_authorization_token:
+    default: dummy

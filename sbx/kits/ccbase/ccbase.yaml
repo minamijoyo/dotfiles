@@ -7,7 +7,7 @@ capabilities:
     config:
       install:
         - description: Set env vars
-          command: cat ~/hooks/sandbox-persistent.sh >> /etc/sandbox-persistent.sh
+          command: cat ~/scripts/sandbox-persistent.sh >> /etc/sandbox-persistent.sh
           user: "0"
         - description: Set PS1
           # PROMPT_COMMANDのリセット後にdirenv hookを読み直す必要があることに注意
@@ -32,6 +32,9 @@ capabilities:
     config:
       runtime:
         allow:
+          - hosts: [localhost] # aws-vault exec --ecs-server
+            methods: [GET]
+            paths: [/]
           - claude.com:443
           - downloads.claude.ai:443
           - api.anthropic.com:443
@@ -47,7 +50,6 @@ capabilities:
           - "*.us-east-1.amazonaws.com:443"
           - "*.us-east-2.amazonaws.com:443"
           - "*.s3.ap-northeast-1.amazonaws.com:443"
-          - ap-northeast-1.signin.aws.amazon.com:443 # aws login --remote
           - iam.amazonaws.com:443
           - sts.amazonaws.com:443
           - 169.254.169.254:80 # AWS metadata service

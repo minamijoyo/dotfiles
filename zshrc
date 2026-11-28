@@ -135,8 +135,8 @@ alias sbxb='(){ docker build -t minamijoyo/ccbase ./sbx/kits/ccbase && sbx templ
 alias sbxr='(){ sbx rm -f $(basename $(git rev-parse --show-toplevel)) }'
 alias sbxc='(){ sbx create --name $(basename $(git rev-parse --show-toplevel)) --kit ~/src/github.com/minamijoyo/dotfiles/sbx/kits/cato ~/src/github.com/minamijoyo/dotfiles/sbx/kits/ccbase . }'
 alias sbxe='(){ sbx exec -it -w $(pwd) $(basename $(git rev-parse --show-toplevel)) bash }'
-alias sbxa='(){ sbx exec -it -e AWS_PROFILE=$2 -e AWS_REGION=ap-northeast-1 --env-file=<(aws --profile=$1 configure export-credentials --format env-no-export) -w $(pwd) $(basename $(git rev-parse --show-toplevel)) /home/agent/hooks/init.sh }'
 alias sbxg='(){ ghtkn get $@ | sbx secret set --sandbox $(basename $(git rev-parse --show-toplevel)) github -f }'
+sbxa(){ aws-vault exec --duration=15m --ecs-server --lazy $@ -- bash -c 'sbx env run -f --env-arg aws_container_credentials_full_uri=$AWS_CONTAINER_CREDENTIALS_FULL_URI --env-arg aws_container_authorization_token=$AWS_CONTAINER_AUTHORIZATION_TOKEN' }
 
 # 環境変数の管理にdirenvを使う
 eval "$(direnv hook zsh)"
